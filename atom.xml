@@ -3,11 +3,11 @@
   <title>琲木木_blog</title>
   
   
-  <link href="https://beimumu.xyz/atom.xml" rel="self"/>
+  <link href="https://beimumu.github.io/atom.xml" rel="self"/>
   
-  <link href="https://beimumu.xyz/"/>
+  <link href="https://beimumu.github.io/"/>
   <updated>2021-08-14T15:15:01.884Z</updated>
-  <id>https://beimumu.xyz/</id>
+  <id>https://beimumu.github.io/</id>
   
   <author>
     <name>beimumu</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://beimumu.xyz/2020/07/08/hello-world/"/>
-    <id>https://beimumu.xyz/2020/07/08/hello-world/</id>
+    <link href="https://beimumu.github.io/2020/07/08/hello-world/"/>
+    <id>https://beimumu.github.io/2020/07/08/hello-world/</id>
     <published>2020-07-07T16:00:00.000Z</published>
     <updated>2021-08-14T15:15:01.884Z</updated>
     
@@ -34,14 +34,14 @@
     
     
     
-    <category term="git" scheme="https://beimumu.xyz/categories/git/"/>
+    <category term="git" scheme="https://beimumu.github.io/categories/git/"/>
     
-    <category term="java" scheme="https://beimumu.xyz/categories/git/java/"/>
+    <category term="java" scheme="https://beimumu.github.io/categories/git/java/"/>
     
     
-    <category term="hello" scheme="https://beimumu.xyz/tags/hello/"/>
+    <category term="hello" scheme="https://beimumu.github.io/tags/hello/"/>
     
-    <category term="博客搭建" scheme="https://beimumu.xyz/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <category term="博客搭建" scheme="https://beimumu.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   
