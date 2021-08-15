@@ -6,7 +6,7 @@
   <link href="https://beimumu.xyz/atom.xml" rel="self"/>
   
   <link href="https://beimumu.xyz/"/>
-  <updated>2021-08-15T11:11:23.796Z</updated>
+  <updated>2021-08-15T13:20:51.172Z</updated>
   <id>https://beimumu.xyz/</id>
   
   <author>
@@ -17,31 +17,438 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://beimumu.xyz/post/hello-world/"/>
-    <id>https://beimumu.xyz/post/hello-world/</id>
-    <published>2020-07-07T16:00:00.000Z</published>
-    <updated>2021-08-15T11:11:23.796Z</updated>
+    <title>七月随记</title>
+    <link href="https://beimumu.xyz/post/qi-yue-sui-ji/"/>
+    <id>https://beimumu.xyz/post/qi-yue-sui-ji/</id>
+    <published>2021-07-15T19:36:57.000Z</published>
+    <updated>2021-08-15T13:20:51.172Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;“宝剑锋从磨砺出，梅花香自苦寒来”&lt;/p&gt;
+&lt;p&gt;​                                                              </summary>
         
       
     
     
     
-    <category term="git" scheme="https://beimumu.xyz/categories/git/"/>
-    
-    <category term="java" scheme="https://beimumu.xyz/categories/git/java/"/>
+    <category term="生活" scheme="https://beimumu.xyz/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-    <category term="hello" scheme="https://beimumu.xyz/tags/hello/"/>
+    <category term="随记" scheme="https://beimumu.xyz/tags/%E9%9A%8F%E8%AE%B0/"/>
     
-    <category term="博客" scheme="https://beimumu.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
+  </entry>
+  
+  <entry>
+    <title>万年历</title>
+    <link href="https://beimumu.xyz/post/wan-nian-li/"/>
+    <id>https://beimumu.xyz/post/wan-nian-li/</id>
+    <published>2021-06-28T04:51:32.000Z</published>
+    <updated>2021-08-15T13:54:39.714Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java复习总结</title>
+    <link href="https://beimumu.xyz/post/java-fu-xi-zong-jie/"/>
+    <id>https://beimumu.xyz/post/java-fu-xi-zong-jie/</id>
+    <published>2021-06-14T14:38:14.000Z</published>
+    <updated>2021-08-15T14:06:47.055Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简答题&quot;&gt;&lt;a href=&quot;#简答题&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+    <category term="复习" scheme="https://beimumu.xyz/tags/%E5%A4%8D%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>“i++、i--、++i、--i”等自增自减运算的区别及练习</title>
+    <link href="https://beimumu.xyz/post/i-i-i-i-deng-zi-zeng-zi-jian-yun-suan-de-qu-bie-ji-lian-xi/"/>
+    <id>https://beimumu.xyz/post/i-i-i-i-deng-zi-zeng-zi-jian-yun-suan-de-qu-bie-ji-lian-xi/</id>
+    <published>2021-03-28T06:20:37.000Z</published>
+    <updated>2021-08-15T13:54:04.718Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在做题的过程中遇到后增运算总是想不通，于是自己就动手做了些基础练习题，获得了些感悟。&lt;/p&gt;
+&lt;h4 id=&quot;自增自减运算&quot;&gt;&lt;a href=&quot;#自增自减运算&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三月随记</title>
+    <link href="https://beimumu.xyz/post/san-yue-sui-ji/"/>
+    <id>https://beimumu.xyz/post/san-yue-sui-ji/</id>
+    <published>2021-03-28T06:20:37.000Z</published>
+    <updated>2021-08-15T13:54:32.940Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;“好蓝的天空啊，是青春的蓝，突然，好想去剪个头发~”&lt;/p&gt;
+&lt;p&gt;​                                                              </summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://beimumu.xyz/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="随记" scheme="https://beimumu.xyz/tags/%E9%9A%8F%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML+CSS实例练习</title>
+    <link href="https://beimumu.xyz/post/html-css-shi-li-lian-xi/"/>
+    <id>https://beimumu.xyz/post/html-css-shi-li-lian-xi/</id>
+    <published>2020-10-12T09:10:23.000Z</published>
+    <updated>2021-08-15T13:55:12.779Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="https://beimumu.xyz/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="HTML" scheme="https://beimumu.xyz/tags/HTML/"/>
+    
+    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java数组</title>
+    <link href="https://beimumu.xyz/post/java-shu-zu/"/>
+    <id>https://beimumu.xyz/post/java-shu-zu/</id>
+    <published>2020-10-04T18:10:16.000Z</published>
+    <updated>2021-08-15T13:57:23.195Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一维数组&quot;&gt;&lt;a href=&quot;#一维数组&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java流程控制-循环结构（二）</title>
+    <link href="https://beimumu.xyz/post/java-liu-cheng-kong-zhi-xun-huan-jie-gou-er/"/>
+    <id>https://beimumu.xyz/post/java-liu-cheng-kong-zhi-xun-huan-jie-gou-er/</id>
+    <published>2020-09-25T10:29:00.000Z</published>
+    <updated>2021-08-15T14:13:25.934Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;在学完循环语句后，还需要大量的练习。此篇为练习题，练习题的篇幅有些长。&lt;/p&gt;
+&lt;h1 id=&quot;一、if语句&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java流程控制-循环结构（一）</title>
+    <link href="https://beimumu.xyz/post/java-liu-cheng-kong-zhi-xun-huan-jie-gou-yi/"/>
+    <id>https://beimumu.xyz/post/java-liu-cheng-kong-zhi-xun-huan-jie-gou-yi/</id>
+    <published>2020-09-20T11:23:37.000Z</published>
+    <updated>2021-08-15T13:57:37.650Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;if语句&quot;&gt;&lt;a href=&quot;#if语句&quot; class=&quot;headerlink&quot; title=&quot;if语句&quot;&gt;&lt;/a&gt;if语句&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;if单选择结构&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-java&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java流程控制-Scanner对象</title>
+    <link href="https://beimumu.xyz/post/java-liu-cheng-kong-zhi-scanner-dui-xiang/"/>
+    <id>https://beimumu.xyz/post/java-liu-cheng-kong-zhi-scanner-dui-xiang/</id>
+    <published>2020-09-17T11:54:46.000Z</published>
+    <updated>2021-08-15T13:55:37.547Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Scanner对象&quot;&gt;&lt;a href=&quot;#Scanner对象&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+    <category term="Scanner对象" scheme="https://beimumu.xyz/tags/Scanner%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git部署Github和Gitee共存</title>
+    <link href="https://beimumu.xyz/post/git-bu-shu-github-he-gitee-gong-cun/"/>
+    <id>https://beimumu.xyz/post/git-bu-shu-github-he-gitee-gong-cun/</id>
+    <published>2020-09-06T04:02:45.000Z</published>
+    <updated>2021-08-15T13:54:49.811Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Git" scheme="https://beimumu.xyz/categories/Git/"/>
+    
+    <category term="环境部署" scheme="https://beimumu.xyz/categories/Git/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="Git命令" scheme="https://beimumu.xyz/tags/Git%E5%91%BD%E4%BB%A4/"/>
+    
+    <category term="Gitee" scheme="https://beimumu.xyz/tags/Gitee/"/>
+    
+    <category term="GitHub" scheme="https://beimumu.xyz/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础语法</title>
+    <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa/"/>
+    <id>https://beimumu.xyz/post/java-ji-chu-yu-fa/</id>
+    <published>2020-08-30T13:47:02.000Z</published>
+    <updated>2021-08-15T14:07:08.466Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;注释&quot;&gt;&lt;a href=&quot;#注释&quot; class=&quot;headerlink&quot; title=&quot;注释&quot;&gt;&lt;/a&gt;注释&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Java中的注释有三种：&lt;ol&gt;
+&lt;li&gt;单行注释“//”&lt;/li&gt;
+&lt;li&gt;多行注释“/*</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="java" scheme="https://beimumu.xyz/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git相关操作</title>
+    <link href="https://beimumu.xyz/post/git-xiang-guan-cao-zuo/"/>
+    <id>https://beimumu.xyz/post/git-xiang-guan-cao-zuo/</id>
+    <published>2020-08-25T12:11:29.000Z</published>
+    <updated>2021-08-15T13:54:53.514Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;常用的Linux命令&quot;&gt;&lt;a href=&quot;#常用的Linux命令&quot; class=&quot;headerlink&quot; title=&quot;常用的Linux命令&quot;&gt;&lt;/a&gt;常用的Linux命令&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Git" scheme="https://beimumu.xyz/categories/Git/"/>
+    
+    <category term="环境部署" scheme="https://beimumu.xyz/categories/Git/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="Git命令" scheme="https://beimumu.xyz/tags/Git%E5%91%BD%E4%BB%A4/"/>
+    
+    <category term="Github" scheme="https://beimumu.xyz/tags/Github/"/>
+    
+    <category term="Gitee" scheme="https://beimumu.xyz/tags/Gitee/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用的DOS命令和Hello,world!</title>
+    <link href="https://beimumu.xyz/post/chang-yong-de-dos-ming-ling-he-hello-world/"/>
+    <id>https://beimumu.xyz/post/chang-yong-de-dos-ming-ling-he-hello-world/</id>
+    <published>2020-08-08T08:58:35.000Z</published>
+    <updated>2021-08-15T13:54:16.874Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;常用的DOS命令&quot;&gt;&lt;a href=&quot;#常用的DOS命令&quot; class=&quot;headerlink&quot; title=&quot;常用的DOS命令&quot;&gt;&lt;/a&gt;常用的DOS命令&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Dos" scheme="https://beimumu.xyz/categories/Dos/"/>
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Dos/Java/"/>
+    
+    <category term="环境部署" scheme="https://beimumu.xyz/categories/Dos/Java/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+    <category term="Dos命令" scheme="https://beimumu.xyz/tags/Dos%E5%91%BD%E4%BB%A4/"/>
+    
+    <category term="idea" scheme="https://beimumu.xyz/tags/idea/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于Gridea+Github搭建自己的Blog</title>
+    <link href="https://beimumu.xyz/post/ji-yu-gridea-github-da-jian-zi-ji-de-blog/"/>
+    <id>https://beimumu.xyz/post/ji-yu-gridea-github-da-jian-zi-ji-de-blog/</id>
+    <published>2020-07-21T16:00:00.000Z</published>
+    <updated>2021-08-15T13:51:18.038Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;木木有话说：&quot;&gt;&lt;a href=&quot;#木木有话说：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Gridea" scheme="https://beimumu.xyz/categories/Gridea/"/>
+    
+    <category term="博客搭建" scheme="https://beimumu.xyz/categories/Gridea/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="环境部署" scheme="https://beimumu.xyz/categories/Gridea/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="写作工具" scheme="https://beimumu.xyz/categories/Gridea/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Github" scheme="https://beimumu.xyz/tags/Github/"/>
+    
+    <category term="Gitee" scheme="https://beimumu.xyz/tags/Gitee/"/>
+    
+    <category term="Gridea" scheme="https://beimumu.xyz/tags/Gridea/"/>
+    
+    <category term="Git" scheme="https://beimumu.xyz/tags/Git/"/>
+    
+    <category term="node.js" scheme="https://beimumu.xyz/tags/node-js/"/>
+    
+    <category term="PicGo" scheme="https://beimumu.xyz/tags/PicGo/"/>
+    
+    <category term="typora" scheme="https://beimumu.xyz/tags/typora/"/>
     
   </entry>
   

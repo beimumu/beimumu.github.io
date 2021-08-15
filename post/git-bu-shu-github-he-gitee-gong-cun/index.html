@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>标签 | 琲木木_blog</title>
+  <title>Git部署Github和Gitee共存 | 琲木木_blog</title>
 
   
     
@@ -624,194 +624,653 @@
     <!-- 内容区域 -->
     <main class="main" id="pjax-container" style="margin-top: 0;">
       
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-tags" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-
-<div class="lazyload tags-header" data-original="https://pic2.zhimg.com/80/v2-bf6c555e7c61a57ba4a1fd95a9a32975_1440w.jpg">
-    <div class="tags-header-title">
-        tags
-    </div>
-    <div class="tags-header-desc">
+ <!-- prismjs 代码高亮 -->
+ 
     
-        <span class="title" id="tags-header-desc"></span>
-        <script>
-  function typedFn() {
-    const el = '#tags-header-desc';
-    const type = 'tag';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
+    <link href="/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/js/prism/prism.min.css" rel="stylesheet">
+    
+
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
+  
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://gitee.com/beimumu/img/raw/master/background_img/alphabe.jpg" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        Git部署Github和Gitee共存
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fa fa-calendar"></i> 发表于：2020-09-06 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/Git/" class="post-detail-header_category">
+              Git
+            </a>
+          
+            <a href="/categories/Git/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/" class="post-detail-header_category">
+              环境部署
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fa fa-file-text-o"></i> 字数统计: 688 |
+          </span>
+  
+          <span class="min2read">
+            <i class="fa fa-clock-o"></i> 阅读时长: 2分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fa fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      <div class="post-content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>学习git命令后就实际操作了一番，但有一说一在Git部署Github和Gitee共存时确实遇到一些问题，所以就想做一总结整理，当然在学习过程也看了一些大佬的经验。哈哈，这也算是为将来打下基础吧。</p>
+<h2 id="配置SSH公钥"><a href="#配置SSH公钥" class="headerlink" title="配置SSH公钥"></a>配置SSH公钥</h2><ol>
+<li><p>GitHub密钥</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"YourGIthubEmail@mail.com"</span> -f <span class="token string">"github_id_rsa"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>之后命令<code>cat github_id_rsa.pub</code>即可查看github的公钥，然后复制在添加到github的SSH keys中保存。</p>
+</li>
+<li><p>Gitee密钥</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"YourGiteeEmail@mail.com"</span> -f <span class="token string">"gitee_id_rsa"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>复制<code>gitee_id_rsa.pub</code>公钥到gitee的SSH keys中保存。</p>
+</li>
+</ol>
+<p>以上两步完成后在<code>~/.ssh</code>文件中出现:</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/typora/image-20200906101335625.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20200906101335625"></p>
+<ol start="3">
+<li><p>创建config文件避免ssh冲突</p>
+<p>在<code>~/.ssh</code>文件夹下新建<code>config</code>文件，在里面添加以下内容</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># gitee</span>
+
+Host gitee.com
+HostName gitee.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/gitee_id_rsa
+
+<span class="token comment"># github</span>
+
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/github_id_rsa
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>测试</p>
+<ul>
+<li><p>执行<code>ssh -T git@github.com</code>,接着会让选择yes ，最后出现<code>successfully</code>,则github配置成功。</p>
+</li>
+<li><p>执行<code>ssh -T git@gitee.com</code>,接着会让选择yes ，最后出现<code>successfully</code>,则gitee配置成功。</p>
+</li>
+</ul>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/typora/image-20200906102426599.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20200906102426599"></p>
+</li>
+</ol>
+<p>以上工作全部完成后在<code>~/.ssh</code>文件下见到</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/typora/image-20200906103022196.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20200906103022196"></p>
+<h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>创建前需要提前说一下在此过程问题诸多，按照步骤一步一步来。闲言少叙，走起。</p>
+<ol>
+<li><p>在gitee上创建一个仓库。</p>
+</li>
+<li><p>使用<code>git cine [url]</code>克隆到本地。</p>
+</li>
+<li><p>在github上创建一个与gitee和本地仓库名字相同的空仓库。创建仓库时不要勾选这些：</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/typora/image-20200906104936144.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20200906104936144"></p>
+</li>
+</ol>
+<p>==tips：如果以3步没弄正确则会遇到git push报错error: failed to push some refs to：的问题==</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/typora/image-20200906103900473.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20200906103900473"></p>
+<p>这就是在push过程中本地仓库和远程仓库二者间内容没有联系。问题改了之后，命令<code>git push github master</code>，下图为成功。</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/typora/image-20200906110724725.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20200906110724725"></p>
+<ol start="4">
+<li><p>在命令<code>git push github master</code>后还会出现==git push报错fatal: HttpRequestException encountered.的问题==</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/typora/image-20200906112156662.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20200906112156662"></p>
+</li>
+</ol>
+<p>在网上查了下原因：出现该提示信息的主要原因是Github禁用了TLS v1.0 and v1.1这种弱加密标准，此时需要手动更新Windows的git凭证管理器，更新方式很简单，在网站下载Git在Window上的凭证管理器并默认安装即可。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft/Git-Credential-Manager-for-Windows/releases/tag/1.20.0">https://github.com/microsoft/Git-Credential-Manager-for-Windows/releases/tag/1.20.0</a></li>
+</ul>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/typora/image-20200906112905817.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20200906112905817"></p>
+<p>两个报错解决后，则可以：</p>
+<ol>
+<li>上传到GitHub：<code>git push github master</code></li>
+</ol>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/typora/image-20200906114322520.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20200906114322520"></p>
+<ol start="2">
+<li>上传到Gitee：<code>git push gitee master</code></li>
+</ol>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/typora/image-20200906114924463.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20200906114924463"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是我学习git部署过程中所遇到的问题。遇到都已解决，而未遇到的问题以后再说。在这其中也让我再一次熟悉了git基本命令和自主学习能力，即不会就自己动手查阅资料和请教他人。虽然自主学习过程中有些坎坷但是解决后是无比的开心和满足。</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/Git%E5%91%BD%E4%BB%A4/" class="">
+              Git命令
+            </a>
+          
+            <a href="/tags/Gitee/" class="">
+              Gitee
+            </a>
+          
+            <a href="/tags/GitHub/" class="">
+              GitHub
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>beimumu</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/post/git-bu-shu-github-he-gitee-gong-cun/" target="_blank" title="Git部署Github和Gitee共存">https://beimumu.xyz/post/git-bu-shu-github-he-gitee-gong-cun/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img lazyload" data-original="https://gitee.com/beimumu/img/raw/master/background_img/1002.jpg" style="background-size: cover; 
+      background-position: center center;">
+    </div>
+    <a href="/post/java-liu-cheng-kong-zhi-scanner-dui-xiang/" class="post-nav-link">
+      <div class="title">
+        <i class="fa fa-angle-left"></i> 上一篇:
+        <div class="title-text">Java流程控制-Scanner对象</div>
+      </div>
+      
+      <!-- <div class="content">
+        Scanner对象
+之前我们学的基础语法中我们并没有实现程序和人的交互，但是Java给我们提供了这样一个工具类，我们可以
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img lazyload" data-original="https://gitee.com/beimumu/img/raw/master/background_img/sportive.jpg" style="background-size: cover; 
+      background-position: center center;">
+    </div>
+    <a href="/post/java-ji-chu-yu-fa/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fa fa-angle-right"></i>
+        <div class="title-text">Java基础语法</div>
+      </div>
+      <!-- <div class="content">
+        注释
+Java中的注释有三种：
+单行注释“//”
+多行注释“/* */“
+文档注释”/**  */“
+
+
+
+标识符
+关键
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-if="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-if="visible">
+      <div class="donate-box_close">
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+          <img src="/medias/zfb.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+          <img src="/medias/wx.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
 </script>
     
-    </div>
-    <div class="mask-box"></div>
-</div>
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
 
 
-<div id="tags" class="container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fa fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/Git%E5%91%BD%E4%BB%A4/" title="Git命令: 2">
-                    <span class="tag-content"
-                        title="Git命令" style="background-color: #D7BDE2;">Git命令
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Github/" title="Github: 2">
-                    <span class="tag-content"
-                        title="Github" style="background-color: #FEF9E7;">Github
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Gitee/" title="Gitee: 3">
-                    <span class="tag-content"
-                        title="Gitee" style="background-color: #F8C471;">Gitee
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/java/" title="java: 1">
-                    <span class="tag-content"
-                        title="java" style="background-color: #A3E4D7;">java
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/HTML/" title="HTML: 1">
-                    <span class="tag-content"
-                        title="HTML" style="background-color: #FEF9E7;">HTML
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%BB%83%E4%B9%A0/" title="练习: 4">
-                    <span class="tag-content"
-                        title="练习" style="background-color: #D7BDE2;">练习
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Java/" title="Java: 8">
-                    <span class="tag-content"
-                        title="Java" style="background-color: #FFF;">Java
-                        <span class="tag-length">8</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%A4%8D%E4%B9%A0/" title="复习: 1">
-                    <span class="tag-content"
-                        title="复习" style="background-color: #82E0AA;">复习
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/GitHub/" title="GitHub: 1">
-                    <span class="tag-content"
-                        title="GitHub" style="background-color: #F8C471;">GitHub
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Scanner%E5%AF%B9%E8%B1%A1/" title="Scanner对象: 1">
-                    <span class="tag-content"
-                        title="Scanner对象" style="background-color: #F5EEF8;">Scanner对象
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E9%9A%8F%E8%AE%B0/" title="随记: 2">
-                    <span class="tag-content"
-                        title="随记" style="background-color: #F9EBEA;">随记
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Gridea/" title="Gridea: 1">
-                    <span class="tag-content"
-                        title="Gridea" style="background-color: #FEF9E7;">Gridea
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Git/" title="Git: 1">
-                    <span class="tag-content"
-                        title="Git" style="background-color: #F9E79F;">Git
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/node-js/" title="node.js: 1">
-                    <span class="tag-content"
-                        title="node.js" style="background-color: #E8F8F5;">node.js
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/PicGo/" title="PicGo: 1">
-                    <span class="tag-content"
-                        title="PicGo" style="background-color: #F9EBEA;">PicGo
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/typora/" title="typora: 1">
-                    <span class="tag-content"
-                        title="typora" style="background-color: #F5EEF8;">typora
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Dos%E5%91%BD%E4%BB%A4/" title="Dos命令: 1">
-                    <span class="tag-content"
-                        title="Dos命令" style="background-color: #F5EEF8;">Dos命令
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/idea/" title="idea: 1">
-                    <span class="tag-content"
-                        title="idea" style="background-color: #E8F8F5;">idea
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-            </div>
-        </div>
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fa fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
     </div>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
+  <script>
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+  </script>
+
+
+  
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
 </div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+    <transition-group tag="ul" :name="names">
+        <li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+            <img :src="image" class="bg-swiper-img">
+        </li>
+    </transition-group>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#appBgSwiper',
+        data: {
+            names: '' || 'fade' || 'fade', // translate-fade fade
+            mark: 0,
+            img: [],
+            bgColor: '',
+            time: null
+        },
+        methods: {   //添加方法
+            change(i, m) {
+                if (i > m) {
+                    // this.names = 'fade';
+                } else if (i < m) {
+                    // this.names = 'fade';
+                } else {
+                    return;
+                }
+                this.mark = i;
+            },
+            prev() {
+                // this.names = 'fade';
+                this.mark--;
+                if (this.mark === -1) {
+                    this.mark = 3;
+                    return
+                }
+            },
+            next() {
+                // this.names = 'fade';
+                this.mark++;
+                if (this.mark === this.img.length) {
+                    this.mark = 0;
+                    return
+                }
+            },
+            autoPlay() {
+                // this.names = 'fade';
+                this.mark++;
+                if (this.mark === this.img.length) {
+                    this.mark = 0;
+                    return
+                }
+            },
+            play() {
+                let bgImgDelay = '' || '180000'
+                let delay = parseInt(bgImgDelay) || 180000;
+                this.time = setInterval(this.autoPlay, delay);
+            },
+            enter() {
+                clearInterval(this.time);
+            },
+            leave() {
+                this.play();
+            }
+        },
+        created() {
+            this.play()
+        },
+        beforeDestroy() {
+            clearInterval(this.time);
+        },
+        mounted() {
+            let prop = ''|| '';
+            let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://') 
+            if (isImg) {
+                let img = prop.split(',');
+                let configRoot = '/'
+                let arrImg = [];
+                img.forEach(el => {
+                    var Expression=/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+			        var objExp = new RegExp(Expression);
+
+                    if(objExp.test(el)) {
+                        // http or https
+                        arrImg.push(el);
+                    } else {
+                        // 非http or https开头
+                        // 本地文件
+                        let firstStr = el.charAt(0);
+                        if (firstStr == '/') {
+                            el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+                        }
+                        el = configRoot + el;
+                        arrImg.push(el);
+                    }
+                })
+                this.img = arrImg;
+            } else {
+                this.bgColor = prop;
+            }
+        }
+    })
+</script>
+
+<style>
+    .bg-swiper-box {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .bg-swiper-img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+</style>
 
     </main>
 
