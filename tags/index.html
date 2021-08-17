@@ -83,7 +83,7 @@
     <!-- import script -->
     
         
-            
+            <script src="/scripts/createtime.js"></script>
         
             
         
@@ -665,6 +665,38 @@
             <div class="tag-chips">
                 
                 
+                <a href="/tags/HTML/" title="HTML: 1">
+                    <span class="tag-content"
+                        title="HTML" style="background-color: #FEF9E7;">HTML
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%BB%83%E4%B9%A0/" title="练习: 4">
+                    <span class="tag-content"
+                        title="练习" style="background-color: #D7BDE2;">练习
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Java/" title="Java: 8">
+                    <span class="tag-content"
+                        title="Java" style="background-color: #FFF;">Java
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%A4%8D%E4%B9%A0/" title="复习: 1">
+                    <span class="tag-content"
+                        title="复习" style="background-color: #82E0AA;">复习
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/Git%E5%91%BD%E4%BB%A4/" title="Git命令: 2">
                     <span class="tag-content"
                         title="Git命令" style="background-color: #D7BDE2;">Git命令
@@ -689,30 +721,6 @@
                 </a>
                 
                 
-                <a href="/tags/java/" title="java: 1">
-                    <span class="tag-content"
-                        title="java" style="background-color: #A3E4D7;">java
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/HTML/" title="HTML: 1">
-                    <span class="tag-content"
-                        title="HTML" style="background-color: #FEF9E7;">HTML
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%BB%83%E4%B9%A0/" title="练习: 4">
-                    <span class="tag-content"
-                        title="练习" style="background-color: #D7BDE2;">练习
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/GitHub/" title="GitHub: 1">
                     <span class="tag-content"
                         title="GitHub" style="background-color: #F8C471;">GitHub
@@ -721,17 +729,9 @@
                 </a>
                 
                 
-                <a href="/tags/Java/" title="Java: 8">
+                <a href="/tags/java/" title="java: 1">
                     <span class="tag-content"
-                        title="Java" style="background-color: #FFF;">Java
-                        <span class="tag-length">8</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%A4%8D%E4%B9%A0/" title="复习: 1">
-                    <span class="tag-content"
-                        title="复习" style="background-color: #82E0AA;">复习
+                        title="java" style="background-color: #A3E4D7;">java
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -749,6 +749,22 @@
                     <span class="tag-content"
                         title="随记" style="background-color: #F9EBEA;">随记
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Dos%E5%91%BD%E4%BB%A4/" title="Dos命令: 1">
+                    <span class="tag-content"
+                        title="Dos命令" style="background-color: #F5EEF8;">Dos命令
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/idea/" title="idea: 1">
+                    <span class="tag-content"
+                        title="idea" style="background-color: #E8F8F5;">idea
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -788,22 +804,6 @@
                 <a href="/tags/typora/" title="typora: 1">
                     <span class="tag-content"
                         title="typora" style="background-color: #F5EEF8;">typora
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Dos%E5%91%BD%E4%BB%A4/" title="Dos命令: 1">
-                    <span class="tag-content"
-                        title="Dos命令" style="background-color: #F5EEF8;">Dos命令
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/idea/" title="idea: 1">
-                    <span class="tag-content"
-                        title="idea" style="background-color: #E8F8F5;">idea
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -859,6 +859,9 @@
     </div>
     <div class="footer-custom">
       
+        <div><p><span id="timeDate">载入天数…</span><span id="times">载入时分秒…</span></p>
+</div>
+      
     </div>
     <!-- 不蒜子统计 -->
     
@@ -874,25 +877,6 @@
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
 
     
-	<!-- 网站运行时间的设置 -->
-	<span id="timeDate">载入天数...</span>
-	<span id="times">载入时分秒...</span> 
-	<script>
-		var now = new Date();
-		function createtime() {
-			var grt= new Date("07/20/2020 13:14:21");//此处修改你的建站时间或者网站上线时间
-			now.setTime(now.getTime()+250);
-			days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-			hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-			if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-			mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-			seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-			snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-			document.getElementById("timeDate").innerHTML = "<br />本站已安全运行 "+dnum+" 天 ";
-			document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-		}
-	setInterval("createtime()",250);
-	</script>
   </div>
 </div>
 

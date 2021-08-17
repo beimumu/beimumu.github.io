@@ -83,7 +83,7 @@
     <!-- import script -->
     
         
-            
+            <script src="/scripts/createtime.js"></script>
         
             
         
@@ -666,10 +666,10 @@
             <div class="category-chips">
                 
                 
-                <a href="/categories/Git/" title="Git: 2">
+                <a href="/categories/%E5%89%8D%E7%AB%AF/" title="前端: 1">
                     <span class="category-content"
-                        title="Git" style="background-color: #F9E79F;">Git
-                        <span class="category-length">2</span>
+                        title="前端" style="background-color: #FEF9E7;">前端
+                        <span class="category-length">1</span>
                     </span>
                 </a>
                 
@@ -682,10 +682,10 @@
                 </a>
                 
                 
-                <a href="/categories/%E5%89%8D%E7%AB%AF/" title="前端: 1">
+                <a href="/categories/Git/" title="Git: 2">
                     <span class="category-content"
-                        title="前端" style="background-color: #FEF9E7;">前端
-                        <span class="category-length">1</span>
+                        title="Git" style="background-color: #F9E79F;">Git
+                        <span class="category-length">2</span>
                     </span>
                 </a>
                 
@@ -706,14 +706,6 @@
                 </a>
                 
                 
-                <a href="/categories/Gridea/" title="Gridea: 1">
-                    <span class="category-content"
-                        title="Gridea" style="background-color: #FEF9E7;">Gridea
-                        <span class="category-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/Dos/" title="Dos: 1">
                     <span class="category-content"
                         title="Dos" style="background-color: #FEF9E7;">Dos
@@ -722,9 +714,9 @@
                 </a>
                 
                 
-                <a href="/categories/Gridea/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="博客搭建: 1">
+                <a href="/categories/Gridea/" title="Gridea: 1">
                     <span class="category-content"
-                        title="博客搭建" style="background-color: #F8F9F9;">博客搭建
+                        title="Gridea" style="background-color: #FEF9E7;">Gridea
                         <span class="category-length">1</span>
                     </span>
                 </a>
@@ -738,7 +730,15 @@
                 </a>
                 
                 
-                <a href="/categories/Gridea/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/" title="环境部署: 1">
+                <a href="/categories/Gridea/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="博客搭建: 1">
+                    <span class="category-content"
+                        title="博客搭建" style="background-color: #F8F9F9;">博客搭建
+                        <span class="category-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Dos/Java/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/" title="环境部署: 1">
                     <span class="category-content"
                         title="环境部署" style="background-color: #F9EBEA;">环境部署
                         <span class="category-length">1</span>
@@ -746,7 +746,7 @@
                 </a>
                 
                 
-                <a href="/categories/Dos/Java/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/" title="环境部署: 1">
+                <a href="/categories/Gridea/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/" title="环境部署: 1">
                     <span class="category-content"
                         title="环境部署" style="background-color: #F9EBEA;">环境部署
                         <span class="category-length">1</span>
@@ -812,6 +812,9 @@
     </div>
     <div class="footer-custom">
       
+        <div><p><span id="timeDate">载入天数…</span><span id="times">载入时分秒…</span></p>
+</div>
+      
     </div>
     <!-- 不蒜子统计 -->
     
@@ -827,25 +830,6 @@
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
 
     
-	<!-- 网站运行时间的设置 -->
-	<span id="timeDate">载入天数...</span>
-	<span id="times">载入时分秒...</span> 
-	<script>
-		var now = new Date();
-		function createtime() {
-			var grt= new Date("07/20/2020 13:14:21");//此处修改你的建站时间或者网站上线时间
-			now.setTime(now.getTime()+250);
-			days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-			hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-			if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-			mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-			seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-			snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
-			document.getElementById("timeDate").innerHTML = "<br />本站已安全运行 "+dnum+" 天 ";
-			document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-		}
-	setInterval("createtime()",250);
-	</script>
   </div>
 </div>
 
