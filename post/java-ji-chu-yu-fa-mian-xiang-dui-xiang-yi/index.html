@@ -685,7 +685,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fa fa-file-text-o"></i> 字数统计: 2.5k |
+            <i class="fa fa-file-text-o"></i> 字数统计: 2.7k |
           </span>
   
           <span class="min2read">
@@ -733,11 +733,11 @@
 <h2 id="2-类和对象"><a href="#2-类和对象" class="headerlink" title="2.类和对象"></a>2.类和对象</h2><ol>
 <li><p>类：类是模板，类是蓝图，是一组类似对象的共同抽象定义。</p>
 <p>例：狗有四条腿，猫有四条腿，老虎有四条腿，狮子也有四条腿。他们都有犬牙、可以捕猎以及吃肉等。</p>
-<p>总结：提取他们共同的特性，定义一个新的名称叫“食肉动物”。我们把新的物种成为有一个新的类。</p>
+<p><strong>总结：提取<font color = ff0000>个体</font>中他们共同的特性，定义一个新的名称叫“食肉动物”。我们把新的物种成为有一个新的类。</strong><font color = "ff0000"><strong>先从个体中总结出一个共有的类（共同属性的集合），在从类中实例出具体的对象。</strong></font></p>
 </li>
 <li><p>对象：对象由类产生出来的，具有上述共同特性的一个单独的个体。对象是类的一个实例化的具体表现。</p>
 </li>
-<li><p>在Java中：<span class='pbg '>先有类，再有对象</span>。</p>
+<li><p>在Java中：<font color = "ff0000">先有类，再有对象 </font>。</p>
 </li>
 <li><p>类可以当作一个有共同特点的集合，而对象就相当于在名词前加了一个定语。</p>
 </li>
@@ -746,27 +746,26 @@
 </ol>
 <h2 id="3-类的创建"><a href="#3-类的创建" class="headerlink" title="3.类的创建"></a>3.类的创建</h2><ol>
 <li>是定义类名</li>
-<li>编写<strong>属性</strong>代表类的静态特性。比如：姓名、年龄、学号。</li>
-<li>编写<strong>方法</strong>代表类的动态行为（操作）。比如：看书、打游戏、学习。</li>
+<li>编写<font color = #ff0000><strong>属性</strong></font>代表类的静态特性。比如：姓名、年龄、学号。</li>
+<li>编写<font color = #ff0000><strong>方法</strong></font>代表类的动态行为（操作）。比如：看书、打游戏、学习。</li>
 </ol>
 <h2 id="4-对象的创建"><a href="#4-对象的创建" class="headerlink" title="4.对象的创建"></a>4.对象的创建</h2><p>以Student类为例</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Student</span> stu <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//类名 变量名 = new 类名();</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ol>
-<li><p>声明引用变量：Student stu</p>
+<li><p>在栈中声明引用变量：Student stu</p>
 </li>
 <li><p>在堆中开辟一个内存空间用来存储变量值。执行new Student();</p>
-<span class='pbg '>堆中占多大内存取决于属性是什么数据类型。</span></li>
-<li><p>使第一部的引用变量指向堆中的对象。</p>
+<p><font color = "ff0000">堆中占多大内存取决于属性是什么数据类型。</font></p>
 </li>
-<li><p>导航符<code>.</code>可以修改属性的值和调用方法。</p>
+<li><p>使第一步栈中的引用变量指向堆中的对象。</p>
+</li>
+<li><p>导航符<code>.</code>可以修改属性的值和调用方法(通过对象发送消息的的功能体现)。</p>
 </li>
 </ol>
 <p>特点：这样我们就可以通过stu这个变量来找到堆内存中的这个对象，也可以通过stu改变堆内存中属性的值。</p>
-<span class='pbg '>注：每创建一个对象，在堆中内存就会开辟一个内存空间，而在方法区的内存只占一份。</span>
-
-<p>举例：磨坊磨小麦。</p>
+<p><font color = "ff0000">注：每创建一个对象，在堆中内存就会开辟一个内存空间，而在方法区的内存只占一份。</font>在方法区中，哪个对象调用方法，这个方法就有调用他的对象的属性。举例：磨坊磨小麦。</p>
 <p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20211002180955452.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20211002180955452"></p>
 <ul>
 <li><p>创建学生类</p>
@@ -821,7 +820,10 @@
 <ul>
 <li><p>控制当前方法对其他类或其他方法的访问权限。</p>
 </li>
-<li><p>public、protected、private、默认的。</p>
+<li><p>public、protected、默认的、private。</p>
+<blockquote>
+<p>访问权限由低→高</p>
+</blockquote>
 </li>
 </ul>
 </li>
@@ -841,7 +843,7 @@
 </li>
 <li><p>调用此方法时，可以声明一个变量来接收此方法的返回结果。</p>
 <p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20211002215934037.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20211002215934037"></p>
-<p>在返回值类型为String的方法下会报错（丢失返回值语句），即需要我们写一个返回String类型的结果。代码：<code>return &quot;这是String类型的返回结果格式&quot;;</code></p>
+<p>在返回值类型为String的方法下会报错（丢失返回值语句），即需要我们写一个返回String类型的结果。代码：<code>return &quot;这是String类型的返回结果&quot;;</code></p>
    <pre class="line-numbers language-java" data-language="java"><code class="language-java">stu<span class="token punctuation">.</span><span class="token function">aaa</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stu<span class="token punctuation">.</span><span class="token function">aaa</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -853,7 +855,9 @@
 
 <p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20211002222252672.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20211002222252672"></p>
 <p>如上图所示：声明一个String类型的<code>res</code>变量，用来接收aaa()方法的返回结果。</p>
+<blockquote>
 <p>注：用户是否能接受到返回信息取决于是否需要给用户返回一个结果，而是否需要给用户返回一个结果取决于是否需要设置一个<code>res</code>(”结果“的变量)。</p>
+</blockquote>
 </li>
 </ul>
 <p>练习：创建一个JudgeAge类，根据年龄返回不同的字符串。</p>
@@ -902,7 +906,7 @@
 </li>
 <li><p>参数列表：</p>
 <ul>
-<li><p>在方法的定义中，括号里的出现的参数(形式参数）。形参个数不固定，也可以没有。<span class='pbg '>只能在此方法内部使用。</span></p>
+<li><p>在方法的定义中，括号里的出现的参数(形式参数）。形参个数不固定，也可以没有。<font color = #ff0000>只能在此方法内部使用。</font></p>
 </li>
 <li><p>在调用方法的时候们必须提供参数的个数，顺序，数据类型完全一致的参数。这时的参数叫实参(实际参数)。</p>
 </li>
@@ -982,30 +986,38 @@
 <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">double</span> a<span class="token punctuation">,</span><span class="token keyword">double</span> b<span class="token punctuation">,</span><span class="token keyword">double</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<blockquote>
 <p>在同一个类中，不允许出现方法签名相同的方法。</p>
+</blockquote>
 </li>
-<li><p>方法的重载(overload)：方法签名不同（即：同一个类，同名不同参），同一个类中的方法就可以同时存在。</p>
-<p>典型应用：构造方法重载，System.out.printlln();</p>
+<li><p>方法的<strong>重载</strong>(overload)：方法名相同，参数列表不同的一组方法。（即：**<font color = #ff0000>同一个类中</font>**，同名不同参），同一个类中的方法就可以同时存在。</p>
+<blockquote>
+<p>典型应用：构造方法重载，<code>System.out.printlln();</code></p>
+</blockquote>
 </li>
 <li><p>变量的作用域：</p>
 <ul>
 <li>全局变量：类中在方法之外定义的变量。全局变量可以在当前类或其它类中被使用。</li>
-<li>局部变量：在方法内部声明的变量，只能在方法内部使用。形参也属于局部变量。<span class='pbg '>注意：局部变量未初始化不能使用。</span></li>
+<li>局部变量：在方法内部声明的变量，只能在方法内部使用。形参也属于局部变量。<font color = #ff0000> 注意：局部变量未初始化不能使用。</font></li>
 </ul>
+<blockquote>
+<p>可以理解为自己的大名和小名。</p>
+</blockquote>
 </li>
 <li><p>值传递</p>
 <ul>
-<li><p>在Java中，方法调用，如果参数为基本数据类型，那么实参传递的实数值。</p>
+<li><p>在Java中，方法调用，如果参数为基本数据类型，那么实参传递的实际的数值。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//ValueDeliver类</span>
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">updateValue</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         num <span class="token operator">=</span> num<span class="token operator">+</span><span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"updateValue方法："</span><span class="token operator">+</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 
 <span class="token comment">//TestValueDeliver类</span>
 <span class="token class-name">ValueDeliver</span> va <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ValueDeliver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
-va<span class="token punctuation">.</span><span class="token function">updateValue</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// a的值为5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+va<span class="token punctuation">.</span><span class="token function">updateValue</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//输出的是此方法中的结果：updateValue方法：10</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// a的值为5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>在Java中，方法调用，如果参数为引用数据类型，那么实参传递的是引用值（内存地址）。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//Account类</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Account</span> <span class="token punctuation">&#123;</span>
@@ -1031,7 +1043,7 @@ va<span class="token punctuation">.</span><span class="token function">updateVal
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>account<span class="token punctuation">.</span>user_name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//"test"</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>account<span class="token punctuation">.</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//"test"</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>account<span class="token punctuation">.</span>yu_money<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//1234</span>
-        <span class="token comment">//不管怎么传递，account对象在内存中只有一份，方法内操作对象，</span>
+        <span class="token comment">//不管怎么传递，account对象在内存中只有一份，方法内操作对象，（内存空间相当于一个盒子）</span>
         <span class="token comment">//首先，需要在内存中找到这个对象然后操作。</span>
         va<span class="token punctuation">.</span><span class="token function">updateAccount</span><span class="token punctuation">(</span>account<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment">//调用了updateAccount方法，值发生改变。</span>
@@ -1102,19 +1114,20 @@ va<span class="token punctuation">.</span><span class="token function">updateVal
 
   
   <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-8oky1j_960x678.png" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-e76pew_960x678.png" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-er/" class="post-nav-link">
+    <a href="/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-san/" class="post-nav-link">
       <div class="title">
         <i class="fa fa-angle-left"></i> 上一篇:
-        <div class="title-text">Java基础语法_面向对象（二）</div>
+        <div class="title-text">Java基础语法_面向对象（三）</div>
       </div>
       
       <!-- <div class="content">
-        6.字符串1.String的创建方式
-直接赋值：String a = &quot;hello&quot;;
-先去字符串常
+        8.继承
+1.子类与父类的关系
+is-a ：意味“子类是一个父类的…”。
+父类更抽象，更普通；子类更具体，更特殊。例：车
       </div> -->
     </a>
   </div>
