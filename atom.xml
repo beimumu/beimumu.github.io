@@ -287,6 +287,31 @@
   </entry>
   
   <entry>
+    <title>Java基础语法_面向对象（二）</title>
+    <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-er/"/>
+    <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-er/</id>
+    <published>2020-10-06T12:51:56.000Z</published>
+    <updated>2022-01-24T12:18:25.859Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;6-字符串&quot;&gt;&lt;a href=&quot;#6-字符串&quot; class=&quot;headerlink&quot; title=&quot;6.字符串&quot;&gt;&lt;/a&gt;6.字符串&lt;/h2&gt;&lt;h4 id=&quot;1-String的创建方式&quot;&gt;&lt;a href=&quot;#1-String的创建方式&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java基础语法_面向对象（一）</title>
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-yi/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-yi/</id>
@@ -538,49 +563,6 @@
     <category term="Dos命令" scheme="https://beimumu.xyz/tags/Dos%E5%91%BD%E4%BB%A4/"/>
     
     <category term="idea" scheme="https://beimumu.xyz/tags/idea/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于Gridea+Github搭建自己的Blog</title>
-    <link href="https://beimumu.xyz/post/ji-yu-gridea-github-da-jian-zi-ji-de-blog/"/>
-    <id>https://beimumu.xyz/post/ji-yu-gridea-github-da-jian-zi-ji-de-blog/</id>
-    <published>2020-07-21T16:00:00.000Z</published>
-    <updated>2021-08-15T13:51:18.038Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;木木有话说：&quot;&gt;&lt;a href=&quot;#木木有话说：&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Gridea" scheme="https://beimumu.xyz/categories/Gridea/"/>
-    
-    <category term="博客搭建" scheme="https://beimumu.xyz/categories/Gridea/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-    <category term="环境部署" scheme="https://beimumu.xyz/categories/Gridea/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
-    
-    <category term="写作工具" scheme="https://beimumu.xyz/categories/Gridea/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Github" scheme="https://beimumu.xyz/tags/Github/"/>
-    
-    <category term="Gitee" scheme="https://beimumu.xyz/tags/Gitee/"/>
-    
-    <category term="Gridea" scheme="https://beimumu.xyz/tags/Gridea/"/>
-    
-    <category term="Git" scheme="https://beimumu.xyz/tags/Git/"/>
-    
-    <category term="node.js" scheme="https://beimumu.xyz/tags/node-js/"/>
-    
-    <category term="PicGo" scheme="https://beimumu.xyz/tags/PicGo/"/>
-    
-    <category term="typora" scheme="https://beimumu.xyz/tags/typora/"/>
     
   </entry>
   
