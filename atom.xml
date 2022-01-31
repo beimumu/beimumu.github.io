@@ -45,6 +45,33 @@
   </entry>
   
   <entry>
+    <title>MySQL的安装</title>
+    <link href="https://beimumu.xyz/post/mysql-de-an-zhuang/"/>
+    <id>https://beimumu.xyz/post/mysql-de-an-zhuang/</id>
+    <published>2021-11-14T21:17:32.000Z</published>
+    <updated>2022-01-31T21:21:25.341Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="https://beimumu.xyz/categories/MySQL/"/>
+    
+    
+    <category term="MySQL" scheme="https://beimumu.xyz/tags/MySQL/"/>
+    
+    <category term="软件安装" scheme="https://beimumu.xyz/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>简单的账户类系统</title>
     <link href="https://beimumu.xyz/post/jian-dan-de-zhang-hu-lei-xi-tong/"/>
     <id>https://beimumu.xyz/post/jian-dan-de-zhang-hu-lei-xi-tong/</id>
@@ -530,39 +557,6 @@
     <category term="Github" scheme="https://beimumu.xyz/tags/Github/"/>
     
     <category term="Gitee" scheme="https://beimumu.xyz/tags/Gitee/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用的DOS命令和Hello,world!</title>
-    <link href="https://beimumu.xyz/post/chang-yong-de-dos-ming-ling-he-hello-world/"/>
-    <id>https://beimumu.xyz/post/chang-yong-de-dos-ming-ling-he-hello-world/</id>
-    <published>2020-08-08T08:58:35.000Z</published>
-    <updated>2021-08-15T13:54:16.874Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;常用的DOS命令&quot;&gt;&lt;a href=&quot;#常用的DOS命令&quot; class=&quot;headerlink&quot; title=&quot;常用的DOS命令&quot;&gt;&lt;/a&gt;常用的DOS命令&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Dos" scheme="https://beimumu.xyz/categories/Dos/"/>
-    
-    <category term="Java" scheme="https://beimumu.xyz/categories/Dos/Java/"/>
-    
-    <category term="环境部署" scheme="https://beimumu.xyz/categories/Dos/Java/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
-    
-    
-    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
-    
-    <category term="Dos命令" scheme="https://beimumu.xyz/tags/Dos%E5%91%BD%E4%BB%A4/"/>
-    
-    <category term="idea" scheme="https://beimumu.xyz/tags/idea/"/>
     
   </entry>
   
