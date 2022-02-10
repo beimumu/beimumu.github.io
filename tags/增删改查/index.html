@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>琲木木_blog</title>
+  <title>标签: 增删改查 | 琲木木_blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -605,772 +605,119 @@
 </header>
         <!-- 内容区域 -->
         
- <!-- prismjs 代码高亮 -->
- 
-    
-    <link href="/js/prism/prism-line-numbers.css" rel="stylesheet">
-    
-        <link href="/js/prism/prism.min.css" rel="stylesheet">
-    
 
-    <style>
-        pre[class*="language-"] {
-            overflow-y: hidden;
-        }
-        .line-numbers .line-numbers-rows {
-            border: none;
-        }
-    </style>
-  
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-tagDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
 
-
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
-
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/1.jpg')">
-  <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
-  <div class="post-detail-header_info-box">
-    <div class="title-box">
-      <span class="title">
-        
-      </span>
-    </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-11-17 |
-        </span>
-      
-
-      
-
-      
-        <div class="post-detail-header_wordcount">
-          <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 1.4k |
-          </span>
-  
-          <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 6分钟 |
-          </span>
-  
-          
-            <span class="reading">
-              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
-            </span>
-          
-        </div>
-      
-    
+<div class="tag-header" style="background-image: url('https://pic1.zhimg.com/80/v2-604a15cef201cf177943af2d915eb2e7_1440w.jpg?source=1940ef5c');">
+  <div class="tag-header-title">
+    tag
   </div>
+  <div class="tag-header-desc">
   
-  
-    <script src="/js/bubble/bubble.js"></script>
-  
-</div>
-
-
-
-
-
-<div class="row justify-position" 
-  style="padding-top: 0px;">
-  <div class="main-content">
-    <article class="post post-detail">
-      <div class="post-content">
-        <blockquote>
-<p>1、查询所有学生的学号、姓名，要求按学号升序排列</p>
-</blockquote>
-<blockquote>
-<p>2、将“060101”号学生的成绩按降序排列</p>
-</blockquote>
-<blockquote>
-<p>3、查询课程名中不包含“数据”字样的课程信息</p>
-</blockquote>
-<blockquote>
-<p>4、查询选修了100004号课程且成绩在80分以上的学生学号、姓名和成绩</p>
-</blockquote>
-<blockquote>
-<p>5、查询选修课程“100002”的学生中成绩最高的学生的学号</p>
-</blockquote>
-<blockquote>
-<p>5.1、查询课程号“4”的最高分和最低分</p>
-</blockquote>
-<blockquote>
-<p>5.2、查询选修课程“100002”的学生中成绩最高的学生的学号、姓名和成绩</p>
-</blockquote>
-<blockquote>
-<p>6、查询所有比王华年龄大的学生姓名、年龄和性别</p>
-</blockquote>
-<blockquote>
-<p>7、查询学号为“16480101”学生的成绩，输出格式为：姓名、课程名、成绩</p>
-</blockquote>
-<blockquote>
-<p>8、查询本班同学各科的平均成绩，输出格式为：学号、姓名、平均成绩，并按降序排列</p>
-</blockquote>
-<blockquote>
-<p>9、插入一个记录学生记录（16480150，李明，男，21，电信系，16物联网工程1班）</p>
-</blockquote>
-<blockquote>
-<p>10、将学号为“16480150”学生的年龄改为22</p>
-</blockquote>
-<blockquote>
-<p>11、删除学号为“16480150”的学生信息</p>
-</blockquote>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 1、查询所有学生的学号、姓名，要求按学号升序排列</span>
-<span class="token comment">/*
-升序排列：
-where 所要求的 order by 字段 [asc升序 | desc降序] 
-*/</span>
-<span class="token comment">-- 方法一</span>
-<span class="token keyword">select</span> Sno<span class="token punctuation">,</span>Sname <span class="token keyword">from</span> Student
-<span class="token keyword">where</span> Sno <span class="token keyword">order</span> <span class="token keyword">by</span> Sno<span class="token punctuation">;</span>
-<span class="token comment">-- 方法二</span>
-<span class="token keyword">select</span> Sno<span class="token punctuation">,</span>Sname <span class="token keyword">from</span> Student <span class="token keyword">order</span> <span class="token keyword">by</span> Sno <span class="token keyword">asc</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- 2、将“060101”号学生的成绩按降序排列</span>
-<span class="token keyword">select</span> Cno<span class="token punctuation">,</span>Grade <span class="token keyword">from</span> Sc
-<span class="token keyword">where</span> Sno<span class="token operator">=</span><span class="token string">'060101'</span> <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> Grade <span class="token keyword">Desc</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- 3、查询课程名中不包含“数据”字样的课程信息</span>
-<span class="token comment">-- 不包含 not like '字段'</span>
-<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> course
-<span class="token keyword">where</span> Cname <span class="token operator">not</span> <span class="token operator">like</span> <span class="token string">'%数据%'</span>
-
-<span class="token comment">-- 4、查询选修了100004号课程且成绩在80分以上的学生学号、姓名和成绩</span>
-<span class="token comment">/*
-Sname只有在Student表中有，Grade只有在SC表中有，其中将两个表连起来的是Sno。
-要得到Student表中的sno,就得通过sc表中的sno,所以Student.Sno=sc.Sno,
-即：
-select Student.Sname,Student.Sno,SC.Cno,SC.Grade from SC,Student
-where Student.Sno = SC.Sno and sc.Cno = '100004' and sc.Grade >= '80';
-*/</span>
-<span class="token keyword">select</span> Student<span class="token punctuation">.</span>Sname<span class="token punctuation">,</span>Student<span class="token punctuation">.</span>Sno<span class="token punctuation">,</span>SC<span class="token punctuation">.</span>Cno<span class="token punctuation">,</span>SC<span class="token punctuation">.</span>Grade <span class="token keyword">from</span> SC<span class="token punctuation">,</span>Student
-<span class="token keyword">where</span> Student<span class="token punctuation">.</span>Sno <span class="token operator">=</span> SC<span class="token punctuation">.</span>Sno <span class="token operator">and</span> sc<span class="token punctuation">.</span>Cno <span class="token operator">=</span> <span class="token string">'4'</span> <span class="token operator">and</span> sc<span class="token punctuation">.</span>Grade <span class="token operator">>=</span> <span class="token string">'80'</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- 5、查询选修课程“100002”的学生中成绩最高的学生的学号</span>
-<span class="token comment">/*
-先查询Sno，在嵌套查询成绩最高
-列值的最大值: max()
-列值的最小值：min()
-即：
-select Sno from sc
-where Grade=(select MAX(Grade) from sc where Cno = '100002' );
-*/</span>
-<span class="token keyword">select</span> Sno 
-<span class="token keyword">from</span> sc
-<span class="token keyword">where</span> Grade<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token function">MAX</span><span class="token punctuation">(</span>Grade<span class="token punctuation">)</span> <span class="token keyword">from</span> sc <span class="token keyword">where</span> Cno <span class="token operator">=</span> <span class="token string">'4'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- 查询选修课程“4”的学生中成绩最高的学生的学号</span>
-<span class="token keyword">select</span> sno 
-<span class="token keyword">from</span> SC
-<span class="token keyword">where</span> cno <span class="token operator">=</span> <span class="token number">4</span>
-<span class="token keyword">order</span> <span class="token keyword">by</span> grade <span class="token keyword">desc</span>
-<span class="token keyword">limit</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- 查询课程号“4”的最高分和最低分</span>
-<span class="token keyword">select</span> <span class="token function">max</span><span class="token punctuation">(</span>Grade<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'最高分'</span><span class="token punctuation">,</span> <span class="token function">min</span><span class="token punctuation">(</span>Grade<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'最低分'</span> <span class="token keyword">from</span> sc
-<span class="token keyword">where</span> Cno <span class="token operator">=</span> <span class="token string">'4'</span><span class="token punctuation">;</span>
-<span class="token comment">-- 查询选修课程“100002”的学生中成绩最高的学生的学号、姓名和成绩</span>
-<span class="token keyword">select</span> student<span class="token punctuation">.</span>Sname<span class="token punctuation">,</span>sc<span class="token punctuation">.</span>Sno<span class="token punctuation">,</span>sc<span class="token punctuation">.</span>Grade <span class="token keyword">from</span> student<span class="token punctuation">,</span>sc
-<span class="token keyword">where</span> student<span class="token punctuation">.</span>Sno <span class="token operator">=</span> sc<span class="token punctuation">.</span>Sno <span class="token operator">and</span> Grade <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token function">MAX</span><span class="token punctuation">(</span>Grade<span class="token punctuation">)</span> <span class="token keyword">from</span> sc <span class="token keyword">where</span> Cno <span class="token operator">=</span> <span class="token string">'4'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- 6、查询所有比王华年龄大的学生姓名、年龄和性别</span>
-<span class="token comment">/*
-子查询：
-先在student表中找王华的年龄，
-再在student表中找大于王华年龄的姓名...
-即：
-select Sname,Sage,Ssex from student
-where  sage > (select sage from student where sname = '王华')
-*/</span>
-<span class="token keyword">select</span> Sname<span class="token punctuation">,</span>Sage<span class="token punctuation">,</span>Ssex <span class="token keyword">from</span> student
-<span class="token keyword">where</span>  sage <span class="token operator">></span> <span class="token punctuation">(</span><span class="token keyword">select</span> sage <span class="token keyword">from</span> student <span class="token keyword">where</span> sname <span class="token operator">=</span> <span class="token string">'钟文辉'</span><span class="token punctuation">)</span>  
-
-<span class="token comment">-- 查询选了“4”号课程的且成绩高于此课程平均成绩的学生的学号、该门课程成绩</span>
-<span class="token comment">/*
-先查出此课程（课程号为4）的平均成绩
-select avg(grade) 
-from sc
-where cno = '4'
-再查出4号的学生学号和成绩，
-select sno,grade
-from sc
-where cno = '4'
-*/</span>
-<span class="token keyword">select</span> sno<span class="token punctuation">,</span>grade
-<span class="token keyword">from</span> sc
-<span class="token keyword">where</span> cno <span class="token operator">=</span> <span class="token string">'4'</span> <span class="token operator">and</span> grade <span class="token operator">></span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token function">avg</span><span class="token punctuation">(</span>grade<span class="token punctuation">)</span>
-<span class="token keyword">from</span> sc <span class="token keyword">where</span> cno <span class="token operator">=</span> <span class="token string">'4'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- 7、查询学号为“16480101”学生的成绩，输出格式为：姓名、课程名、成绩</span>
-<span class="token comment">/*
-在select中只需要输入你想查询的内容，不用输那么多；
-在条件中，你可以调用表中的任何字段。其中，
-三表相联
-student.Sno = sc.Sno and course.Cno = sc.Cno 相当于关联。
-*/</span>
-
-<span class="token comment">-- 学生表和成绩表的姓名对应，课程表和成绩表的课程名没对应，会导致该学号下的同学课程名和成绩不匹配。</span>
-<span class="token keyword">select</span> student<span class="token punctuation">.</span>Sname <span class="token keyword">as</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span>course<span class="token punctuation">.</span>Cname <span class="token keyword">as</span> <span class="token string">'课程名'</span><span class="token punctuation">,</span>sc<span class="token punctuation">.</span>Grade <span class="token keyword">as</span> <span class="token string">'成绩'</span> <span class="token keyword">from</span> student<span class="token punctuation">,</span>course<span class="token punctuation">,</span>sc
-<span class="token keyword">where</span> student<span class="token punctuation">.</span>Sno <span class="token operator">=</span> sc<span class="token punctuation">.</span>Sno <span class="token operator">and</span> sc<span class="token punctuation">.</span>Sno <span class="token operator">=</span> <span class="token string">'060101'</span> 
-<span class="token comment">-- 修改后：</span>
-<span class="token comment">-- 方式一: 在查询语句里，表明调用导致代码冗余</span>
-<span class="token keyword">select</span> student<span class="token punctuation">.</span>Sname <span class="token keyword">as</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span>course<span class="token punctuation">.</span>Cname <span class="token keyword">as</span> <span class="token string">'课程名'</span><span class="token punctuation">,</span>sc<span class="token punctuation">.</span>Grade <span class="token keyword">as</span> <span class="token string">'成绩'</span> 
-<span class="token keyword">from</span> student <span class="token punctuation">,</span>course <span class="token punctuation">,</span>sc
-<span class="token keyword">where</span> student<span class="token punctuation">.</span>Sno <span class="token operator">=</span> sc<span class="token punctuation">.</span>Sno <span class="token operator">and</span> course<span class="token punctuation">.</span>Cno <span class="token operator">=</span> sc<span class="token punctuation">.</span>Cno <span class="token operator">and</span> sc<span class="token punctuation">.</span>Sno <span class="token operator">=</span> <span class="token string">'060101'</span> <span class="token punctuation">;</span>
-
-<span class="token comment">-- 方式二：方式一精简，取掉表用调用</span>
-<span class="token keyword">select</span> Sname <span class="token keyword">as</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span>Cname <span class="token keyword">as</span> <span class="token string">'课程名'</span><span class="token punctuation">,</span>Grade <span class="token keyword">as</span> <span class="token string">'成绩'</span> 
-<span class="token keyword">from</span> student s<span class="token punctuation">,</span>course c<span class="token punctuation">,</span>sc
-<span class="token keyword">where</span> s<span class="token punctuation">.</span>Sno <span class="token operator">=</span> sc<span class="token punctuation">.</span>Sno <span class="token operator">and</span> c<span class="token punctuation">.</span>Cno <span class="token operator">=</span> sc<span class="token punctuation">.</span>Cno <span class="token operator">and</span> sc<span class="token punctuation">.</span>Sno <span class="token operator">=</span> <span class="token string">'060101'</span> <span class="token punctuation">;</span>
-
-<span class="token comment">-- 方式三：join</span>
-<span class="token keyword">select</span> Sname<span class="token punctuation">,</span>cname<span class="token punctuation">,</span>Grade
-<span class="token keyword">from</span> student s
-<span class="token keyword">inner</span> <span class="token keyword">join</span> sc
-<span class="token keyword">on</span> s<span class="token punctuation">.</span>sno <span class="token operator">=</span> sc<span class="token punctuation">.</span>Sno
-<span class="token keyword">inner</span> <span class="token keyword">join</span> course c
-<span class="token keyword">on</span> sc<span class="token punctuation">.</span>Cno <span class="token operator">=</span> c<span class="token punctuation">.</span>Cno
-<span class="token keyword">where</span> sc<span class="token punctuation">.</span>Sno <span class="token operator">=</span> <span class="token number">060101</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- 8、查询本班同学各科的平均成绩，输出格式为：学号、姓名、平均成绩，并按降序排列</span>
-<span class="token comment">/*
-“每个”等字样，考虑group by子句
-语法：group by [分组依据]
-*/</span>
-<span class="token keyword">select</span> s<span class="token punctuation">.</span>sno <span class="token keyword">as</span> <span class="token string">'学号'</span><span class="token punctuation">,</span>sname <span class="token keyword">as</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span><span class="token function">avg</span><span class="token punctuation">(</span>grade<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'平均成绩'</span>
-<span class="token keyword">from</span> student s
-<span class="token keyword">inner</span> <span class="token keyword">join</span> sc
-<span class="token keyword">on</span> s<span class="token punctuation">.</span>Sno <span class="token operator">=</span> sc<span class="token punctuation">.</span>Sno
-<span class="token keyword">group</span> <span class="token keyword">by</span> sc<span class="token punctuation">.</span>sno
-<span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token function">avg</span><span class="token punctuation">(</span>grade<span class="token punctuation">)</span> <span class="token keyword">desc</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- 9、插入一个记录学生记录（16480150，李明，男，21，电信系，16物联网工程1班）</span>
-<span class="token comment">-- insert into student </span>
-<span class="token comment">-- values('16480150','李明','男','21','电信系','16物联网工程1班')</span>
-<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> student<span class="token punctuation">;</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> <span class="token punctuation">`</span>student<span class="token punctuation">`</span> 
-<span class="token keyword">values</span><span class="token punctuation">(</span><span class="token string">'070105'</span><span class="token punctuation">,</span><span class="token string">'张三'</span><span class="token punctuation">,</span><span class="token string">'男'</span><span class="token punctuation">,</span><span class="token string">'1999-12-10'</span><span class="token punctuation">,</span><span class="token string">'22'</span><span class="token punctuation">,</span><span class="token string">'电信系'</span><span class="token punctuation">,</span><span class="token boolean">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> <span class="token punctuation">`</span>student<span class="token punctuation">`</span> 
-<span class="token keyword">values</span><span class="token punctuation">(</span><span class="token string">'070110'</span><span class="token punctuation">,</span><span class="token string">'李四'</span><span class="token punctuation">,</span><span class="token string">'男'</span><span class="token punctuation">,</span><span class="token string">'1998-12-10'</span><span class="token punctuation">,</span><span class="token string">'21'</span><span class="token punctuation">,</span><span class="token string">'信息院'</span><span class="token punctuation">,</span><span class="token boolean">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> <span class="token punctuation">`</span>student<span class="token punctuation">`</span> 
-<span class="token keyword">values</span><span class="token punctuation">(</span><span class="token string">'070119'</span><span class="token punctuation">,</span><span class="token string">'王五'</span><span class="token punctuation">,</span><span class="token string">'男'</span><span class="token punctuation">,</span><span class="token string">'1997-11-10'</span><span class="token punctuation">,</span><span class="token string">'22'</span><span class="token punctuation">,</span><span class="token string">'机电系'</span><span class="token punctuation">,</span><span class="token boolean">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- 10、将学号为“16480150”学生的年龄改为23</span>
-<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> student<span class="token punctuation">;</span>
-<span class="token keyword">update</span> student <span class="token keyword">set</span> sage <span class="token operator">=</span> <span class="token string">'23'</span>
-<span class="token keyword">where</span> sno <span class="token operator">=</span> <span class="token string">'070105'</span><span class="token punctuation">;</span>
-<span class="token keyword">update</span> student <span class="token keyword">set</span> memo <span class="token operator">=</span> <span class="token string">'爱好打篮球'</span>
-<span class="token keyword">where</span> sno <span class="token operator">=</span> <span class="token string">'070110'</span><span class="token punctuation">;</span>
-
-<span class="token comment">-- 11、删除学号为“16480150”的学生信息</span>
-<span class="token keyword">delete</span> <span class="token keyword">from</span> student 
-<span class="token keyword">where</span> sno <span class="token operator">=</span> <span class="token string">'070119'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-      </div>
-      <div class="post-tags-categories">
-        
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>作者:  </strong>beimumu</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>文章链接:  </strong>
-    <a href="/post/mysql-1/" target="_blank" title="">https://beimumu.xyz/post/mysql-1/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明:   </strong>
-      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      许可协议。转载请注明出处!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
-<div class="post-nav">
-
-
-
-
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-pkw6y3_960x678.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-pkw6y3_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
-    </div>
-    <a href="/post/mysql-de-an-zhuang/" class="post-nav-link">
-      <div class="title">
-        下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">MySQL的安装</div>
-      </div>
-      <!-- <div class="content">
-        数据库
-数据库（DB，DataBase）
-概念：长期存放在计算机内，有组织，可共享的大量数据的集合，是一个数据“仓库”。
-      </div> -->
-    </a>
-  </div>
-
-</div>
-
-    
-    
-
-    <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
-  <div id="donate_board" class="donate_bar center" ref="donate">
-    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
-  </div>
-  <transition name="fade">
-    <div 
-      class="donate-box-mask"
-      v-cloak 
-      v-show="visible"
-      @click="cancelDialogDrawer()"
-    >
-    </div>
-  </transition>
-  <transition name="bounce">
-    <div class="donate-box" v-cloak v-show="visible">
-      <div class="donate-box_close">
-        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
-      </div>
-      <div class="donate-box_title">
-        <h4>
-          你的赏识是我前进的动力
-        </h4>
-      </div>
-      <div class="donate-box_tab">
-        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
-          支付宝
-        </div>
-        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
-          微信
-        </div>
-      </div>
-      <div class="donate-box_img">
-        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/zfb.jpg" class="lazyload placeholder" data-srcset="/medias/zfb.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
-        </div> 
-        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wx.jpg" class="lazyload placeholder" data-srcset="/medias/wx.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
-        </div>
-      </div>
-    </div>
-  </transition>
-</div>
-
-<script>
-  var body = document.body || document.documentElement || window;
-  var vm = new Vue({
-    el: '#appDonate',
-    data: {
-      visible: false,
-      tabActive: 'Alipay',
-      top: 0,
-    },
-    computed: {
-    },
-    mounted() {
-    },
-    methods: {
-      showDialogDrawer() {
-        this.visible = true;
-        // 防止页面滚动，只能让弹框滚动
-        // function getScroll() {
-        //   return {
-        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        //   };
-        // }
-        this.top = $(document).scrollTop() // or getScroll().top
-        // console.log('aa', $('.main-content'));
-        body.style.cssText = 'overflow: hidden;';
-      },
-      cancelDialogDrawer() {
-        this.visible = false;
-        body.removeAttribute('style');
-        $(document).scrollTop(this.top)
-      },
-      changeTabActive(name) {
-        this.tabActive = name;
-      }
-    },
-    created() {}
-  })
-</script>
-    
-
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-<!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-<script src="/js/shareJs/social-share.min.js"></script>
-</script>
-
-<style>
-  .social-share {
-    margin: 20px 0;
-  }
-</style>
-
-
-    
-    
-    <!-- 评论 -->
-    <!-- 评论 -->
-
-  <div id="myComment">
-    
-      
-<section id="comments" style="padding: 1em; margin: 15px auto;"
-	class="animated bounceInUp">
-	<div id="vcomment" class="comment"></div>
-</section>
-<style>
-	#comments {
-		background: rgba(255,255,255,0.9);
-	}
-	#veditor {
-		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: right;
-		background-color: rgba(255, 255, 255, 0);
-		resize: vertical;
-	}
-	#veditor:focus{
-		background-position-y: 200px;
-		transition: all 0.2s ease-in-out 0s;
-	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
-	#vcomment .vcards .vcard .vhead .vsys i {
-		display: none;
-	}
-	/* 底部valine链接 */
-	#vcomment .vpower {
-		display: none;
-	}
-	
-	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
-	/* #vcomment .vheader {
-		display: flex;
-		justify-content: space-around;
-	}
-	
-	#vcomment .vheader .vnick {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
-
-	#vcomment .vheader .vmail {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	}
-
-	#vcomment .vheader .vlink {
-		width: 31%;
-		border: 2px solid #dedede;
-		padding-left: 10px;
-		padding-right: 10px;
-		border-radius: 5px
-	} */
-
-	img.vimg {
-		transition: all 1s;
-		/* 头像旋转时间为 1s */
-	}
-
-	img.vimg:hover {
-		transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		-ms-transform: rotate(360deg);
-	}
-
-	#vcomment .vcards .vcard {
-		padding: 15px 20px 0 20px;
-		border-radius: 10px;
-		margin-bottom: 15px;
-		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
-		transition: all .3s
-	}
-
-	#vcomment .vcards .vcard:hover {
-		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
-	}
-
-	#vcomment .vcards .vcard .vh .vcard {
-		border: none;
-		box-shadow: none;
-	}
-</style>
-    
-  </div>
-
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
-
-  </div>
-
-  <!-- 目录 -->
-  <!-- 文章详情页右侧目录 -->
-
-  <div class="toc-aside">
-    <div class="toc-main">
-      <div class="toc-aside-title">
-        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
-        
-          <div class="toc-open-close">本文目录</div>
-        
-      </div>
-      <div class="toc-content">
-        <div class="toc"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 手机端目录按钮 -->
-  <div id="toc-mobile-btn">
-    <i class="fas fa-list-ul" aria-hidden="true"></i>
-  </div>
-
-
-<script>
-  function closeToc(init) {
-    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
-    $(".toc-content").css({'width': 0});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-  };
-  function openToc() {
-    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
-    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
-    $(".toc-content").css({'width': '300px'});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
-  }
-  function openBtnClickFn () {
-    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-    let open = eval('' || 'true');
-    openOrCloseBtn.click(function() {
-      if (open) {
-        closeToc();
-        open = false;
-      } else {
-        openToc();
-        open = true;
-      }
+    <span class="title" id="tag-header-desc"></span>
+    <script>
+  function typedFn() {
+    const el = '#tag-header-desc';
+    const type = 'tagDetail';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
     });
-  };
-  openBtnClickFn();
-  initCloseTocWidth(true);
-
-  function initCloseTocWidth(init) {
-    if (window.innerWidth >= 992) {
-      let isClose = false;
-      isClose && closeToc(init)
-    }
   }
-
-  document.addEventListener('pjax:complete', function () {
-    $(".toc-aside").css({'transition': 'no'});
-  })
-  document.addEventListener('pjax:complete', function () {
-    openBtnClickFn();
-  })
-  
+  typedFn();
 </script>
-
-  <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
+    
+  </div>
+  <div class="mask-box"></div>
 </div>
 
-<!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
-	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
-			<img :src="image" class="bg-swiper-img no-lazy">
-		</li>
-	</transition-group>
-</div>
-<script>
-	var vm = new Vue({
-		el: '#appBgSwiper',
-		data: {
-			names: '' || 'fade' || 'fade', // translate-fade fade
-			mark: 0,
-			img: [],
-			bgColor: '',
-			time: null
-		},
-		methods: {   //添加方法
-			change(i, m) {
-				if (i > m) {
-					// this.names = 'fade';
-				} else if (i < m) {
-					// this.names = 'fade';
-				} else {
-					return;
-				}
-				this.mark = i;
-			},
-			prev() {
-				// this.names = 'fade';
-				this.mark--;
-				if (this.mark === -1) {
-					this.mark = 3;
-					return
-				}
-			},
-			next() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			autoPlay() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			play() {
-				let bgImgDelay = '' || '180000'
-				let delay = parseInt(bgImgDelay) || 180000;
-				this.time = setInterval(this.autoPlay, delay);
-			},
-			enter() {
-				clearInterval(this.time);
-			},
-			leave() {
-				this.play();
-			}
-		},
-		created() {
-			this.play()
-		},
-		beforeDestroy() {
-			clearInterval(this.time);
-		},
-		mounted() {
-			let prop = '' || '';
-			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
-			if (isImg) {
-				let img = prop.split(',');
-				let configRoot = '/'
-				let arrImg = [];
-				img.forEach(el => {
-					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-					var objExp = new RegExp(Expression);
-
-					if (objExp.test(el)) {
-						// http or https
-						arrImg.push(el);
-					} else {
-						// 非http or https开头
-						// 本地文件
-						let firstStr = el.charAt(0);
-						if (firstStr == '/') {
-							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
-						}
-						el = configRoot + el;
-						arrImg.push(el);
-					}
-				})
-				this.img = arrImg;
-			} else {
-				this.bgColor = prop;
-			}
-		}
-	})
-</script>
-
-<style>
-	.bg-swiper-box {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
-	.bg-swiper-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-</style>
 
 
+<div class="tag">
+  <div class="tag-name">
+    <div class="name" style="background-color: #F9E79F;">增删改查 分类</div>
+  </div>
+  <!-- 每一篇文章卡片 -->
+  <!-- hash算法 -->
 
-
-  <script>
-  function loadMermaid() {
-    if (document.getElementsByClassName('mermaid').length) {
-      if (window.mermaidJsLoad) mermaid.init()
-      else {
-        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
-          window.mermaidJsLoad = true
-          mermaid.initialize({
-            theme: 'default',
-          })
-          if ('true') {
-            mermaid.init();
-          }
-        })
-      }
-    }
-  };
-  document.addEventListener("DOMContentLoaded", function () {
-    loadMermaid();
-  })
-
-  document.addEventListener('pjax:complete', function () {
-    loadMermaid();
-  })
+<section class="posts">
   
-</script>
+    
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span class="post-time">2021-11-17</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/post/mysol-lian-xi/">MySQL练习</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
 
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/" rel="tag">增删改查</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+</div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            <a href="/post/mysol-lian-xi/" style="background-size: cover; 
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-1kg989_960x678.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-1kg989_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+          <div class="post-content">
+            
+1、查询所有学生的学号、姓名，要求按学号升序排列
+
+select sno,sname from student
+order by sno asc
+
+
+2、将“060101”号学生的成绩按降序排列
+
+
+3、查询课程名中不包含“数据”字样的课
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/post/mysol-lian-xi/">
+            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/post/mysol-lian-xi/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-1kg989_960x678.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-1kg989_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+        </a>
+      </div>
+    </article>
+  
+</section>
+</div>
+
+<div class="w-70">
+  
+</div>
 
       </main>
     </div>
