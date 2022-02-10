@@ -685,11 +685,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fa fa-file-text-o"></i> 字数统计: 1.4k |
+            <i class="fa fa-file-text-o"></i> 字数统计: 3k |
           </span>
   
           <span class="min2read">
-            <i class="fa fa-clock-o"></i> 阅读时长: 5分钟 |
+            <i class="fa fa-clock-o"></i> 阅读时长: 11分钟 |
           </span>
   
           
@@ -714,9 +714,155 @@
     <article class="post post-detail">
       
       <div class="post-content">
-        <h2 id="8-继承"><a href="#8-继承" class="headerlink" title="8.继承"></a>8.继承</h2><p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20211110173932703.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20211110173932703"></p>
+        <h4 id="5-static关键字"><a href="#5-static关键字" class="headerlink" title="5.static关键字"></a>5.static关键字</h4><ol>
+<li><p>static可以修饰全局变量，用static修饰的变量称为静态变量，静态变量<strong>不属于任何对象</strong>，静态变量<strong>被当前类的所有对象共享</strong>，静态变量可以使用<code>类名.变量名</code>直接访问。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> sex<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestStudent</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Student</span><span class="token punctuation">.</span>sex <span class="token operator">=</span> <span class="token string">"男"</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">Student</span> s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s1<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"张三"</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">Student</span> s2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        s2<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"李四"</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Student</span><span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span>sex <span class="token operator">==</span> s2<span class="token punctuation">.</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行结果：</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20211108163350623.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20211108163350623"></p>
+<blockquote>
+<p>从运行结果看：静态变量确实被本类的所有对象共享。</p>
+</blockquote>
+</li>
+<li><p>内存原理：</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20211108170242148.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20211108170242148"></p>
+</li>
+<li><p>static可以修饰方法，被static修饰的方法称之为静态方法。静态方法可以使用<code>类名.方法名</code>直接调用。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Student</span><span class="token punctuation">.</span><span class="token function">attendClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>static可以用来修饰代码块，被static修饰的代码块称之为静态代码块，静态代码块在当前类被加载进内存的时候就会执行，并且整个程序运行期间，<font color = "#ff0000">先于<strong>main()方法</strong>之前执行，只执行一次。</font>主要作用：<strong>给静态变量初始化</strong>。</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20220208154128630.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20220208154128630"></p>
+<p>运行结果：</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20220208154336587.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20220208154336587"></p>
+<blockquote>
+<p>可以看出：静态代码块优先于主方法（静态方法和构造方法），最先被执行。</p>
+<ul>
+<li>程序执行顺序：静态代码块→静态方法→普通代码块→构造方法</li>
+</ul>
+<p>由此也可以得出在静态代码块里可以访问静态成员以及静态方法，但不能访问实例成员。</p>
+<ul>
+<li>内存分配顺序：静态变量→静态方法→静态代码块→构造方法</li>
+</ul>
+</blockquote>
+</li>
+<li><p>静态方法内不能直接调用非静态的成员(实例属性、实例方法)。</p>
+<ul>
+<li><p>当为普通方法时，方法间可以相互调用：</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20211108170743959.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20211108170743959"></p>
+</li>
+<li><p>当被static修饰了之后，实例成员就不能被静态方法所调用。</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20211108172148123.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20211108172148123"></p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20211108173352077.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20211108173352077"></p>
+<p>如图：出现报错(<code>Non-static 方法 &#39;exam()&#39; cannot be referenced from a static context</code>)。</p>
+<p>因为在JVM给静态方法分配内存时，此时的非静态变量和方法还没有出现。</p>
+</li>
+</ul>
+</li>
+<li><p>静态方法、静态代码块内不能出现this。静态方法中，实例成员还没出现呢，哪来的this关键字。</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>类加载的机制：</strong></p>
+<p>JVM虚拟机，类加载器负责把Java程序编译后的字节码文件加载进内存，加载字节码文件进内存后，JVM就会首先给当前类中的静态成员去分配空间。创建对象的时候，才会给实例成员分配空间。反过来，实例方法可以访问静态成员。</p>
+<p><strong>内存分配的顺序：</strong></p>
+<p>静态变量 → 静态方法 → 静态代码块 → 实例变量 → 构造方法 → 实例方法</p>
+</blockquote>
+<h4 id="6-设计模式——单例模式"><a href="#6-设计模式——单例模式" class="headerlink" title="6.设计模式——单例模式"></a>6.设计模式——单例模式</h4><ol>
+<li><p>设计模式（Design pattern）：</p>
+<ul>
+<li>设计模式是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。</li>
+<li>使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。</li>
+<li>由GOF四人帮编写23种常用的设计模式。</li>
+</ul>
+</li>
+<li><p>单例模式：</p>
+<ol>
+<li><p>在整个程序生命周期内，某个类只有一个实例存在（即<strong>只能存在一个对象</strong>）。这个实例必须自行实例化（即<strong>自行创建对象</strong>），并且向外界提供这个实例（即<strong>外界只能访问，但不能修改</strong>）。</p>
+</li>
+<li><p>实现要点：</p>
+<ul>
+<li><p>构造方法私有化</p>
+<blockquote>
+<p>解析：为什么要构造方法私有化？因为在外界创建对象时。可以创建多个对象，而这些对象是通过调用Jvm所创建的构造方法，所以我们需要自行创建一个构造方法，这样JVM就不会自主创建了，同时将构造方法进行私有化，外界就不能创建对象了。换言之，<strong>杜绝外界创建多个对象</strong>。</p>
+</blockquote>
+</li>
+<li><p>私有的静态变量持有本类的唯一对象</p>
+<blockquote>
+<p>解析：由于构造方法私有化，外界不能创建对象（所以我们就的自己创建对象，我们将自己创建的对象作为全局变量存在。）进而不能访问类中的全局变量。此时我们把刚才的全局变量加上static关键字后，外界就可以通过类名.变量访问到了。如果不将静态对象私有化，则外界就可以随意更改变量的值，若<code>Phone.p = null</code>时，创建的对象在堆内存中会因为没有变量指向而导致被JVM当作垃圾清理掉。换言之，<strong>杜绝外界随意修改对象的值</strong>。</p>
+</blockquote>
+</li>
+<li><p>公有的静态方法用来向外提供本类的唯一对象</p>
+<blockquote>
+<p>解析：因为在类中的实例方法创建后，由于对象已经私有化，外界访问不到，所以我们需要将实例方法变成静态方法。这样<strong>外界就可以通过方法来创建对象</strong>。</p>
+</blockquote>
+<p>如下图所示：</p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20211110164027651.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20211110164027651"></p>
+<p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20211110164055163.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20211110164055163"></p>
+<blockquote>
+<p>通过运行结果可以发现，创建的三个对象的内存地址是一样的，可以得出结论，<strong>外界创建的对象是同一个</strong>，即完成了类中只有一个实例。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>单例模式代码</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Phone</span> <span class="token punctuation">&#123;</span>
+    
+    <span class="token comment">//2、私有的静态变量持有本类的唯一对象</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Phone</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Phone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//1、构造方法私有化</span>
+    <span class="token keyword">private</span> <span class="token class-name">Phone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//3、公有的静态方法用来向外界提供本类的唯一对象</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Phone</span> <span class="token function">getPhone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>恶汉式和懒汉式的区别就在于创建对象位置不同，也就导致运行加载速度不同。恶汉式在方法执行前提前创建，懒汉式则是当你需要使用方法时才会创建对象。</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//懒汉式</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Phone</span> <span class="token punctuation">&#123;</span>
+    
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Phone</span> p<span class="token punctuation">;</span>
+    
+    <span class="token keyword">private</span> <span class="token class-name">Phone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Phone</span> <span class="token function">getPhone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>p <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Phone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h2 id="8-继承"><a href="#8-继承" class="headerlink" title="8.继承"></a>8.继承</h2><p><img "" class="lazyload placeholder" data-original="https://gitee.com/beimumu/img/raw/master/java/image-20211110173932703.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image-20211110173932703"></p>
 <h4 id="1-子类与父类的关系"><a href="#1-子类与父类的关系" class="headerlink" title="1.子类与父类的关系"></a>1.子类与父类的关系</h4><ul>
-<li>is-a ：意味“子类是一个父类的…”。</li>
+<li>is-a ：意味 “子类是一个父类的…”。</li>
 <li>父类更抽象，更普通；子类更具体，更特殊。例：车-汽车，自行车，电动车。</li>
 </ul>
 <h4 id="2-继承的概念"><a href="#2-继承的概念" class="headerlink" title="2.继承的概念"></a>2.继承的概念</h4><ul>
@@ -730,27 +876,33 @@
 <h4 id="4-关键字this和super的区别"><a href="#4-关键字this和super的区别" class="headerlink" title="4.关键字this和super的区别"></a>4.关键字this和super的区别</h4><table>
 <thead>
 <tr>
-<th><code>this</code>&amp;<code>super</code>区别</th>
-<th></th>
+<th><code>this</code>&amp;<code>super</code></th>
+<th align="left">区   别</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><code>this</code></td>
-<td>本类的引用</td>
+<td align="left">本类的引用</td>
 </tr>
 <tr>
 <td><code>super</code></td>
-<td>子类对父类对象的引用</td>
+<td align="left">子类对父类对象的引用</td>
 </tr>
 <tr>
 <td><code>this()</code></td>
-<td>可以调用本类其他的构造方法（构造方法的第一行）</td>
+<td align="left">可以调用本类其他的构造方法（构造方法的第一行）</td>
 </tr>
 <tr>
 <td><code>super()</code></td>
-<td>在子类中，可以调用父类的构造方法（子类构造方法的第一行）</td>
+<td align="left">在子类中，可以调用父类的构造方法（子类构造方法的第一行）</td>
 </tr>
 </tbody></table>
+<blockquote>
+<ul>
+<li>栈：stack。给方法的执行临时开辟空间，方法执行结束后，此内存区域也会被释放掉。除了存放引用变量，方法内的局部变量（<strong>声明的一些基本数据变量，变量值</strong>）也会存放在栈内存中。执行速度比较快。</li>
+<li>堆：heap。<strong>存放对象</strong>。执行速度比较慢。</li>
+</ul>
+</blockquote>
 <h4 id="5-例子：人类-学生类"><a href="#5-例子：人类-学生类" class="headerlink" title="5.例子：人类-学生类"></a>5.例子：人类-学生类</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//Person类</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
     <span class="token class-name">String</span> name<span class="token punctuation">;</span> <span class="token comment">//姓名</span>
@@ -812,7 +964,7 @@
 <blockquote>
 <p>运行结果也证实执行子类构造方法前会先执行父类的构造方法。</p>
 </blockquote>
-<h4 id="6-方法的重写"><a href="#6-方法的重写" class="headerlink" title="6.方法的重写"></a>6.方法的重写</h4><ol>
+<h4 id="6-方法的重写（Override）"><a href="#6-方法的重写（Override）" class="headerlink" title="6.方法的重写（Override）"></a>6.方法的重写（Override）</h4><ol>
 <li><p>概念</p>
 <p>方法的重写是指子类对从父类继承过来的方法，可以进行重写。</p>
 </li>
@@ -861,7 +1013,7 @@
 <li><p>equals()</p>
 <ul>
 <li><p>Object类</p>
-<p>1.在Object类中的equals()方法默认是比较两个对象是否为同一个对象。</p>
+<p>1.在Object类中的equals()方法默认是<font color = "#ff0000">比较两个对象是否为同一个对象</font>。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token comment">//this为调用此方法的对象</span>
     <span class="token comment">//obj为被比较的对象</span>
@@ -877,8 +1029,8 @@
     <span class="token comment">//判断d1和d2两个对象的属性值是否相等，如果相等则认为是同一个对象。</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">//this为调用此方法的对象</span>
-        <span class="token comment">//obj为被比较的对象,但因数据类型不同，所以需要强制转换</span>
+        <span class="token comment">//this为调用此方法的对象(比较的对象)。</span>
+        <span class="token comment">//obj为被比较的对象。但因数据类型不同，所以需要将“Object类型” 强制转换为 “比较的对象的数据类型”。</span>
         <span class="token class-name">Dog</span> dog <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Dog</span><span class="token punctuation">)</span>obj<span class="token punctuation">;</span>
 
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">==</span> dog<span class="token punctuation">.</span>color <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>dogID <span class="token operator">==</span> dog<span class="token punctuation">.</span>dogID<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -906,38 +1058,40 @@
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>String类</p>
-<p>1.在String类中的equals()方法</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> anObject<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">//this 表示调用该方法的对象</span>
-    <span class="token comment">//anObject 表示被比较的对象</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> anObject<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token comment">// instanceof关键字可以判断左边对象是否是右边类或者子类的一个实例</span>
-    <span class="token comment">//需要用到对象的强制类型转换时，需要使用instanceof进行判断。</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>anObject <span class="token keyword">instanceof</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">String</span> anotherString <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span>anObject<span class="token punctuation">;</span>
-        <span class="token comment">//value 实际上就是String类中的一个字符型常量数组char value[];</span>
-        <span class="token comment">//说到底，string最后还是字符数组进行存储</span>
-        <span class="token comment">//调用该方法的对象的值的数组长度</span>
-        <span class="token keyword">int</span> n <span class="token operator">=</span> value<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
-        <span class="token comment">//被比较的对象的数组长度</span>
-        <span class="token comment">//pan'duan</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> anotherString<span class="token punctuation">.</span>value<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">char</span> v1<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> value<span class="token punctuation">;</span>
-            <span class="token keyword">char</span> v2<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> anotherString<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
-            <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span> <span class="token punctuation">(</span>n<span class="token operator">--</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token comment">//分别对应两个对象中字符是否相等</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>v1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> v2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                i<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
+<p>在String类中的equals()方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> anObject<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//this 表示调用该方法的对象</span>
+        <span class="token comment">//anObject 表示被比较的对象</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> anObject<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>    
-    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token comment">// instanceof关键字可以判断左边对象是否是右边类或者子类的一个实例</span>
+        <span class="token comment">//需要用到对象的强制类型转换时，需要使用instanceof进行判断。</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>anObject <span class="token keyword">instanceof</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">String</span> anotherString <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span>anObject<span class="token punctuation">;</span>
+            <span class="token comment">//value 实际上就是String类中的一个字符型常量数组char value[];</span>
+            <span class="token comment">//说到底，string最后还是字符数组进行存储</span>
+            
+            <span class="token comment">//调用该方法的对象的值的数组长度</span>
+            <span class="token keyword">int</span> n <span class="token operator">=</span> value<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+            <span class="token comment">//被比较的对象的数组长度</span>
+            <span class="token comment">//pan'duan</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> anotherString<span class="token punctuation">.</span>value<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">char</span> v1<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> value<span class="token punctuation">;</span>
+                <span class="token keyword">char</span> v2<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> anotherString<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+                <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token comment">//长度自减，不等于0，执行while循环</span>
+                <span class="token keyword">while</span> <span class="token punctuation">(</span>n<span class="token operator">--</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token comment">//分别对应两个对象中字符是否相等</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>v1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> v2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                    i<span class="token operator">++</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>    
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>拓展：<br>instanceof关键字：</p>
