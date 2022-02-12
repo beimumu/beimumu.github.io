@@ -696,7 +696,7 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="6-字符串"><a href="#6-字符串" class="headerlink" title="6.字符串"></a>6.字符串</h2><h4 id="1-String的创建方式"><a href="#1-String的创建方式" class="headerlink" title="1.String的创建方式"></a>1.String的创建方式</h4><ul>
+        <h2 id="6-字符串"><a href="#6-字符串" class="headerlink" title="6.字符串"></a>6.字符串</h2><h3 id="1-String的创建方式"><a href="#1-String的创建方式" class="headerlink" title="1.String的创建方式"></a>1.String的创建方式</h3><ul>
 <li><p>直接赋值：<code>String a = &quot;hello&quot;;</code></p>
 <blockquote>
 <p>先去字符串常量池查找有没有<code>hello</code>这个字符串，如果有，那么就让变量a指向这个字符串；如果没有，就创建一个<code>hello</code>存入常量池中。</p>
@@ -750,8 +750,7 @@
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-<h4 id="2-String对象的声明和操作"><a href="#2-String对象的声明和操作" class="headerlink" title="2.String对象的声明和操作"></a>2.String对象的声明和操作</h4><ul>
+<h3 id="2-String对象的声明和操作"><a href="#2-String对象的声明和操作" class="headerlink" title="2.String对象的声明和操作"></a>2.String对象的声明和操作</h3><ul>
 <li><p>String对象是不可变的。</p>
 </li>
 <li><p>在类中每一个看起来会修改String值的方法，其实都是**<font color='#ff0000'>创建了新的String对象</font>**（包含修改后的字符串内容）。其中，之前所指向的内容不在被指向；在堆中的话，之前不被指向的内容则会在jvm虚拟机的特性(java对象的内存管理机制)被自动清理掉。</p>
@@ -820,7 +819,7 @@ c<span class="token operator">=</span><span class="token string">"abd"</span><sp
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"====04====="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c1<span class="token operator">==</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h4 id="3-String对象的常用方法"><a href="#3-String对象的常用方法" class="headerlink" title="3.String对象的常用方法"></a>3.String对象的常用方法</h4><p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220121165943413.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220121165943413.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220121165943413"></p>
+<h3 id="3-String对象的常用方法"><a href="#3-String对象的常用方法" class="headerlink" title="3.String对象的常用方法"></a>3.String对象的常用方法</h3><p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220121165943413.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220121165943413.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220121165943413"></p>
 <blockquote>
 <p>length()：返回字符串的长度（个数）</p>
 </blockquote>
@@ -1015,12 +1014,12 @@ c<span class="token operator">=</span><span class="token string">"abd"</span><sp
 <li>面向对象编程的三大特性：封装、继承、多态。</li>
 </ol>
 </blockquote>
-<h4 id="1-封装的概念"><a href="#1-封装的概念" class="headerlink" title="1.封装的概念"></a>1.封装的概念</h4><ul>
+<h3 id="1-封装的概念"><a href="#1-封装的概念" class="headerlink" title="1.封装的概念"></a>1.封装的概念</h3><ul>
 <li>将东西打包装在一起，以新的形式展现出来</li>
 <li>将重要的信息隐藏，不让外界看到</li>
 <li>将数据和方法包装在类中，再加以隐藏。</li>
 </ul>
-<h4 id="2-属性私有化"><a href="#2-属性私有化" class="headerlink" title="2.属性私有化"></a>2.属性私有化</h4><ul>
+<h3 id="2-属性私有化"><a href="#2-属性私有化" class="headerlink" title="2.属性私有化"></a>2.属性私有化</h3><ul>
 <li><p>private关键字修饰的属性，只能在本类中被访问。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">&#123;</span>
     <span class="token comment">//属性私有化：private修饰的属性，只能在本类中被访问。</span>
@@ -1055,7 +1054,7 @@ c<span class="token operator">=</span><span class="token string">"abd"</span><sp
 </blockquote>
 </li>
 </ul>
-<h4 id="3-构造方法"><a href="#3-构造方法" class="headerlink" title="3.构造方法"></a>3.构造方法</h4><ol>
+<h3 id="3-构造方法"><a href="#3-构造方法" class="headerlink" title="3.构造方法"></a>3.构造方法</h3><ol>
 <li><p>语法规则</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">访问修饰符 方法名（与类名相同）<span class="token punctuation">&#123;</span>
     
@@ -1102,7 +1101,7 @@ c<span class="token operator">=</span><span class="token string">"abd"</span><sp
 </ol>
 </li>
 </ol>
-<h4 id="4-toString-方法"><a href="#4-toString-方法" class="headerlink" title="4.toString()方法"></a>4.toString()方法</h4><ul>
+<h3 id="4-toString-方法"><a href="#4-toString-方法" class="headerlink" title="4.toString()方法"></a>4.toString()方法</h3><ul>
 <li><p>练习创建一个电脑类,要求有品牌，型号，价格,颜色等属性。实现对属性的封装。<br>要求，创建对象的时候，可以快速的给这些属性赋值。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//Computer类</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Computer</span> <span class="token punctuation">&#123;</span>

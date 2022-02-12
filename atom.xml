@@ -74,6 +74,31 @@
   </entry>
   
   <entry>
+    <title>Java基础语法_面向对象（四）</title>
+    <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-si/"/>
+    <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-si/</id>
+    <published>2021-10-12T16:17:56.000Z</published>
+    <updated>2022-02-12T16:29:59.799Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;9-多态&quot;&gt;&lt;a href=&quot;#9-多态&quot; class=&quot;headerlink&quot; title=&quot;9.多态&quot;&gt;&lt;/a&gt;9.多态&lt;/h2&gt;&lt;h3 id=&quot;1-多态的概念&quot;&gt;&lt;a href=&quot;#1-多态的概念&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>简单的账户类系统</title>
     <link href="https://beimumu.xyz/post/jian-dan-de-zhang-hu-lei-xi-tong/"/>
     <id>https://beimumu.xyz/post/jian-dan-de-zhang-hu-lei-xi-tong/</id>
@@ -94,9 +119,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
-    
     <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
@@ -175,9 +200,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
-    
     <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
@@ -230,9 +255,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
-    
     <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
@@ -295,14 +320,14 @@
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-san/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-san/</id>
     <published>2020-10-07T04:51:56.000Z</published>
-    <updated>2022-02-10T16:15:06.144Z</updated>
+    <updated>2022-02-12T16:23:45.200Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;7-封装（续）&quot;&gt;&lt;a href=&quot;#7-封装（续）&quot; class=&quot;headerlink&quot; title=&quot;7.封装（续）&quot;&gt;&lt;/a&gt;7.封装（续）&lt;/h2&gt;&lt;h4 id=&quot;5-static关键字&quot;&gt;&lt;a href=&quot;#5-static关键字&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;7-封装（续）&quot;&gt;&lt;a href=&quot;#7-封装（续）&quot; class=&quot;headerlink&quot; title=&quot;7.封装（续）&quot;&gt;&lt;/a&gt;7.封装（续）&lt;/h2&gt;&lt;h3 id=&quot;5-static关键字&quot;&gt;&lt;a href=&quot;#5-static关键字&quot;</summary>
         
       
     
@@ -320,14 +345,14 @@
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-er/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-er/</id>
     <published>2020-10-06T12:51:56.000Z</published>
-    <updated>2022-02-10T16:15:09.420Z</updated>
+    <updated>2022-02-12T16:22:59.708Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;6-字符串&quot;&gt;&lt;a href=&quot;#6-字符串&quot; class=&quot;headerlink&quot; title=&quot;6.字符串&quot;&gt;&lt;/a&gt;6.字符串&lt;/h2&gt;&lt;h4 id=&quot;1-String的创建方式&quot;&gt;&lt;a href=&quot;#1-String的创建方式&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;6-字符串&quot;&gt;&lt;a href=&quot;#6-字符串&quot; class=&quot;headerlink&quot; title=&quot;6.字符串&quot;&gt;&lt;/a&gt;6.字符串&lt;/h2&gt;&lt;h3 id=&quot;1-String的创建方式&quot;&gt;&lt;a href=&quot;#1-String的创建方式&quot;</summary>
         
       
     
@@ -345,7 +370,7 @@
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-yi/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-yi/</id>
     <published>2020-10-05T12:51:56.000Z</published>
-    <updated>2022-02-10T16:18:48.634Z</updated>
+    <updated>2022-02-12T16:22:16.266Z</updated>
     
     
       
@@ -412,9 +437,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
-    
     <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
@@ -508,7 +533,7 @@
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa/</id>
     <published>2020-08-30T13:47:02.000Z</published>
-    <updated>2022-02-10T16:14:56.890Z</updated>
+    <updated>2022-02-12T16:13:27.807Z</updated>
     
     
       
@@ -528,37 +553,6 @@
     
     
     <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git相关操作</title>
-    <link href="https://beimumu.xyz/post/git-xiang-guan-cao-zuo/"/>
-    <id>https://beimumu.xyz/post/git-xiang-guan-cao-zuo/</id>
-    <published>2020-08-25T12:11:29.000Z</published>
-    <updated>2021-08-15T13:54:53.514Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;常用的Linux命令&quot;&gt;&lt;a href=&quot;#常用的Linux命令&quot; class=&quot;headerlink&quot; title=&quot;常用的Linux命令&quot;&gt;&lt;/a&gt;常用的Linux命令&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Git" scheme="https://beimumu.xyz/categories/Git/"/>
-    
-    <category term="环境部署" scheme="https://beimumu.xyz/categories/Git/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
-    
-    
-    <category term="Git命令" scheme="https://beimumu.xyz/tags/Git%E5%91%BD%E4%BB%A4/"/>
-    
-    <category term="Github" scheme="https://beimumu.xyz/tags/Github/"/>
-    
-    <category term="Gitee" scheme="https://beimumu.xyz/tags/Gitee/"/>
     
   </entry>
   
