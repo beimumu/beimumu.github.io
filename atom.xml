@@ -6,7 +6,7 @@
   <link href="https://beimumu.xyz/atom.xml" rel="self"/>
   
   <link href="https://beimumu.xyz/"/>
-  <updated>2022-02-10T18:55:35.635Z</updated>
+  <updated>2022-02-21T14:58:27.149Z</updated>
   <id>https://beimumu.xyz/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaSE_合集</title>
+    <link href="https://beimumu.xyz/post/javase-he-ji/"/>
+    <id>https://beimumu.xyz/post/javase-he-ji/</id>
+    <published>2022-02-21T11:23:37.000Z</published>
+    <updated>2022-02-21T14:58:27.149Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt; 学习JavaSE过程中的笔记合集，以作目录使用，方便查阅。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL练习</title>
@@ -94,9 +122,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
-    
     <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
     
   </entry>
   
@@ -175,9 +203,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
-    
     <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
     
   </entry>
   
@@ -230,9 +258,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
-    
     <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
     
   </entry>
   
@@ -260,6 +288,31 @@
     
     
     <category term="随记" scheme="https://beimumu.xyz/tags/%E9%9A%8F%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础语法_面向对象（五）</title>
+    <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-wu/"/>
+    <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-wu/</id>
+    <published>2020-10-31T16:17:56.000Z</published>
+    <updated>2022-02-21T14:54:16.739Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;11-抽象类&quot;&gt;&lt;a href=&quot;#11-抽象类&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
     
   </entry>
   
@@ -320,7 +373,7 @@
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-san/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-san/</id>
     <published>2020-10-07T04:51:56.000Z</published>
-    <updated>2022-02-12T16:23:45.200Z</updated>
+    <updated>2022-02-21T14:59:16.616Z</updated>
     
     
       
@@ -345,7 +398,7 @@
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-er/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-er/</id>
     <published>2020-10-06T12:51:56.000Z</published>
-    <updated>2022-02-12T16:22:59.708Z</updated>
+    <updated>2022-02-21T14:59:23.982Z</updated>
     
     
       
@@ -370,7 +423,7 @@
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-yi/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-yi/</id>
     <published>2020-10-05T12:51:56.000Z</published>
-    <updated>2022-02-12T16:22:16.266Z</updated>
+    <updated>2022-02-21T14:59:09.526Z</updated>
     
     
       
@@ -395,7 +448,7 @@
     <link href="https://beimumu.xyz/post/java-shu-zu/"/>
     <id>https://beimumu.xyz/post/java-shu-zu/</id>
     <published>2020-10-04T18:10:16.000Z</published>
-    <updated>2022-02-10T16:14:23.632Z</updated>
+    <updated>2022-02-21T14:58:53.802Z</updated>
     
     
       
@@ -420,7 +473,7 @@
     <link href="https://beimumu.xyz/post/java-liu-cheng-kong-zhi-xun-huan-jie-gou-er/"/>
     <id>https://beimumu.xyz/post/java-liu-cheng-kong-zhi-xun-huan-jie-gou-er/</id>
     <published>2020-09-25T10:29:00.000Z</published>
-    <updated>2022-02-10T16:14:52.495Z</updated>
+    <updated>2022-02-21T14:59:02.529Z</updated>
     
     
       
@@ -437,9 +490,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
-    
     <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
     
   </entry>
   
@@ -448,7 +501,7 @@
     <link href="https://beimumu.xyz/post/java-liu-cheng-kong-zhi-xun-huan-jie-gou-yi/"/>
     <id>https://beimumu.xyz/post/java-liu-cheng-kong-zhi-xun-huan-jie-gou-yi/</id>
     <published>2020-09-20T11:23:37.000Z</published>
-    <updated>2022-02-10T16:14:48.097Z</updated>
+    <updated>2022-02-21T14:58:58.803Z</updated>
     
     
       
@@ -494,65 +547,6 @@
     <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
     
     <category term="Scanner对象" scheme="https://beimumu.xyz/tags/Scanner%E5%AF%B9%E8%B1%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git部署Github和Gitee共存</title>
-    <link href="https://beimumu.xyz/post/git-bu-shu-github-he-gitee-gong-cun/"/>
-    <id>https://beimumu.xyz/post/git-bu-shu-github-he-gitee-gong-cun/</id>
-    <published>2020-09-06T04:02:45.000Z</published>
-    <updated>2021-08-15T13:54:49.811Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Git" scheme="https://beimumu.xyz/categories/Git/"/>
-    
-    <category term="环境部署" scheme="https://beimumu.xyz/categories/Git/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"/>
-    
-    
-    <category term="Git命令" scheme="https://beimumu.xyz/tags/Git%E5%91%BD%E4%BB%A4/"/>
-    
-    <category term="Gitee" scheme="https://beimumu.xyz/tags/Gitee/"/>
-    
-    <category term="GitHub" scheme="https://beimumu.xyz/tags/GitHub/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java基础语法</title>
-    <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa/"/>
-    <id>https://beimumu.xyz/post/java-ji-chu-yu-fa/</id>
-    <published>2020-08-30T13:47:02.000Z</published>
-    <updated>2022-02-12T16:13:27.807Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;注释&quot;&gt;&lt;a href=&quot;#注释&quot; class=&quot;headerlink&quot; title=&quot;注释&quot;&gt;&lt;/a&gt;注释&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Java中的注释有三种：&lt;ol&gt;
-&lt;li&gt;单行注释“//”&lt;/li&gt;
-&lt;li&gt;多行注释“/*</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
-    
-    
-    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
     
   </entry>
   
