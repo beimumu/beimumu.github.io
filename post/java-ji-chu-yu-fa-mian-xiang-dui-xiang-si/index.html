@@ -665,11 +665,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 1.6k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 1.7k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 5分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 6分钟 |
           </span>
   
           
@@ -728,16 +728,24 @@
 </ol>
 </li>
 </ul>
-<h3 id="2-对象向上、下转型"><a href="#2-对象向上、下转型" class="headerlink" title="2.对象向上、下转型"></a>2.对象向上、下转型</h3><ul>
+<h3 id="2-对象向上、下转型"><a href="#2-对象向上、下转型" class="headerlink" title="2.对象向上、下转型"></a>2.对象向上、下转型</h3><blockquote>
+<p><strong>编译看左，执行看右</strong>，<code>Person p = new Student</code>为例：</p>
+<p>右边为实际类型，运行时认右边。</p>
+<p>左边为声明的变量类型，编译器只认左边。</p>
+</blockquote>
+<ul>
 <li><p>向上转型：</p>
 <ul>
-<li><p>继承图上来看，<font color='#ff0000'>子类转向父类</font>。</p>
+<li>继承图上来看，<font color='#ff0000'>子类转向父类</font>。</li>
+</ul>
 </li>
 <li><p>类型上来看，较专用类型转向较普通类型。</p>
-</li>
-<li><p>安全角度来看，向上转型是<strong>安全的</strong>，在程序中<strong>不会报错</strong>，但是在转型过程中，会<strong>丢失</strong>子类的<strong>特有的属性和方法</strong>。这也是多态的体现。</p>
-</li>
+<ul>
+<li>安全角度来看，向上转型是<strong>安全的</strong>，属于<strong>自动类型转换</strong>，在程序中<strong>不会报错</strong>，但是在转型过程中，会<strong>丢失</strong>子类的<strong>特有的属性和方法</strong>。这也是多态的体现。</li>
 </ul>
+<blockquote>
+<p>注：丢失子类方法：实际过程是编译过程中未识别子类方法。</p>
+</blockquote>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Student</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">,</span><span class="token string">"1001"</span><span class="token punctuation">,</span><span class="token string">"三年二班"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">Person</span> p <span class="token operator">=</span> s<span class="token punctuation">;</span>
 <span class="token comment">//等价于</span>
@@ -763,8 +771,6 @@
 </blockquote>
 </li>
 <li><p>在对象做下转型之前，没有其他有关对象类型信息时务必使用<code>instanceOf</code>关键字来进行判断，以此来避免<code>classCastException</code>异常。</p>
-</li>
-</ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Person</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p <span class="token keyword">instanceof</span> <span class="token class-name">Person</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p <span class="token keyword">instanceof</span> <span class="token class-name">Student</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
@@ -775,11 +781,15 @@
 <span class="token class-name">Person</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token keyword">instanceof</span> <span class="token class-name">Student</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token class-name">Student</span> student <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Student</span><span class="token punctuation">)</span>p<span class="token punctuation">;</span>
+    student<span class="token punctuation">.</span><span class="token function">exam</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Student类型"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>p <span class="token keyword">instanceof</span> <span class="token class-name">Worker</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token class-name">Worker</span> worker <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Worker</span><span class="token punctuation">)</span>p<span class="token punctuation">;</span>
+    worker<span class="token punctuation">.</span><span class="token function">work</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Worker类型"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
 </ul>
 <h3 id="3-静态绑定和动态绑定"><a href="#3-静态绑定和动态绑定" class="headerlink" title="3.静态绑定和动态绑定"></a>3.静态绑定和动态绑定</h3><ul>
 <li><p>静态绑定</p>
@@ -835,6 +845,9 @@ p<span class="token punctuation">.</span><span class="token function">sleep</spa
 </li>
 <li><p>典型应用：</p>
 <p>用父类作为形参，再传实参时，父类或者子类创建的实例对象依然能调用。</p>
+<blockquote>
+<p>打印机、动物叫。</p>
+</blockquote>
 </li>
 <li><p>拓展</p>
 <blockquote>
@@ -845,6 +858,51 @@ p<span class="token punctuation">.</span><span class="token function">sleep</spa
 </blockquote>
 </li>
 </ul>
+<h2 id="10-访问修饰符"><a href="#10-访问修饰符" class="headerlink" title="10.访问修饰符"></a>10.访问修饰符</h2><table>
+<thead>
+<tr>
+<th>访问修饰符</th>
+<th>本类</th>
+<th>同包其他类</th>
+<th>不同包的子类</th>
+<th>不同包的非子类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>默认的</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>private</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>public：所有地方</p>
+<p>protected：同一个包及子类</p>
+<p>默认的：同一个包</p>
+<p>private：本类</p>
+</blockquote>
 
       </div>
       <div class="post-tags-categories">
