@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>三月随记 | 琲木木_blog</title>
+  <title>Java基础语法-常用类（二） | 琲木木_blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -633,21 +633,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://gitee.com/beimumu/img/raw/master/background_img/mei02.jpg')">
+  background-position: center center;position: relative;background-image:url('https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-13grpw_960x678.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        三月随记
+        Java基础语法-常用类（二）
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-03-28 |
+          <i class="fas fa-calendar"></i> 发表于：2020-11-06 |
         </span>
       
 
@@ -655,8 +655,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-detail-header_category">
-              生活
+            <a href="/categories/Java/" class="post-detail-header_category">
+              Java
             </a>
           
         </span>
@@ -665,11 +665,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 439 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 1.2k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 5分钟 |
           </span>
   
           
@@ -696,24 +696,246 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <blockquote>
-<p>“好蓝的天空啊，是青春的蓝，突然，好想去剪个头发~”</p>
-<p>​                                                               ——《刺客伍六七》</p>
+        <h2 id="14-枚举类"><a href="#14-枚举类" class="headerlink" title="14.枚举类"></a>14.枚举类</h2><ul>
+<li><p>枚举（enum），是一个特殊的类。</p>
+</li>
+<li><p>枚举值：静态常量，即<code>public static final</code>，需要大写。</p>
+</li>
+<li><p>语法格式</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">Color</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">//1.静态常量</span>
+    <span class="token comment">//2.私有构造器</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>通常搭配switch语句使用。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">Color</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token comment">//静态常量</span>
+    RED<span class="token punctuation">,</span>YELLOW<span class="token punctuation">,</span>BLUE<span class="token punctuation">,</span>GREEN<span class="token punctuation">;</span>
+
+    <span class="token comment">//私有构造器</span>
+    <span class="token keyword">private</span> <span class="token class-name">Color</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"枚举类的构造器"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//Color a = new Color();//'Color()' has private access in 'top.beimumu.TestEnum.Color'</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Color</span><span class="token punctuation">.</span>BLUE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span><span class="token class-name">Color</span><span class="token punctuation">.</span>RED<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">case</span> RED<span class="token operator">:</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"红色"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> BLUE<span class="token operator">:</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"蓝色"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> YELLOW<span class="token operator">:</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"黄色"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">default</span><span class="token operator">:</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"其他颜色"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>现象：</p>
+<ol>
+<li>每个被枚举的成员变量就是一个枚举类的实例，即：<strong>枚举值就是当前枚举类的对象</strong>。</li>
+<li>每枚举一次枚举值，就会执行一次构造方法，即：<strong>有几个枚举值就会执行几次构造方法</strong>。</li>
+</ol>
 </blockquote>
-<p>时间很快，开学也已经快一个月了。刚开始的我做什么事情都有动力、有目标。但我知道时间会慢慢让我颓废下去。可是在假期我成长了许多或者说想明白了些事情，所以这学期我觉得不能在浪荡下去了。开学后，开不完的没有意义的会，听着对我将来毫无用处的话，我在想我脑子是让驴踢了还是让门给挤了。</p>
-<p>本来是想着昨天记录，后来贪玩就推到了今天。昨天我参加了计算机二级。说实话过是有点悬。但我同学也鼓励我说“你才学了多长时间”，想想也是。三天打鱼两天晒网的学习状态和总共刷了三套试题的我怎么反驳？也只能尴尬的笑笑。</p>
-<p>通过昨天考试，我也发现了些问题。对于一些细枝末节的问题也把暴露了出来。接下来的时间就踏踏实实的过基础。昨天还想着长篇大论，现在却屁都想不出来了。</p>
-<p>前几天看《刺客伍六七》，听到片尾曲《我想和你一起去海边》，心就一下子静了下来。就像评论里说“有歌词的是五六七的生活，纯音乐的是自己的生活。”写着随记也就是回顾下自己的生活。</p>
-<p>貌似这一个月我什么都没成功，但是唯一的进步就是上课注意听讲了，愿意坐前面听课了，上课也愿意记笔记了。</p>
-<p>接下来就努力吧！</p>
+</li>
+</ul>
+<h2 id="15-Date类"><a href="#15-Date类" class="headerlink" title="15.Date类"></a>15.Date类</h2><h3 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h3><ul>
+<li><p>Date 表示特定的时间，精确到毫秒。</p>
+</li>
+<li><p>学习java.util.lang包中的Date。</p>
+</li>
+<li><p>构造方法</p>
+<ul>
+<li>public Date()</li>
+<li>public Date(long date)</li>
+</ul>
+</li>
+<li><p>创建方式：<code>Date date = new Date();</code></p>
+</li>
+<li><p>常用方法（被弃用的）</p>
+<table>
+<thead>
+<tr>
+<th>常用方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>date</td>
+<td>打印当前时间</td>
+</tr>
+<tr>
+<td>date.getYear();</td>
+<td>年份，返回结果是结果为真实年份-1900年的结果，输出时记得+1900</td>
+</tr>
+<tr>
+<td>date.getMonth();</td>
+<td>月份，返回结果(0-11),一月：0,十二月：11，输出时记得+1</td>
+</tr>
+<tr>
+<td>date.getDate();</td>
+<td>日，返回结果(1-31)</td>
+</tr>
+<tr>
+<td>date.getDay();</td>
+<td>星期几，返回结果(0-6),星期日:0,星期一：1</td>
+</tr>
+<tr>
+<td>date.getHours();</td>
+<td>小时，返回结果(0-23),24小时制</td>
+</tr>
+<tr>
+<td>date.getMinutes();</td>
+<td>分钟，返回结果(0-59)</td>
+</tr>
+<tr>
+<td>date.getSeconds();</td>
+<td>秒，返回结果(0-61),61是在jvm中考虑到闰秒。</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Date</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//打印当前时间</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//Tue Mar 15 18:14:55 CST 2022</span>
+
+<span class="token comment">//年份，返回结果是结果为真实年份-1900年的结果，输出时记得+1900</span>
+<span class="token keyword">int</span> year <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1900</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//2022</span>
+
+<span class="token comment">//月份，返回结果(0-11),一月：0,十二月：11，输出时记得+1</span>
+<span class="token keyword">int</span> month <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>month<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//日,返回结果(1-31)</span>
+<span class="token keyword">int</span> date1 <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//15</span>
+
+<span class="token comment">//星期几,返回结果(0-6),星期日:0,星期一：1</span>
+<span class="token keyword">int</span> day <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>day<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//2</span>
+
+<span class="token comment">//小时 返回结果(0-23),24小时制</span>
+<span class="token keyword">int</span> hours <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getHours</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>hours<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//18</span>
+<span class="token comment">//分钟 返回结果(0-59)</span>
+<span class="token keyword">int</span> minutes <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getMinutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>minutes<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//34</span>
+<span class="token comment">//秒 返回结果(0-61),61是在jvm中考虑到闰秒。</span>
+<span class="token keyword">int</span> seconds <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>seconds<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//49</span>
+
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>year<span class="token operator">+</span><span class="token string">"年"</span><span class="token operator">+</span>month<span class="token operator">+</span><span class="token string">"月"</span><span class="token operator">+</span>date1<span class="token operator">+</span><span class="token string">"日"</span><span class="token operator">+</span>hours<span class="token operator">+</span><span class="token string">"时"</span><span class="token operator">+</span>minutes<span class="token operator">+</span><span class="token string">"分"</span><span class="token operator">+</span>seconds<span class="token operator">+</span><span class="token string">"秒"</span><span class="token operator">+</span>day<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220316072127709.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220316072127709.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220316072127709"></p>
+</li>
+<li><p>对于getDay()方法，星期天是数字0，为了避免0的出现，以及更加符合我们的逻辑，解决办法：switch语句。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> day <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>day<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">switch</span> <span class="token punctuation">(</span>day<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">case</span> <span class="token number">0</span><span class="token operator">:</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期天"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期一"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期二"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期三"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">4</span><span class="token operator">:</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期四"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">5</span><span class="token operator">:</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期五"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">6</span><span class="token operator">:</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"星期六"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>打印时间</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//1999年1月1日 2点3分4秒</span>
+<span class="token class-name">Date</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token function">setYear</span><span class="token punctuation">(</span><span class="token number">99</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//1900+99 = 1999</span>
+date<span class="token punctuation">.</span><span class="token function">setMonth</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token function">setHours</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token function">setMinutes</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token function">setSeconds</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//Fri Jan 01 02:03:04 CST 1999</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><code>long l = date.getTime();</code>是指当前的时刻距离1970年1月1日0点0分0秒的毫秒数。一般用来计算完成工作的时间。</p>
+</li>
+</ul>
+<h3 id="SimpleDateFormat类"><a href="#SimpleDateFormat类" class="headerlink" title="SimpleDateFormat类"></a>SimpleDateFormat类</h3><p>对于上面的打印时间，还不能以我们中国人的思维表现出来，此时SimpleDateFormat类日期格式类就帮我们解决这种问题。</p>
+<ul>
+<li><p>DateFormat是日期/时间格式化抽象类。</p>
+</li>
+<li><p>SimpleDateFormat类：日期/时间格式化子类，继承DateFormat类。</p>
+<ul>
+<li><p><code>String str = sdf.format(date);</code></p>
+<p>1、先创建SimpleDateFormat对象，指定转换的格式(pattern)，如<code>“yyyy-MM-dd hh:mm:ss”</code></p>
+<p>2、将date时间转换字符串的方法<code>format(date);</code></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">SimpleDateFormat</span> sdf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy年MM月dd日 HH点mm分ss秒"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> format <span class="token operator">=</span> sdf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>format<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220315212242297.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220315212242297.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220315212242297"></p>
+</li>
+<li><p><code>Date date = sdf.parse(String str);</code></p>
+<p>1、先创建SimpleDateFormat对象，指定转换的格式(pattern)，如<code>“yyyy-MM-dd hh:mm:ss”</code></p>
+<p>2、将字符串转换date时间的方法<code>parse(str);</code></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//1999年3月4日 17：18：19 转换成英文格式</span>
+<span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token string">"1999年3月4日 17:18:19"</span><span class="token punctuation">;</span>
+<span class="token class-name">SimpleDateFormat</span> sdf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy年MM月dd日 HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">Date</span> date <span class="token operator">=</span> sdf<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//java.text.ParseException</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//Thu Mar 04 17:18:19 CST 1999</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ParseException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>在调用parse方法时，jdk会默认你写错了，抛出ParseException异常。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>格式化字符的含义（api文档解释）</p>
+<p><img src="../../../../Blog_lacal/typora_imgs/image-20220316074914616.png" class="lazyload placeholder" data-srcset="../../../../Blog_lacal/typora_imgs/image-20220316074914616.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220316074914616"></p>
+</li>
+<li><p>小妙招：可以推断出今天是今年的第几天，是第几周</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Date</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">DateFormat</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"今天是今年的第D天,是第W周,本月的第d天,是第w周"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> str1 <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>now<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>now<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220316102830132.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220316102830132.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220316102830132"></p>
+</li>
+</ul>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/tags/%E9%9A%8F%E8%AE%B0/" class="">
-              随记
+            <a href="/tags/Java/" class="">
+              Java
             </a>
           
         </div>
@@ -727,7 +949,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/post/san-yue-sui-ji/" target="_blank" title="三月随记">https://beimumu.xyz/post/san-yue-sui-ji/</a>
+    <a href="/post/java-ji-chu-yu-fa-chang-yong-lei-er/" target="_blank" title="Java基础语法-常用类（二）">https://beimumu.xyz/post/java-ji-chu-yu-fa-chang-yong-lei-er/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -749,18 +971,33 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/pexels.jpg" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/pexels.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-962v6d_960x678.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-962v6d_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/i-i-i-i-deng-zi-zeng-zi-jian-yun-suan-de-qu-bie-ji-lian-xi/" class="post-nav-link">
+    <a href="/post/java-ji-chu-yu-fa-chang-yong-lei-san/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">“i++、i--、++i、--i”等自增自减运算的区别及练习</div>
+        <div class="title-text">Java基础语法-常用类（三）</div>
       </div>
       
       <!-- <div class="content">
-        在做题的过程中遇到后增运算总是想不通，于是自己就动手做了些基础练习题，获得了些感悟。
-自增自减运算1.练习一
-publi
+        15.Math类
+提供一系列静态方法。
+
+
+
+
+操作
+常用方法
+说明
+
+
+
+
+Math.round();
+四舍五入
+
+
+
       </div> -->
     </a>
   </div>
@@ -771,15 +1008,16 @@ publi
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-1kmog9_960x678%20(1).png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-1kmog9_960x678%20(1).png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-wqve97_960x678.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-wqve97_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/java-ji-chu-yu-fa-chang-yong-lei-si/" class="post-nav-link">
+    <a href="/post/java-ji-chu-yu-fa-chang-yong-lei-yi/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Java基础语法-常用类（四）</div>
+        <div class="title-text">Java基础语法-常用类（一）</div>
       </div>
       <!-- <div class="content">
-        
+        13.包装类(Wrapper Class)
+由于Java不是纯面向对象语言，所以Java提供了将八大基本数据类型转换为相
       </div> -->
     </a>
   </div>

@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>三月随记 | 琲木木_blog</title>
+  <title>Java基础语法-常用类（一） | 琲木木_blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -633,21 +633,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://gitee.com/beimumu/img/raw/master/background_img/mei02.jpg')">
+  background-position: center center;position: relative;background-image:url('https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-wqve97_960x678.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        三月随记
+        Java基础语法-常用类（一）
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-03-28 |
+          <i class="fas fa-calendar"></i> 发表于：2020-11-05 |
         </span>
       
 
@@ -655,8 +655,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-detail-header_category">
-              生活
+            <a href="/categories/Java/" class="post-detail-header_category">
+              Java
             </a>
           
         </span>
@@ -665,11 +665,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 439 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 1.4k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 6分钟 |
           </span>
   
           
@@ -696,24 +696,263 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <blockquote>
-<p>“好蓝的天空啊，是青春的蓝，突然，好想去剪个头发~”</p>
-<p>​                                                               ——《刺客伍六七》</p>
+        <h2 id="13-包装类-Wrapper-Class"><a href="#13-包装类-Wrapper-Class" class="headerlink" title="13.包装类(Wrapper Class)"></a>13.包装类(Wrapper Class)</h2><blockquote>
+<p>由于Java不是纯面向对象语言，所以Java提供了<strong>将八大基本数据类型转换为相应的引用数据类型</strong>，即将基本转换为对象。</p>
+<p>其中六个基本数据类型的对象类都继承自Number类（抽象类）。</p>
 </blockquote>
-<p>时间很快，开学也已经快一个月了。刚开始的我做什么事情都有动力、有目标。但我知道时间会慢慢让我颓废下去。可是在假期我成长了许多或者说想明白了些事情，所以这学期我觉得不能在浪荡下去了。开学后，开不完的没有意义的会，听着对我将来毫无用处的话，我在想我脑子是让驴踢了还是让门给挤了。</p>
-<p>本来是想着昨天记录，后来贪玩就推到了今天。昨天我参加了计算机二级。说实话过是有点悬。但我同学也鼓励我说“你才学了多长时间”，想想也是。三天打鱼两天晒网的学习状态和总共刷了三套试题的我怎么反驳？也只能尴尬的笑笑。</p>
-<p>通过昨天考试，我也发现了些问题。对于一些细枝末节的问题也把暴露了出来。接下来的时间就踏踏实实的过基础。昨天还想着长篇大论，现在却屁都想不出来了。</p>
-<p>前几天看《刺客伍六七》，听到片尾曲《我想和你一起去海边》，心就一下子静了下来。就像评论里说“有歌词的是五六七的生活，纯音乐的是自己的生活。”写着随记也就是回顾下自己的生活。</p>
-<p>貌似这一个月我什么都没成功，但是唯一的进步就是上课注意听讲了，愿意坐前面听课了，上课也愿意记笔记了。</p>
-<p>接下来就努力吧！</p>
+<table>
+<thead>
+<tr>
+<th align="center">基本数据类型</th>
+<th align="center">引用数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">boolean</td>
+<td align="center">Boolean</td>
+</tr>
+<tr>
+<td align="center">byte</td>
+<td align="center">Byte</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">Character</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">Short</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">Integer</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">Float</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">Double</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">Long</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//定义包装类</span>
+<span class="token class-name">Integer</span> i <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//java 9后被弃用</span>
+<span class="token class-name">Integer</span> j <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//官方推荐</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//Integer转换int</span>
+<span class="token keyword">int</span> i1 <span class="token operator">=</span> i<span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//显式调用</span>
+<span class="token keyword">int</span> i2 <span class="token operator">=</span> i<span class="token punctuation">;</span><span class="token comment">// 和上面一样(自动拆箱)</span>
+
+<span class="token keyword">double</span> b <span class="token operator">=</span> i<span class="token punctuation">.</span><span class="token function">doubleValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i1<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>i2<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i1 <span class="token operator">==</span> i2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// true</span>
+
+<span class="token comment">//字符串转换自己相应的引用类型</span>
+<span class="token class-name">Integer</span> integer1 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//Integer integer2 = Integer.parseInt("99分");//NumberFormatException异常->数字格式化异常</span>
+<span class="token class-name">Integer</span> integer3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token string">"99"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>integer1<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>integer3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//包装类最大值和最小值的用法</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span><span class="token class-name">Integer</span><span class="token punctuation">.</span>MIN_VALUE<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//2147483647 -2147483648</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-自动装箱和拆箱"><a href="#1-自动装箱和拆箱" class="headerlink" title="1.自动装箱和拆箱"></a>1.自动装箱和拆箱</h3><p>当我们不需要显示数字而显示内容时可以将基本数据类型进行封装。如：填人员系统的年龄时，空白处会显示int封装好后的对象默认值“null“，而不是显示int型的默认值“0”。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">	 <span class="token keyword">int</span>  <span class="token operator">--</span><span class="token operator">-></span>  引用数据类型
+默认： <span class="token number">0</span>          <span class="token keyword">null</span>	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>自动装箱（autoboxing）</p>
+<p>实质就是在JDK内部，自动<strong>将基本数据类型封装成相应的引用类型</strong>，此过程是隐式转换。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Integer</span> i <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token comment">//相当于编译器自动作以下语法翻译</span>
+<span class="token class-name">Integer</span> i <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//调用的是valueOf(10);而不是new Integer(10);</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>自动拆箱（unboxing）</p>
+<p>实质就是在JDK内部，自动<strong>将引用类型封转换成相应的基本数据类型</strong>，此过程是隐式转换。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Integer</span> i <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token punctuation">;</span>
+<span class="token comment">//相当于编译器自动作以下语法翻译</span>
+<span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//先转类型，再赋值。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<blockquote>
+<p>自动装箱和自动拆箱的功能是所谓的”编译器蜜糖(Compoler Sugar)“。</p>
+</blockquote>
+<ul>
+<li><p>在自动拆箱时，会出现空指针异常</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Integer</span> integer4 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> i3 <span class="token operator">=</span> integer4<span class="token punctuation">;</span> <span class="token comment">//NullPointerException异常->空指针异常</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p><strong>字符串转换为对应的类型</strong>：每种包装类型，都有对应的静态方法，可以将字符串类型转换为自己对应的类型。</p>
+<ul>
+<li><p><code>基本数据类型【包装类型】 变量名 = 包装类型.parse包装类型();</code></p>
+<blockquote>
+<p>返回的是基本数据类型，也可以是相应的引用类型。</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> a <span class="token operator">=</span> <span class="token string">"99"</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> b <span class="token operator">=</span> <span class="token string">"1"</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> i1 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token operator">+</span>i1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">String</span> c <span class="token operator">=</span> <span class="token string">"5.5"</span><span class="token punctuation">;</span>
+<span class="token keyword">double</span> d <span class="token operator">=</span> <span class="token class-name">Double</span><span class="token punctuation">.</span><span class="token function">parseDouble</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">String</span> e <span class="token operator">=</span> <span class="token string">"true"</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> f <span class="token operator">=</span> <span class="token class-name">Boolean</span><span class="token punctuation">.</span><span class="token function">parseBoolean</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token comment">//返回Integer类型</span>
+<span class="token class-name">Integer</span> i1 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//返回int型</span>
+<span class="token keyword">int</span> i3 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"111"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Integer</span> i4 <span class="token operator">=</span> i3<span class="token punctuation">;</span><span class="token comment">//Integer i4 = Integer.parseInt("111");</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i4<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//111</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i4 <span class="token operator">==</span> i3<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//tue</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p><code>包装类型 变量名 = 包装类型.valueOf();</code></p>
+<blockquote>
+<p>api文档中：返回一个Integer指定的int值的Integer实例。 如果不需要新的Integer实例，则该方法通常优先于构造函数Integer(int)使用。</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Integer</span> i2 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Double</span> d1 <span class="token operator">=</span> <span class="token class-name">Double</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p>运算问题</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Integer</span> i <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//20，先将Integer类型转为int型，在拆箱在运算。</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>比较问题：包装类与String类类似</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Integer</span> a <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token class-name">Integer</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Integer</span> c <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a <span class="token operator">==</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//false</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b <span class="token operator">==</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//false</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a <span class="token operator">==</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>缓存问题</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Integer</span> c <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span>
+<span class="token class-name">Integer</span> d <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c <span class="token operator">==</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>源码解释：</p>
+<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220314215127445.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220314215127445.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220314215127445"></p>
+<p>对Integer c = 128这种创建方式，如果值在 -128~127之间，这个数字就会出现在常量池(cache[])中。</p>
+<p>超过这个范围，常量池就无法缓存了，这时候，数字就会出现在堆内存(new Integer(i))中。</p>
+</blockquote>
+</li>
+<li><p>包装类最大值和最小值的用法</p>
+<blockquote>
+<p>静态常量 static final</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//2147483647</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">.</span>MIN_VALUE<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//-2147483648</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="2-自定义包装类-练习、无意义"><a href="#2-自定义包装类-练习、无意义" class="headerlink" title="2.自定义包装类(练习、无意义)"></a>2.自定义包装类(练习、无意义)</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//-----------------MyInteger类----------------------</span>
+<span class="token keyword">public</span>  <span class="token keyword">class</span> <span class="token class-name">MyInteger</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">/**
+     * 前5步已经基本完成自定义类的使用，接着就是解决缓存机制的问题
+     */</span>
+    <span class="token comment">//1.封装属性</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> value<span class="token punctuation">;</span>
+    <span class="token comment">//6.定义静态常量，会出现未被初始化</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> LOW<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> HIGH<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">MyInteger</span> cache<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//存放value值</span>
+
+<span class="token comment">//    cache[] = new MyInteger[];</span>
+    <span class="token comment">//添加静态代码块，使在类加载器加载时就可以执行。</span>
+    <span class="token keyword">static</span><span class="token punctuation">&#123;</span>
+
+        <span class="token comment">//7.给未初始化的进行初始化 ???</span>
+        LOW <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">128</span><span class="token punctuation">;</span>
+        HIGH <span class="token operator">=</span> <span class="token number">127</span><span class="token punctuation">;</span>
+        <span class="token comment">//数组里cache[256];</span>
+        cache <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyInteger</span><span class="token punctuation">[</span><span class="token punctuation">(</span>HIGH <span class="token operator">-</span> LOW<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//8.遍历，将数存入数组中</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>LOW<span class="token punctuation">;</span>i <span class="token operator">&lt;=</span> HIGH<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">//内存地址：(索引值,内容),索引值 = i-LOW;</span>
+            cache<span class="token punctuation">[</span>i <span class="token operator">-</span> LOW<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyInteger</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>cache<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//2.构造方法</span>
+    <span class="token keyword">public</span> <span class="token class-name">MyInteger</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//4.创建静态valueOf()方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">MyInteger</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//9.需添加缓存机制，判断是否在数组[-128~127]这个区间</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">>=</span> LOW <span class="token operator">&amp;&amp;</span> value <span class="token operator">&lt;=</span>HIGH<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> cache<span class="token punctuation">[</span>value <span class="token operator">-</span> LOW<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">//超出数组范围，则出现在堆内存中</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MyInteger</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//5.创建intValue()方法 不会了？？？</span>
+    <span class="token comment">/*public int intValue(int value)&#123;
+       return value;
+    &#125;*/</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+       <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">//3.生成toString</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">""</span><span class="token operator">+</span>value <span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//-----------------TestMyInteger类----------------------</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestMyInteger</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+        <span class="token comment">//自动装箱</span>
+        <span class="token class-name">MyInteger</span> i <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyInteger</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">MyInteger</span> j <span class="token operator">=</span> <span class="token class-name">MyInteger</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 私有静态方法</span>
+
+        <span class="token class-name">MyInteger</span> k <span class="token operator">=</span> <span class="token class-name">MyInteger</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 没有toString</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//自动拆箱</span>
+        <span class="token keyword">int</span> i1 <span class="token operator">=</span> j<span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//静态方法</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<ol>
+<li><p>核心词：value、valueOf()、intValue()。</p>
+</li>
+<li><p>在第五步和第七步的理解上还是有些生疏。</p>
+</li>
+<li><p>第五步不太明白传值过程</p>
+</li>
+<li><p>第七步静态常量、数组初始化问题，以及数组cache[]与LOW的对应关系。</p>
+</li>
+</ol>
+</blockquote>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/tags/%E9%9A%8F%E8%AE%B0/" class="">
-              随记
+            <a href="/tags/Java/" class="">
+              Java
             </a>
           
         </div>
@@ -727,7 +966,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/post/san-yue-sui-ji/" target="_blank" title="三月随记">https://beimumu.xyz/post/san-yue-sui-ji/</a>
+    <a href="/post/java-ji-chu-yu-fa-chang-yong-lei-yi/" target="_blank" title="Java基础语法-常用类（一）">https://beimumu.xyz/post/java-ji-chu-yu-fa-chang-yong-lei-yi/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -749,18 +988,19 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/pexels.jpg" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/pexels.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-13grpw_960x678.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-13grpw_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/i-i-i-i-deng-zi-zeng-zi-jian-yun-suan-de-qu-bie-ji-lian-xi/" class="post-nav-link">
+    <a href="/post/java-ji-chu-yu-fa-chang-yong-lei-er/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">“i++、i--、++i、--i”等自增自减运算的区别及练习</div>
+        <div class="title-text">Java基础语法-常用类（二）</div>
       </div>
       
       <!-- <div class="content">
-        在做题的过程中遇到后增运算总是想不通，于是自己就动手做了些基础练习题，获得了些感悟。
-自增自减运算1.练习一
-publi
+        14.枚举类
+枚举（enum），是一个特殊的类。
+
+枚举值：静态常量，即public static final，需要大写
       </div> -->
     </a>
   </div>
@@ -771,15 +1011,19 @@ publi
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-1kmog9_960x678%20(1).png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-1kmog9_960x678%20(1).png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/pexels-steve-johnson-1930310.jpg" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/pexels-steve-johnson-1930310.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/java-ji-chu-yu-fa-chang-yong-lei-si/" class="post-nav-link">
+    <a href="/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-wu/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Java基础语法-常用类（四）</div>
+        <div class="title-text">Java基础语法_面向对象（五）</div>
       </div>
       <!-- <div class="content">
-        
+        11.抽象类
+抽象：就是将一组数据中相似的、共同的属性抽取出来。
+
+1.抽象方法
+用关键字abstract来修饰，只有声
       </div> -->
     </a>
   </div>

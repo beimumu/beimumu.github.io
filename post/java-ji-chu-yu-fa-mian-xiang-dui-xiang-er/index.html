@@ -665,7 +665,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 3k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 3.1k |
           </span>
   
           <span class="min2read">
@@ -1054,7 +1054,7 @@ c<span class="token operator">=</span><span class="token string">"abd"</span><sp
 </blockquote>
 </li>
 </ul>
-<h3 id="3-构造方法"><a href="#3-构造方法" class="headerlink" title="3.构造方法"></a>3.构造方法</h3><ol>
+<h3 id="3-构造方法-构造器-constructor"><a href="#3-构造方法-构造器-constructor" class="headerlink" title="3.构造方法(构造器 constructor)"></a>3.构造方法(构造器 constructor)</h3><ol>
 <li><p>语法规则</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">访问修饰符 方法名（与类名相同）<span class="token punctuation">&#123;</span>
     
@@ -1070,7 +1070,10 @@ c<span class="token operator">=</span><span class="token string">"abd"</span><sp
 </li>
 <li><p>构造方法可以重载，可以有：无参数的构造方法，也可以有带参数的构造方法。</p>
 </li>
-<li><p>构造方法的主要作用：<font color='#ff0000'>给属性赋合适的初值</font>。</p>
+<li><p>构造方法的主要作用：<font color='#ff0000'>给属性赋合适的初值</font>，而不是创建对象。</p>
+<blockquote>
+<p>装修毛坯房：装修工（构造器）进行装修房子（对象），房子你已经买了，装修工只负责装修，不负责买房。</p>
+</blockquote>
 </li>
 <li><p>举例</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span><span class="token keyword">int</span> legCount<span class="token punctuation">,</span><span class="token class-name">String</span> color<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -1078,7 +1081,7 @@ c<span class="token operator">=</span><span class="token string">"abd"</span><sp
     <span class="token keyword">this</span><span class="token punctuation">.</span>legCount <span class="token operator">=</span> legCount<span class="token punctuation">;</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> color<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
-
+<span class="token comment">//初始化对象，即创建对象后，调用有参构造方法给b进行赋初值。</span>
 <span class="token class-name">Animal</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token string">"奶酪"</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">"黄色"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
@@ -1087,6 +1090,7 @@ c<span class="token operator">=</span><span class="token string">"abd"</span><sp
 <p>2.在堆中给属性开辟空间。</p>
 <p>3.调用构造方法。如果调用的是带参的构造方法，把传进来的参数，挨个的赋值到堆中的属性上。</p>
 <p>4.让栈中的引用变量，指向堆中的对象。</p>
+<p>其中，<strong>1、2创建对象实例化的过程，3、4初始化的过程</strong>。</p>
 </blockquote>
 </li>
 <li><p>每一个类，如果你没有声明任何的构造方法，那么JVM会默认帮你生成一个公有的无参的构造方法。并且创建对象的时候，会自动去调用它。如果你在类中声明了构造方法，那么JVM就不会再帮你生成任何构造方法了。</p>
@@ -1099,6 +1103,9 @@ c<span class="token operator">=</span><span class="token string">"abd"</span><sp
 <li>调用上。普通方法可以用对象来调用。构造方法只能在创建对象的对象使用new操作符来调用。</li>
 <li>每次构造方法被执行，都会有一个对象被创建。普通方法可以使用对象进行无限次的调用。</li>
 </ol>
+</li>
+<li><p>创建对象的步骤</p>
+<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220309103448557.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220309103448557.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220309103448557"></p>
 </li>
 </ol>
 <h3 id="4-toString-方法"><a href="#4-toString-方法" class="headerlink" title="4.toString()方法"></a>4.toString()方法</h3><ul>
