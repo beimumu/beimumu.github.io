@@ -665,11 +665,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 361 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 971 |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 1分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 4分钟 |
           </span>
   
           
@@ -696,7 +696,7 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="15-Math类"><a href="#15-Math类" class="headerlink" title="15.Math类"></a>15.Math类</h2><blockquote>
+        <h2 id="16-Math类"><a href="#16-Math类" class="headerlink" title="16.Math类"></a>16.Math类</h2><blockquote>
 <p>提供一系列静态方法。</p>
 </blockquote>
 <table>
@@ -792,7 +792,7 @@
 <span class="token keyword">double</span> random <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>random<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="16-Random类"><a href="#16-Random类" class="headerlink" title="16.Random类"></a>16.Random类</h2><blockquote>
+<h2 id="17-Random类"><a href="#17-Random类" class="headerlink" title="17.Random类"></a>17.Random类</h2><blockquote>
 <p>专门用来生成随机数。</p>
 </blockquote>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Random</span> ran <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -812,6 +812,135 @@
 <span class="token comment">//随机生成[0,1)的数</span>
 <span class="token keyword">double</span> d <span class="token operator">=</span> ran<span class="token punctuation">.</span><span class="token function">nextDouble</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="18-StringBuffer类和StringBuilder类"><a href="#18-StringBuffer类和StringBuilder类" class="headerlink" title="18.StringBuffer类和StringBuilder类"></a>18.StringBuffer类和StringBuilder类</h2><ul>
+<li><p>String代表不可变的Unicode字符序列，而StringBuffer和StringBuilder代表可变的字符序列。</p>
+<blockquote>
+<p>可变不可变取决于final。</p>
+<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220316170124722.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220316170124722.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220316170124722"></p>
+</blockquote>
+</li>
+<li><p>StringBuffer和StringBuilder区别</p>
+<ul>
+<li>StringBuffer：线程安全（有关键字<code>synchronized</code>，做线程同步检查），效率低。</li>
+<li>StringBuilder：线程不安全，效率高。</li>
+<li>都继承于AbstractStringBuilder类，所以二者用法和方法上都基本一样，但我们主用StringBuilder。</li>
+</ul>
+</li>
+<li><p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>常用方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>append();</td>
+<td>追加字符串</td>
+</tr>
+<tr>
+<td>delete(int start,int end);</td>
+<td>删除字符串[start,end)</td>
+</tr>
+<tr>
+<td>deleteCharAt(int index);</td>
+<td>删除指定索引处的字符串</td>
+</tr>
+<tr>
+<td>insert(int offset,int i);</td>
+<td>指定位置插入字符串</td>
+</tr>
+<tr>
+<td>reverse();</td>
+<td>逆序字符串内容</td>
+</tr>
+<tr>
+<td>length();</td>
+<td>获取字符串长度，返回int</td>
+</tr>
+<tr>
+<td>capacity();</td>
+<td>获取字符串(底层为字符数组)的容量，默认容量为16，返回int</td>
+</tr>
+<tr>
+<td>toString();</td>
+<td>将StringBuilder转换为Sting对象</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>练习</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> str<span class="token punctuation">;</span> <span class="token comment">//private final char value[];</span>
+<span class="token class-name">StringBuffer</span> sbf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//private transient char[] toStringCache;</span>
+<span class="token class-name">StringBuilder</span> sbl <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//append(),追加字符串</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sbf<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"java"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//hellojava</span>
+
+<span class="token comment">//delete(int start,int end),删除字符串[start,end)</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sbf<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//helava</span>
+
+<span class="token comment">//deleteCharAt(int index),删除指定索引处的字符串</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sbf<span class="token punctuation">.</span><span class="token function">deleteCharAt</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//heava</span>
+
+<span class="token comment">//insert(int offset,int i),指定位置插入字符串</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sbf<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token string">"你好"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//heava你好</span>
+
+<span class="token comment">//reverse(),逆序字符串内容</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sbf<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//好你avaeh</span>
+
+<span class="token comment">//length(),获取字符串长度，返回int</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sbf<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//7</span>
+
+<span class="token comment">//capacity(),获取字符串(底层为字符数组)的容量，默认容量为16，返回int</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sbf<span class="token punctuation">.</span><span class="token function">capacity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//21</span>
+
+<span class="token comment">//toString(),将StringBuilder转换为Sting对象</span>
+<span class="token class-name">String</span> string <span class="token operator">=</span> sbf<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>注意：</p>
+<p>1、方法执行完毕，return this;即方法返回自身。所以每次可以追加“点”+方法继续调用。这点是与String不同的。</p>
+<p>2、String不可变序列，所以只能初始化一次，内容就不能改变，而StringBuilder不同，在很大程度上后者节省时空上的效率。</p>
+</blockquote>
+</li>
+<li><p>字符序列陷阱之时空效率测试</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">long</span> num1 <span class="token operator">=</span> <span class="token class-name">Runtime</span><span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">freeMemory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//获取系统剩余内存</span>
+<span class="token keyword">long</span> time1 <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//获取系统当前时间</span>
+
+<span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> <span class="token number">5000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    str <span class="token operator">=</span> str <span class="token operator">+</span> i<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">long</span> num2 <span class="token operator">=</span> <span class="token class-name">Runtime</span><span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">freeMemory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">long</span> time2 <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"String的内存占用:"</span><span class="token operator">+</span><span class="token punctuation">(</span>num1 <span class="token operator">-</span> num2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"String的时间占用:"</span><span class="token operator">+</span><span class="token punctuation">(</span>time2 <span class="token operator">-</span> time1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">long</span> num3 <span class="token operator">=</span> <span class="token class-name">Runtime</span><span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">freeMemory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">long</span> time3 <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">StringBuilder</span> sbd <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> <span class="token number">5000</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    sbd<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">long</span> num4 <span class="token operator">=</span> <span class="token class-name">Runtime</span><span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">freeMemory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">long</span> time4 <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"StringBuilder的内存占用:"</span><span class="token operator">+</span><span class="token punctuation">(</span>num3 <span class="token operator">-</span> num4<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"StringBuilder的时间占用:"</span><span class="token operator">+</span><span class="token punctuation">(</span>time4 <span class="token operator">-</span> time3<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220316183321033.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220316183321033.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220316183321033"></p>
+</li>
+</ul>
+
       </div>
       <div class="post-tags-categories">
         
