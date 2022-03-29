@@ -633,7 +633,7 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://gitee.com/beimumu/img/raw/master/background_img/alphabe.jpg')">
+  background-position: center center;position: relative;background-image:url('https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/alphabe.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
@@ -714,7 +714,7 @@
 </li>
 </ol>
 <p>以上两步完成后在<code>~/.ssh</code>文件中出现:</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/typora/image-20200906101335625.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/typora/image-20200906101335625.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906101335625"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906101335625.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906101335625.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906101335625"></p>
 <ol start="3">
 <li><p>创建config文件避免ssh冲突</p>
 <p>在<code>~/.ssh</code>文件夹下新建<code>config</code>文件，在里面添加以下内容</p>
@@ -739,11 +739,11 @@ IdentityFile ~/.ssh/github_id_rsa
 <li><p>执行<code>ssh -T git@gitee.com</code>,接着会让选择yes ，最后出现<code>successfully</code>,则gitee配置成功。</p>
 </li>
 </ul>
-<p><img src="https://gitee.com/beimumu/img/raw/master/typora/image-20200906102426599.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/typora/image-20200906102426599.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906102426599"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906102426599.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906102426599.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906102426599"></p>
 </li>
 </ol>
 <p>以上工作全部完成后在<code>~/.ssh</code>文件下见到</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/typora/image-20200906103022196.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/typora/image-20200906103022196.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906103022196"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906103022196.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906103022196.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906103022196"></p>
 <h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>创建前需要提前说一下在此过程问题诸多，按照步骤一步一步来。闲言少叙，走起。</p>
 <ol>
 <li><p>在gitee上创建一个仓库。</p>
@@ -751,32 +751,32 @@ IdentityFile ~/.ssh/github_id_rsa
 <li><p>使用<code>git cine [url]</code>克隆到本地。</p>
 </li>
 <li><p>在github上创建一个与gitee和本地仓库名字相同的空仓库。创建仓库时不要勾选这些：</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/typora/image-20200906104936144.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/typora/image-20200906104936144.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906104936144"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906104936144.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906104936144.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906104936144"></p>
 </li>
 </ol>
 <p>==tips：如果以3步没弄正确则会遇到git push报错error: failed to push some refs to：的问题==</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/typora/image-20200906103900473.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/typora/image-20200906103900473.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906103900473"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906103900473.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906103900473.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906103900473"></p>
 <p>这就是在push过程中本地仓库和远程仓库二者间内容没有联系。问题改了之后，命令<code>git push github master</code>，下图为成功。</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/typora/image-20200906110724725.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/typora/image-20200906110724725.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906110724725"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906110724725.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906110724725.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906110724725"></p>
 <ol start="4">
 <li><p>在命令<code>git push github master</code>后还会出现==git push报错fatal: HttpRequestException encountered.的问题==</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/typora/image-20200906112156662.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/typora/image-20200906112156662.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906112156662"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906112156662.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906112156662.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906112156662"></p>
 </li>
 </ol>
 <p>在网上查了下原因：出现该提示信息的主要原因是Github禁用了TLS v1.0 and v1.1这种弱加密标准，此时需要手动更新Windows的git凭证管理器，更新方式很简单，在网站下载Git在Window上的凭证管理器并默认安装即可。</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/microsoft/Git-Credential-Manager-for-Windows/releases/tag/1.20.0">https://github.com/microsoft/Git-Credential-Manager-for-Windows/releases/tag/1.20.0</a></li>
 </ul>
-<p><img src="https://gitee.com/beimumu/img/raw/master/typora/image-20200906112905817.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/typora/image-20200906112905817.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906112905817"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906112905817.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906112905817.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906112905817"></p>
 <p>两个报错解决后，则可以：</p>
 <ol>
 <li>上传到GitHub：<code>git push github master</code></li>
 </ol>
-<p><img src="https://gitee.com/beimumu/img/raw/master/typora/image-20200906114322520.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/typora/image-20200906114322520.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906114322520"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906114322520.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906114322520.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906114322520"></p>
 <ol start="2">
 <li>上传到Gitee：<code>git push gitee master</code></li>
 </ol>
-<p><img src="https://gitee.com/beimumu/img/raw/master/typora/image-20200906114924463.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/typora/image-20200906114924463.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906114924463"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906114924463.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/typora/image-20200906114924463.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20200906114924463"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是我学习git部署过程中所遇到的问题。遇到都已解决，而未遇到的问题以后再说。在这其中也让我再一次熟悉了git基本命令和自主学习能力，即不会就自己动手查阅资料和请教他人。虽然自主学习过程中有些坎坷但是解决后是无比的开心和满足。</p>
 
       </div>
@@ -788,12 +788,12 @@ IdentityFile ~/.ssh/github_id_rsa
               Git命令
             </a>
           
-            <a href="/tags/Gitee/" class="">
-              Gitee
-            </a>
-          
             <a href="/tags/GitHub/" class="">
               GitHub
+            </a>
+          
+            <a href="/tags/Gitee/" class="">
+              Gitee
             </a>
           
         </div>
@@ -829,7 +829,7 @@ IdentityFile ~/.ssh/github_id_rsa
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/1002.jpg" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/1002.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/1002.jpg" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/1002.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
     <a href="/post/java-liu-cheng-kong-zhi-scanner-dui-xiang/" class="post-nav-link">
       <div class="title">
@@ -850,7 +850,7 @@ IdentityFile ~/.ssh/github_id_rsa
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/sportive.jpg" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/sportive.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/sportive.jpg" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/sportive.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
     <a href="/post/java-ji-chu-yu-fa/" class="post-nav-link">
       <div class="title">

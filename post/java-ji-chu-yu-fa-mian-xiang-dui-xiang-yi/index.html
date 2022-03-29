@@ -633,7 +633,7 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-72rxqo_960x678.png')">
+  background-position: center center;position: relative;background-image:url('https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-72rxqo_960x678.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
@@ -748,7 +748,7 @@
 </ol>
 <p>特点：这样我们就可以通过stu这个变量来找到堆内存中的这个对象，也可以通过stu改变堆内存中属性的值。</p>
 <p><font color = "ff0000">注：每创建一个对象，在堆中内存就会开辟一个内存空间，而在方法区的内存只占一份。</font>在方法区中，哪个对象调用方法，这个方法就有调用他的对象的属性。举例：磨坊磨小麦。</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211002180955452.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211002180955452.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002180955452"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002180955452.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002180955452.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002180955452"></p>
 <ul>
 <li><p>创建学生类</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">&#123;</span>
@@ -787,7 +787,7 @@
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>运行图如下：</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211002181419579.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211002181419579.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002181419579"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002181419579.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002181419579.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002181419579"></p>
 </li>
 </ul>
 <h2 id="5-方法的定义"><a href="#5-方法的定义" class="headerlink" title="5.方法的定义"></a>5.方法的定义</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">访问修饰符 返回值类型 方法名（参数列表）<span class="token punctuation">&#123;</span>
@@ -824,18 +824,18 @@
 <li><p>如果方法有返回值，方法体中必须使用关键字<code>return</code>返回该值，返回值类型为该方法所定义的返回值类型。</p>
 </li>
 <li><p>调用此方法时，可以声明一个变量来接收此方法的返回结果。</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211002215934037.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211002215934037.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002215934037"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002215934037.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002215934037.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002215934037"></p>
 <p>在返回值类型为String的方法下会报错（丢失返回值语句），即需要我们写一个返回String类型的结果。代码：<code>return &quot;这是String类型的返回结果&quot;;</code></p>
    <pre class="line-numbers language-java" data-language="java"><code class="language-java">stu<span class="token punctuation">.</span><span class="token function">aaa</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stu<span class="token punctuation">.</span><span class="token function">aaa</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211002220859450.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211002220859450.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002220859450"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002220859450.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002220859450.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002220859450"></p>
 <p>如上图所示：调用aaa()方法，不会返回String类型的结果。</p>
 <p>而输出打印aaa()方法的话，不仅会有aaa()方法的输出语句，还会有其String类型的返回结果。</p>
    <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> res <span class="token operator">=</span> stu<span class="token punctuation">.</span><span class="token function">aaa</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211002222252672.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211002222252672.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002222252672"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002222252672.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002222252672.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002222252672"></p>
 <p>如上图所示：声明一个String类型的<code>res</code>变量，用来接收aaa()方法的返回结果。</p>
 <blockquote>
 <p>注：用户是否能接受到返回信息取决于是否需要给用户返回一个结果，而是否需要给用户返回一个结果取决于是否需要设置一个<code>res</code>(”结果“的变量)。</p>
@@ -869,17 +869,17 @@
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211002225545303.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211002225545303.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002225545303"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002225545303.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002225545303.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002225545303"></p>
 <p>如果是这样，则没有返回的字符串，因为我们没有设置返回结果的变量，只是调用了suanMing()方法，并没有选择去接收我们return的结果。</p>
    <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> res <span class="token operator">=</span> jud<span class="token punctuation">.</span><span class="token function">suanMing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211002225230631.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211002225230631.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002225230631"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002225230631.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002225230631.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002225230631"></p>
 <p>设置一个返回结果的变量，输出就没毛病了。</p>
    <pre class="line-numbers language-java" data-language="java"><code class="language-java">jud<span class="token punctuation">.</span><span class="token function">suanMing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>jud<span class="token punctuation">.</span><span class="token function">suanMing</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211002230034718.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211002230034718.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002230034718"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002230034718.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211002230034718.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211002230034718"></p>
 <p>显然，这种输出方式使同一个语句出现两次重复了。</p>
 <p>   <strong>总结</strong>：可以想到上网购物下单成功后给你提供一个“下单成功”的返回结果。</p>
 <ol start="3">
@@ -975,7 +975,7 @@
 <li><p>方法的<strong>重载</strong>(overload)：方法名相同，参数列表不同的一组方法。与返回值无关。（即：**<font color = #ff0000>同一个类中</font>**，同名不同参），同一个类中的方法就可以同时存在。</p>
 <blockquote>
 <p>典型应用：构造方法重载、<code>System.out.printlln();</code></p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220208170336229.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220208170336229.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220208170336229"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220208170336229.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220208170336229.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220208170336229"></p>
 </blockquote>
 </li>
 <li><p>变量的作用域：</p>
@@ -1035,13 +1035,13 @@ va<span class="token punctuation">.</span><span class="token function">updateVal
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>account<span class="token punctuation">.</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//"123"</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>account<span class="token punctuation">.</span>yu_money<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//123</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>值传递模型</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/%E5%80%BC%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/%E5%80%BC%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="值传递模型"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/%E5%80%BC%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/%E5%80%BC%E4%BC%A0%E9%80%92%E6%A8%A1%E5%9E%8B.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="值传递模型"></p>
 </li>
 </ul>
 </li>
 <li><p><font color ="#ff0000"><strong>Java对象的内存管理机制</strong></font></p>
 <p>首先回顾下Java内存的模型：</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211107151323013.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211107151323013.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211107151323013"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211107151323013.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211107151323013.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211107151323013"></p>
 <ol>
 <li>使用new创建对象，则会在堆内存中开辟新的空间和初始化。</li>
 <li>方法执行完毕返回，栈内存自动释放，局部变量销毁（此时堆中的对象还存在，只是没有任何变量来指向这个对象）。</li>
@@ -1099,7 +1099,7 @@ va<span class="token punctuation">.</span><span class="token function">updateVal
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-8oky1j_960x678.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-8oky1j_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-8oky1j_960x678.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-8oky1j_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
     <a href="/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-er/" class="post-nav-link">
       <div class="title">
@@ -1122,7 +1122,7 @@ va<span class="token punctuation">.</span><span class="token function">updateVal
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-m91yg1_960x678.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-m91yg1_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-m91yg1_960x678.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-m91yg1_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
     <a href="/post/java-shu-zu/" class="post-nav-link">
       <div class="title">

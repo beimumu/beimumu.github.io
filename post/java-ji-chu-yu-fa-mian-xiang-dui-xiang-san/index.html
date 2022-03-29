@@ -633,7 +633,7 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-e76pew_960x678.png')">
+  background-position: center center;position: relative;background-image:url('https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-e76pew_960x678.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
@@ -719,20 +719,20 @@
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>运行结果：</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211108163350623.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211108163350623.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211108163350623"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211108163350623.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211108163350623.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211108163350623"></p>
 <blockquote>
 <p>从运行结果看：静态变量确实被本类的所有对象共享。</p>
 </blockquote>
 </li>
 <li><p>内存原理：</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211108170242148.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211108170242148.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211108170242148"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211108170242148.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211108170242148.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211108170242148"></p>
 </li>
 <li><p>static可以修饰方法，被static修饰的方法称之为静态方法。静态方法可以使用<code>类名.方法名</code>直接调用。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Student</span><span class="token punctuation">.</span><span class="token function">attendClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>static可以用来修饰代码块，被static修饰的代码块称之为静态代码块，静态代码块在当前类被加载进内存的时候就会执行，并且整个程序运行期间，<font color = "#ff0000">先于<strong>main()方法</strong>之前执行，只执行一次。</font>主要作用：<strong>给静态变量初始化</strong>。</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220208154128630.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220208154128630.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220208154128630"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220208154128630.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220208154128630.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220208154128630"></p>
 <p>运行结果：</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220208154336587.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220208154336587.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220208154336587"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220208154336587.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220208154336587.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220208154336587"></p>
 <blockquote>
 <p>可以看出：静态代码块优先于主方法（静态方法和构造方法），最先被执行。</p>
 <ul>
@@ -747,11 +747,11 @@
 <li><p>静态方法内不能直接调用非静态的成员(实例属性、实例方法)。</p>
 <ul>
 <li><p>当为普通方法时，方法间可以相互调用：</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211108170743959.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211108170743959.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211108170743959"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211108170743959.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211108170743959.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211108170743959"></p>
 </li>
 <li><p>当被static修饰了之后，实例成员就不能被静态方法所调用。</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211108172148123.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211108172148123.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211108172148123"></p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211108173352077.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211108173352077.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211108173352077"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211108172148123.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211108172148123.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211108172148123"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211108173352077.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211108173352077.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211108173352077"></p>
 <p>如图：出现报错(<code>Non-static 方法 &#39;exam()&#39; cannot be referenced from a static context</code>)。</p>
 <p>因为在JVM给静态方法分配内存时，此时的非静态变量和方法还没有出现。</p>
 </li>
@@ -795,8 +795,8 @@
 <p>解析：因为在类中的实例方法创建后，由于对象已经私有化，外界访问不到，所以我们需要将实例方法变成静态方法。这样<strong>外界就可以通过方法来创建对象</strong>。</p>
 </blockquote>
 <p>如下图所示：</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211110164027651.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211110164027651.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211110164027651"></p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211110164055163.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211110164055163.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211110164055163"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211110164027651.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211110164027651.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211110164027651"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211110164055163.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211110164055163.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211110164055163"></p>
 <blockquote>
 <p>通过运行结果可以发现，创建的三个对象的内存地址是一样的，可以得出结论，<strong>外界创建的对象是同一个</strong>，即完成了类中只有一个实例。</p>
 </blockquote>
@@ -842,7 +842,7 @@
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
-<h2 id="8-继承"><a href="#8-继承" class="headerlink" title="8.继承"></a>8.继承</h2><p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211110173932703.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211110173932703.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211110173932703"></p>
+<h2 id="8-继承"><a href="#8-继承" class="headerlink" title="8.继承"></a>8.继承</h2><p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211110173932703.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211110173932703.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211110173932703"></p>
 <h3 id="1-子类与父类的关系"><a href="#1-子类与父类的关系" class="headerlink" title="1.子类与父类的关系"></a>1.子类与父类的关系</h3><ul>
 <li>is-a ：意味 “子类是一个父类的…”。</li>
 <li>父类更抽象，更普通；子类更具体，更特殊。例：车-汽车，自行车，电动车。</li>
@@ -854,7 +854,7 @@
 <li>每当有子类对象被创建的时候，都会先创建一个父类对象（创建的子类对象中，有父类对象存在）。</li>
 <li>每当执行子类代码时，也会先进行父类的构造方法，在进行子类的构造方法。</li>
 </ul>
-<h3 id="3-继承的模型图"><a href="#3-继承的模型图" class="headerlink" title="3.继承的模型图"></a>3.继承的模型图</h3><p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211110190740255.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211110190740255.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211110190740255"></p>
+<h3 id="3-继承的模型图"><a href="#3-继承的模型图" class="headerlink" title="3.继承的模型图"></a>3.继承的模型图</h3><p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211110190740255.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211110190740255.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211110190740255"></p>
 <h3 id="4-关键字this和super的区别"><a href="#4-关键字this和super的区别" class="headerlink" title="4.关键字this和super的区别"></a>4.关键字this和super的区别</h3><table>
 <thead>
 <tr>
@@ -897,20 +897,20 @@ stu<span class="token punctuation">.</span><span class="token function">attendCl
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stu<span class="token punctuation">.</span>gradeClss<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stu<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220212142649616.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220212142649616.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220212142649616"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220212142649616.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220212142649616.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220212142649616"></p>
 <blockquote>
 <p>由上图可知，因为没有生成<code>toSting();</code>方法，所以不能直接打印对象。</p>
 </blockquote>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220212143807645.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220212143807645.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220212143807645"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220212143807645.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220212143807645.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220212143807645"></p>
 <blockquote>
 <p>由上图可知，student中没有生成有参的构造函数，</p>
 <p>只有子类先生成父类的有参构造函数后，子类的构造函数里才会有父类的属性。</p>
 </blockquote>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220212144807881.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220212144807881.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220212144807881"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220212144807881.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220212144807881.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220212144807881"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Student</span> stu1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"李四"</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">,</span><span class="token string">"1002"</span><span class="token punctuation">,</span><span class="token string">"三年二班"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stu1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20220212145019645.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20220212145019645.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220212145019645"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220212145019645.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220212145019645.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220212145019645"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//Person类</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
     <span class="token class-name">String</span> name<span class="token punctuation">;</span> <span class="token comment">//姓名</span>
@@ -968,7 +968,7 @@ stu<span class="token punctuation">.</span><span class="token function">attendCl
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20211110202045322.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20211110202045322.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211110202045322"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211110202045322.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20211110202045322.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20211110202045322"></p>
 <blockquote>
 <p>运行结果也证实执行子类构造方法前会先执行父类的构造方法。</p>
 </blockquote>
@@ -1157,7 +1157,7 @@ stu<span class="token punctuation">.</span><span class="token function">attendCl
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-y8e89k_960x678.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-y8e89k_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-y8e89k_960x678.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-y8e89k_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
     <a href="/post/html-css-shi-li-lian-xi/" class="post-nav-link">
       <div class="title">
@@ -1177,7 +1177,7 @@ stu<span class="token punctuation">.</span><span class="token function">attendCl
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-8oky1j_960x678.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-8oky1j_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-8oky1j_960x678.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-8oky1j_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
     <a href="/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-er/" class="post-nav-link">
       <div class="title">

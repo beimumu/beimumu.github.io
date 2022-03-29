@@ -633,7 +633,7 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-m91yg1_960x678.png')">
+  background-position: center center;position: relative;background-image:url('https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-m91yg1_960x678.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
@@ -830,7 +830,7 @@ score <span class="token operator">=</span> <span class="token keyword">new</spa
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>分析如图所示：</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20210429180545963.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20210429180545963.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20210429180545963"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20210429180545963.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20210429180545963.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20210429180545963"></p>
 <p><strong>注</strong>：但是在数组元素进行颠倒时，如果用<code>i&lt;arr.length</code>判断：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>j <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">,</span>j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -842,7 +842,7 @@ score <span class="token operator">=</span> <span class="token keyword">new</spa
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>三角替换会出现替换2次，就导致顺序没变。结果如图：</p>
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20210429173104779.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20210429173104779.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20210429173104779"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20210429173104779.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20210429173104779.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20210429173104779"></p>
 </li>
 <li><p><strong>冒泡排序</strong>(Bubble Sort)，是一种计算机科学领域的较简单的排序算法。重复地走访要排序的元素，依次比较两个相邻的元素，如果顺序错误就把他们交换过来,直到所有元素有序。将最大的数沉到最底下 ,等到下一轮就是数组总数少1。其中，==排序次数=数组总数-1==。在写算法的过程中：先写出一轮的排序，再把一轮的放入到总的循环里。算法优化：在内层循环中判断条件比外层循环少1，即：==内层&lt;外层-1==。</p>
 <ul>
@@ -908,7 +908,7 @@ score <span class="token operator">=</span> <span class="token keyword">new</spa
 <span class="token comment">//3、数据类型 [][] 数组名 = &#123;&#123;元素1,元素2,...&#125;,&#123;元素1,元素2,...&#125;,...&#125;;</span>
 <span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://gitee.com/beimumu/img/raw/master/java/image-20210718165205932.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/java/image-20210718165205932.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20210718165205932"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20210718165205932.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20210718165205932.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20210718165205932"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//如果要抓取数字2，则需要进行下标检索。</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -1010,7 +1010,7 @@ score <span class="token operator">=</span> <span class="token keyword">new</spa
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-72rxqo_960x678.png" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/wallhaven-72rxqo_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-72rxqo_960x678.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-72rxqo_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
     <a href="/post/java-ji-chu-yu-fa-mian-xiang-dui-xiang-yi/" class="post-nav-link">
       <div class="title">
@@ -1034,7 +1034,7 @@ score <span class="token operator">=</span> <span class="token keyword">new</spa
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://gitee.com/beimumu/img/raw/master/background_img/roman-mager-oHrodCLNnU8-unsplash.jpg" class="lazyload placeholder" data-srcset="https://gitee.com/beimumu/img/raw/master/background_img/roman-mager-oHrodCLNnU8-unsplash.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/roman-mager-oHrodCLNnU8-unsplash.jpg" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/roman-mager-oHrodCLNnU8-unsplash.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
     <a href="/post/java-liu-cheng-kong-zhi-xun-huan-jie-gou-er/" class="post-nav-link">
       <div class="title">
