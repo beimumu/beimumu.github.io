@@ -1585,7 +1585,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   text-align: center;
   line-height: 20px;
   font-weight: bold;
-  font-family: 'Font Awesome 5 Pro';
+  font-family: 'Font Awesome 6 Free';
   font-weight: 600;
   font-size: 14px;
 }
@@ -4748,7 +4748,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   position: relative;
 }
 .note::before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Free";
   font-weight: 600;
 }
 .note.warning {
