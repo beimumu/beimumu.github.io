@@ -6,7 +6,7 @@
   <link href="https://beimumu.xyz/atom.xml" rel="self"/>
   
   <link href="https://beimumu.xyz/"/>
-  <updated>2022-06-28T14:44:15.824Z</updated>
+  <updated>2022-07-14T11:04:53.456Z</updated>
   <id>https://beimumu.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://beimumu.xyz/post/jdbc-lian-jie-shu-ju-ku/"/>
     <id>https://beimumu.xyz/post/jdbc-lian-jie-shu-ju-ku/</id>
     <published>2022-06-28T14:42:56.000Z</published>
-    <updated>2022-06-28T14:44:15.824Z</updated>
+    <updated>2022-07-14T11:04:53.456Z</updated>
     
     
       
@@ -172,9 +172,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
-    
     <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
@@ -253,9 +253,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
-    
     <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
@@ -308,9 +308,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
-    
     <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+    <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
     
   </entry>
   
@@ -342,11 +342,11 @@
   </entry>
   
   <entry>
-    <title>Java基础语法-泛型）</title>
+    <title>Java基础语法-泛型</title>
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-fan-xing/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-fan-xing/</id>
     <published>2020-11-22T04:51:56.000Z</published>
-    <updated>2022-03-29T03:34:22.755Z</updated>
+    <updated>2022-07-14T10:55:49.286Z</updated>
     
     
       

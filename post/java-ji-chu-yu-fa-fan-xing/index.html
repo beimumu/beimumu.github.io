@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Java基础语法-泛型） | 琲木木_blog</title>
+  <title>Java基础语法-泛型 | 琲木木_blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -624,7 +624,7 @@
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        Java基础语法-泛型）
+        Java基础语法-泛型
       </span>
     </div>
     
@@ -649,11 +649,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 1.8k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 2.2k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 8分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 9分钟 |
           </span>
   
           
@@ -699,7 +699,9 @@
 <p>2、类型参数在编译后会被替换成Object，运行时JVM并不知道泛型。</p>
 </blockquote>
 <h2 id="2-泛型的使用"><a href="#2-泛型的使用" class="headerlink" title="2. 泛型的使用"></a>2. 泛型的使用</h2><h3 id="2-1-泛型标记"><a href="#2-1-泛型标记" class="headerlink" title="2.1 泛型标记"></a>2.1 泛型标记</h3><ul>
-<li>使用”E、T、K、V、？“来当作泛型标记符。</li>
+<li><p>使用”E、T、K、V、？“来当作泛型标记符。</p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220714152353573.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220714152353573.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220714152353573"></p>
+</li>
 </ul>
 <blockquote>
 <p>用一个万能的标识符占位，充当形参。当你调用时，确定用哪种类型就可以当作实参来使用。</p>
@@ -751,33 +753,76 @@
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>举例</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Demo02</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
-    <span class="token class-name">T</span> <span class="token function">showInterfance</span><span class="token punctuation">(</span><span class="token class-name">T</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">T</span> <span class="token function">showInterface</span><span class="token punctuation">(</span><span class="token class-name">T</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo02Impl</span><span class="token punctuation">[</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span><span class="token punctuation">]</span>  <span class="token keyword">implements</span> <span class="token class-name">Demo02</span> <span class="token punctuation">&#123;</span>
-
+<span class="token comment">//第三种在接口处声明具体类型Demo02&lt;String></span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo02Impl</span>  <span class="token keyword">implements</span> <span class="token class-name">Demo02</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
+    
+	<span class="token comment">//快捷键 ctrl+i,快速生成重写抽象方法</span>
     <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">showInterfance</span><span class="token punctuation">(</span><span class="token class-name">Object</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">showInterfance</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
+
+
+<span class="token comment">/*
+//第二种用接口类型指向实现类创建对象。
+public class Demo02Impl  implements Demo02 &#123;
+
+    @Override
+    public Object showInterfance(Object name) &#123;
+        System.out.println(name);
+        return "";
+    &#125;
+&#125;
+*/</span>
+
+<span class="token comment">/*
+//第一种通过实现类创建实例对象，在实现类后声明泛型
+public class Demo02Impl&lt;T>  implements Demo02 &#123;
+
+
+    @Override
+    public Object showInterfance(Object name) &#123;
+        return null;
+    &#125;
+
+&#125;
+*/</span>
 <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestDemo02</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-        <span class="token comment">//在创建对象时:</span>
-        <span class="token comment">// 1、在实现类中声明，用实现类创建对象</span>
-        <span class="token class-name">Demo02Impl</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Demo02Impl</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        d<span class="token punctuation">.</span><span class="token function">showInterfance</span><span class="token punctuation">(</span><span class="token string">"张三"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token comment">/*
+        //在创建对象时:
+        // 1、在实现类后声明，用实现类创建对象
+        Demo02Impl&lt;String> d = new Demo02Impl&lt;>();
+        d.showInterfance("张三");
+        */</span>
 
-        <span class="token comment">//2、用接口类型指向实现类创建对象。</span>
-        <span class="token class-name">Demo02</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> d1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Demo02Impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        d1<span class="token punctuation">.</span><span class="token function">showInterfance</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">/*
+        //2、用接口类型指向实现类创建对象。
+        Demo02&lt;Integer> d1 = new Demo02Impl();
+        d1.showInterfance(123);
+        */</span>
+        
+       
+        <span class="token comment">//3.在接口名后定义类型，用实现类创建对象</span>
+        <span class="token class-name">Demo02Impl</span> d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Demo02Impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">String</span> str <span class="token operator">=</span> d<span class="token punctuation">.</span><span class="token function">showInterfance</span><span class="token punctuation">(</span><span class="token string">"李四"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
 
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
+<blockquote>
+<p>总结：</p>
+<p>泛型接口存在灵活性，在各种位置都可以放置，在使用时多观察定义的实际类型。</p>
+</blockquote>
 <h3 id="2-4-泛型方法"><a href="#2-4-泛型方法" class="headerlink" title="2.4 泛型方法"></a>2.4 泛型方法</h3><blockquote>
 <p>除了在泛型类中定义的方法可以当作泛型方法使用。还有将方法的参数类型定义成泛型，以便在调用时接收不同的类型参数。</p>
 <p>调用时，不需要想泛型类那样告诉编译器是什么类型，编译器会自动识别类型。（？extends Object obj）</p>
@@ -826,7 +871,7 @@
 <h4 id="2-4-2-静态方法"><a href="#2-4-2-静态方法" class="headerlink" title="2.4.2 静态方法"></a>2.4.2 静态方法</h4><ul>
 <li><p>静态方法只能在方法上使用泛型。</p>
 <blockquote>
-<p>静态方法无法访问类上定义的泛型，如果静态方法操作的引用类型不明确时，必须将泛型定义在方法上。</p>
+<p>静态方法无法访问类上定义的泛型(即：<strong>静态方法的泛型不能和定义的类上的泛型相同</strong>)，如果静态方法操作的引用类型不明确时，必须将泛型定义在方法上。</p>
 </blockquote>
 </li>
 <li><p>语法格式</p>
@@ -864,7 +909,16 @@
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h4 id="2-4-3-泛型方法与可变参数"><a href="#2-4-3-泛型方法与可变参数" class="headerlink" title="2.4.3 泛型方法与可变参数"></a>2.4.3 泛型方法与可变参数</h4><ul>
+<blockquote>
+<p>小结：</p>
+<p>泛型方法在非静态方法和静态方法的区别：</p>
+<p>1.在非静态方法中：<strong>泛型可以在泛型类中的泛型方法或者普通类中的泛型方法使用。</strong></p>
+<p>2.在静态方法中：<strong>泛型只能在普通类中的泛型方法中使用，并且通过类名.泛型方法名来调用。</strong></p>
+</blockquote>
+<h4 id="2-4-3-泛型方法与可变参数"><a href="#2-4-3-泛型方法与可变参数" class="headerlink" title="2.4.3 泛型方法与可变参数"></a>2.4.3 泛型方法与可变参数</h4><blockquote>
+<p>在计算机程序设计，一个可变参数函数是指一个函数拥有不定引数，即是它接受一个可变数目的参数。简单来说，就是<font color = #ff0000><strong>函数的参数个数可变，参数类型不定的函数</strong></font>。</p>
+</blockquote>
+<ul>
 <li><p>语法格式</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//泛型方法静态或非静态都可以。</span>
 <span class="token keyword">public</span> <span class="token operator">&lt;</span>泛型符<span class="token operator">></span> <span class="token keyword">void</span> 方法名<span class="token punctuation">(</span>泛型符<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>参数名<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -896,11 +950,13 @@
 <h3 id="2-5-通配符和上下限定"><a href="#2-5-通配符和上下限定" class="headerlink" title="2.5 通配符和上下限定"></a>2.5 通配符和上下限定</h3><h4 id="2-5-1-无界通配符"><a href="#2-5-1-无界通配符" class="headerlink" title="2.5.1 无界通配符"></a>2.5.1 无界通配符</h4><ul>
 <li><p>表示任何不确定的类型。</p>
 </li>
-<li><?> 作为形参。</li>
+<li><p><code>&lt;?&gt;</code> 作为形参。</p>
+</li>
 <li><p>用于解决具体类型不确定的问题。</p>
 </li>
-<li><p>使用泛型并确定好具体类型后，就不能使用其他类型了。泛型只是确定类型，但不考虑继承关系。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">showNon</span><span class="token punctuation">(</span><span class="token class-name">Gnerics</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> gnerics<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+<li><p>使用泛型并确定好具体类型后，就不能使用其他类型了。即：<font color = #ff0000><strong>泛型只是确定类型，但不考虑继承关系。</strong></font></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//此时定义了Gnerics&lt;Integer>，就说明你已经将使用类型固定不变了。</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">showNon</span><span class="token punctuation">(</span><span class="token class-name">Gnerics</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> gnerics<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>gnerics<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
@@ -908,9 +964,9 @@
 g<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token number">1001</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 show<span class="token punctuation">.</span><span class="token function">showNon</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token class-name">Gnerics</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Number</span><span class="token punctuation">></span></span> g2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Gnerics</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Gnerics</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Number</span><span class="token punctuation">></span></span> g2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Gnerics</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//该行代码会报错。</span>
 g2<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-show<span class="token punctuation">.</span><span class="token function">showNon</span><span class="token punctuation">(</span>g2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//确定了Integer类型，就不能使用Number类</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+show<span class="token punctuation">.</span><span class="token function">showNon</span><span class="token punctuation">(</span>g2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//之前确定了Integer类型，就不能使用Number类。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>举例</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Gnerics</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">private</span> <span class="token class-name">T</span> id<span class="token punctuation">;</span>
@@ -926,7 +982,7 @@ show<span class="token punctuation">.</span><span class="token function">showNon
 <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> showMsg <span class="token punctuation">&#123;</span>
     <span class="token comment">//测试无界通配符</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">showNon</span><span class="token punctuation">(</span><span class="token class-name">Gnerics</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> gnerics<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">showNon</span><span class="token punctuation">(</span><span class="token class-name">Gnerics</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">></span></span> gnerics<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>gnerics<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
@@ -953,7 +1009,7 @@ show<span class="token punctuation">.</span><span class="token function">showNon
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="2-5-2-通配符的上限限定"><a href="#2-5-2-通配符的上限限定" class="headerlink" title="2.5.2 通配符的上限限定"></a>2.5.2 通配符的上限限定</h4><ul>
-<li><p>关键字<code>extends</code>,不单是<strong>通配符具备继承关系</strong>，泛型也适用。</p>
+<li><p>关键字<code>extends</code>,不单是<strong>通配符具备继承关系，泛型类也适用</strong>。</p>
 </li>
 <li><? extends 具体类></li>
 <li><p>上限限定是指：</p>
@@ -961,6 +1017,9 @@ show<span class="token punctuation">.</span><span class="token function">showNon
 <li>具体类或者具体类的子类</li>
 <li>具体接口或者具体接口的子接口</li>
 </ul>
+<blockquote>
+<p>通俗点说：我（具体类）最大，只允许我和我的下辈使用。</p>
+</blockquote>
 </li>
 <li><p>举例</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Gnerics</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
@@ -1002,7 +1061,7 @@ show<span class="token punctuation">.</span><span class="token function">showNon
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="2-5-3-通配符的下线限定"><a href="#2-5-3-通配符的下线限定" class="headerlink" title="2.5.3 通配符的下线限定"></a>2.5.3 通配符的下线限定</h4><ul>
-<li><p>关键字<code>super</code>,泛型类不适用下限限定。</p>
+<li><p>关键字<code>super</code>，<strong>泛型类不适用下限限定</strong>。</p>
 </li>
 <li><? super 具体类></li>
 <li><p>下限限定是指：</p>
@@ -1010,6 +1069,9 @@ show<span class="token punctuation">.</span><span class="token function">showNon
 <li>具体类或者具体类的父类</li>
 <li>具体接口或者具体接口的父接口</li>
 </ul>
+<blockquote>
+<p>通俗点说：我（具体类）最小，只允许我和我的父辈以上使用。</p>
+</blockquote>
 </li>
 <li><p>举例</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Gnerics</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
@@ -1072,7 +1134,7 @@ show<span class="token punctuation">.</span><span class="token function">showNon
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/post/java-ji-chu-yu-fa-fan-xing/" target="_blank" title="Java基础语法-泛型）">https://beimumu.xyz/post/java-ji-chu-yu-fa-fan-xing/</a>
+    <a href="/post/java-ji-chu-yu-fa-fan-xing/" target="_blank" title="Java基础语法-泛型">https://beimumu.xyz/post/java-ji-chu-yu-fa-fan-xing/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
