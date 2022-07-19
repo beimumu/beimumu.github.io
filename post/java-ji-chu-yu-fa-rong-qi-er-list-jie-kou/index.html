@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Java基础语法-容器 | 琲木木_blog</title>
+  <title>Java基础语法-容器(二)-List接口 | 琲木木_blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -617,21 +617,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/pexels-vasily-kleymenov-10914616%20.jpg')">
+  background-position: center center;position: relative;background-image:url('https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-dpol5g_960x678.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        Java基础语法-容器
+        Java基础语法-容器(二)-List接口
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2020-11-28 |
+          <i class="fas fa-calendar"></i> 发表于：2020-11-30 |
         </span>
       
 
@@ -649,11 +649,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 4.7k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 3.6k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 20分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 16分钟 |
           </span>
   
           
@@ -680,150 +680,7 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="2-容器-集合（Collection）"><a href="#2-容器-集合（Collection）" class="headerlink" title="2.容器/集合（Collection）"></a>2.容器/集合（Collection）</h2><h3 id="2-1-容器"><a href="#2-1-容器" class="headerlink" title="2.1 容器"></a>2.1 容器</h3><ul>
-<li><p>容器：在程序员的眼中就是“用来容纳和管理数据的集合”。容器也称集合。</p>
-</li>
-<li><p>数组和容器的区别</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">优势</th>
-<th align="center">劣势</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">数组</td>
-<td align="center">简单的线性序列，可以快速的访问元素，效率高。</td>
-<td align="center">不灵活，容量固定不可变。</td>
-</tr>
-<tr>
-<td align="center">容器</td>
-<td align="center">更强大，更灵活，可以随时对容量进行扩容。</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>在我看来，容器和之前学的StringBuffer类一样，都是在数组和String类基础上进一步的提升，将<strong>原来的固定数组长度</strong>（length,返回的是长度而不是元素个数）和<strong>容量</strong>（capacity）进行<strong>动态化</strong>，可以<strong>动态扩容</strong>。所以我觉得前者就是后者的进阶版。</p>
-</blockquote>
-</li>
-<li><p>容器的存储</p>
-<p>在计算机中分两种存储方式：</p>
-<p>1、磁盘存储，是永久性存储；</p>
-<p>2、内存存储，是将temp caches临时的存储。</p>
-<p>而容器的存储就属于后者，内存存储。</p>
-</li>
-</ul>
-<h3 id="2-2-集合"><a href="#2-2-集合" class="headerlink" title="2.2 集合"></a>2.2 集合</h3><blockquote>
-<p>结构图：</p>
-</blockquote>
-<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220319213047580.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220319213047580.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220319213047580"></p>
-<h4 id="2-2-1-Iterable接口"><a href="#2-2-1-Iterable接口" class="headerlink" title="2.2.1 Iterable接口"></a>2.2.1 Iterable接口</h4><ul>
-<li><p><code>Iterable&lt;T&gt; iterable();</code></p>
-<p>功能：返回一个在一组T类型的元素进行迭代的迭代器。</p>
-</li>
-<li><p>迭代器：是实现了Iterable接口的类的对象可以通过遍历集合，访问元素。</p>
-</li>
-<li><p>foreach()语句</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span><span class="token punctuation">(</span>数组中元素的数据类型 临时变量 <span class="token operator">:</span> 要遍历的数组<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>临时变量<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>临时变量：指代就是循环过程中循环到的每一个数组元素。</p>
-</blockquote>
-<p>只有实现了Iterable接口的所有对象，才可以成为foreach语句的目标，即该集合对象允许迭代。</p>
-</li>
-</ul>
-<h4 id="2-2-2-Collection接口"><a href="#2-2-2-Collection接口" class="headerlink" title="2.2.2 Collection接口"></a>2.2.2 Collection接口</h4><ul>
-<li><p>Collection接口的抽象方法</p>
-<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220323102649786.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220323102649786.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220323102649786"></p>
-<blockquote>
-<p>boolean containsAll(Collection c); 本容器是否包含c容器中的所有元素。</p>
-<p>(c是本容器的子集)</p>
-</blockquote>
-<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220330112910305.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220330112910305.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220330112910305"></p>
-<blockquote>
-<p>boolean addAll(C c);将从c容器内的所有元素添加到本容器。</p>
-<p>（<strong>并集操作</strong>）</p>
-</blockquote>
-<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220330134656788.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220330134656788.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220330134656788"></p>
-<blockquote>
-<p>removeAll(C c); 移除本容器和c容器中都包含的元素（即移除交集，保留本容器非交集内容）。</p>
-<p>（差集：A和B两集合，其中属于A且不属于B的元素集合。）</p>
-</blockquote>
-<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220330142456993.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220330142456993.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220330142456993"></p>
-<blockquote>
-<p>retainAll(C c); 保留本容器和c容器中都包含的元素（即保留<strong>交集</strong>，移除本容器非交集内容）。</p>
-<p>（<strong>交集操作</strong>）。</p>
-</blockquote>
-<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220330143627037.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220330143627037.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220330143627037"></p>
-<blockquote>
-<p>void clear(); 清空容器所有元素。</p>
-</blockquote>
-</li>
-<li><p>测试Collection</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo04</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"list容器内容："</span><span class="token operator">+</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        list2<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        list2<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        list2<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"d"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"list2容器内容："</span><span class="token operator">+</span>list2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        
-        <span class="token keyword">boolean</span> isContains <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">containsAll</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"list是否包含了list2所有的元素："</span><span class="token operator">+</span>isContains<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//false</span>
-
-        <span class="token keyword">boolean</span> isAddAll <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"list是否添加了list2所有的元素："</span><span class="token operator">+</span>isAddAll<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
-        <span class="token comment">//list:[a,b,c,b,c,d] list2[b,c,d]</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"list容器新的内容："</span><span class="token operator">+</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        
-        <span class="token keyword">boolean</span> isRemoveAll <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">removeAll</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"是否移除了list和list2都包含的元素："</span><span class="token operator">+</span>isRemoveAll<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
-        <span class="token comment">//list:[c] list2:[a,b,c]</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>list2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">boolean</span> isRetainAll <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">retainAll</span><span class="token punctuation">(</span>list2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"是否保留了list和list2都包含的元素："</span><span class="token operator">+</span>isRetainAll<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
-        <span class="token comment">//list:[b,c] list2:[b,c,d]</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token operator">+</span><span class="token string">""</span><span class="token operator">+</span>list2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<h4 id="2-2-3-List、Set、Map解析"><a href="#2-2-3-List、Set、Map解析" class="headerlink" title="2.2.3 List、Set、Map解析"></a>2.2.3 List、Set、Map解析</h4><ul>
-<li><p>List</p>
-<ul>
-<li>有序且可重复（列表）</li>
-</ul>
-</li>
-<li><p>Set</p>
-<ul>
-<li>无序且不可重复（数据集合）</li>
-</ul>
-<blockquote>
-<p>在高中数学中集合具有①无序性②互异性③确定性。</p>
-</blockquote>
-</li>
-<li><p>Map</p>
-<ul>
-<li>映射</li>
-<li>不能使用foreach和迭代器遍历。</li>
-<li>Key-Value（都可以是对象）</li>
-</ul>
-<blockquote>
-<p>和函数y=f(x)一样，具有唯一性。 </p>
-</blockquote>
-</li>
-</ul>
-<h3 id="2-3-List接口"><a href="#2-3-List接口" class="headerlink" title="2.3 List接口"></a>2.3 List接口</h3><h4 id="2-3-1-ArrayList容器类"><a href="#2-3-1-ArrayList容器类" class="headerlink" title="2.3.1 ArrayList容器类"></a>2.3.1 ArrayList容器类</h4><ul>
+        <h3 id="2-3-List接口"><a href="#2-3-List接口" class="headerlink" title="2.3 List接口"></a>2.3 List接口</h3><h4 id="2-3-1-ArrayList容器类"><a href="#2-3-1-ArrayList容器类" class="headerlink" title="2.3.1 ArrayList容器类"></a>2.3.1 ArrayList容器类</h4><ul>
 <li><p>ArrayList是一个动态数组。<font color = #ff0000><strong>支持可随需求增长的动态数组。</strong></font></p>
 </li>
 <li><p>语法结构</p>
@@ -970,16 +827,24 @@ over<span class="token operator">-</span>flow 溢出
 conscious 意识<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h4 id="2-3-2-Vector容器类"><a href="#2-3-2-Vector容器类" class="headerlink" title="2.3.2 Vector容器类"></a>2.3.2 Vector容器类</h4><ul>
-<li>Vector底层也是数组实现的。</li>
-<li>相关方法都了同步检查，关键字<code>synchronized</code>同步标记。<ul>
+<li><p>Vector底层也是数组实现的。</p>
+</li>
+<li><p>相关方法都加了同步检查，关键字<code>synchronized</code>(英[ˈsɪŋkrənaɪzd])同步标记。</p>
+<ul>
 <li>线程更安全，但是效率也变低了（并行改串行）。</li>
 </ul>
 </li>
-<li>同ArrayList用法一致都是实现了List接口。</li>
-<li>只要不是多个线程同时更改数据，我们一般还是用ArrayList容器类。</li>
-<li>Vector与ArrayList底层源码类似，但也有不同点。<ul>
+<li><p>同ArrayList用法一致都是实现了List接口。</p>
+</li>
+<li><p><strong>只要不是多个线程同时更改数据，我们一般还是用ArrayList容器类</strong>。</p>
+<blockquote>
+<p>注释：在大部分的需求中，我们还是常用ArrayList，对于ArrayList，我们主要用来存储数据，并且读取数据，所以考虑性能，而不考虑线程安全性的问题。但如果多个线程需要对数据修改，此时就需要考虑线程安全了。</p>
+</blockquote>
+</li>
+<li><p>Vector与ArrayList底层源码类似，但也有不同点。</p>
+<ul>
 <li><strong>初始化方面</strong>：Vector是立即初始化，ArrayList是延迟初始化，即啥时候用啥时候扩容。</li>
-<li><strong>扩容操作</strong>：Vector是进行三目运算符，ArrayList是进行右移操作。</li>
+<li><strong>扩容操作</strong>：Vector是进行三目运算符，ArrayList是进行右移（除以2）操作。</li>
 <li><strong>扩容倍数</strong>：Vector是2倍扩容，ArrayList是1.5倍扩容。</li>
 <li><strong>计数方面</strong>：Vector中elementCount和ArrayList中size作用一致。</li>
 </ul>
@@ -1026,8 +891,8 @@ stack<span class="token punctuation">.</span><span class="token function">push</
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>empty<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>栈的实例：“字符串匹配算法”</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//字符串匹配问题,匹配是指不同类型的括号必须左右呼应，可以相互包含，但不能交叉。</span>
+</ul>
+<h5 id="2-3-1-栈的实例：“字符串匹配算法1-0-0”"><a href="#2-3-1-栈的实例：“字符串匹配算法1-0-0”" class="headerlink" title="2.3.1 栈的实例：“字符串匹配算法1.0.0”"></a>2.3.1 栈的实例：“字符串匹配算法1.0.0”</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//字符串匹配问题,匹配是指不同类型的括号必须左右呼应，可以相互包含，但不能交叉。</span>
 <span class="token comment">//例如：</span>
 <span class="token comment">//        ..(..[..]..)..  是允许的</span>
 <span class="token comment">//        ..(...[...)....].... 是禁止的</span>
@@ -1044,8 +909,9 @@ stack<span class="token punctuation">.</span><span class="token function">push</
         
         <span class="token class-name">Stack</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment">//假设修正</span>
+        <span class="token comment">//假设修正法</span>
         <span class="token keyword">boolean</span> flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><span class="token comment">//假设匹配为真</span>
+        
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
             <span class="token keyword">int</span> c <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">==</span> <span class="token string">'&#123;'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -1059,6 +925,7 @@ stack<span class="token punctuation">.</span><span class="token function">push</
             <span class="token punctuation">&#125;</span>
             <span class="token comment">//判断匹配问题</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">==</span> <span class="token string">'&#125;'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token string">']'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token string">')'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">/*----------校验操作：这是遍历前，判断栈内是否为空------------*/</span>  
                 <span class="token comment">//栈为空，字符串右括号在栈里没有对应的左括号，此时有两种情况。</span>
                 <span class="token comment">//1、右括号开头</span>
                 <span class="token comment">//2、右括号多余。</span>
@@ -1067,26 +934,122 @@ stack<span class="token punctuation">.</span><span class="token function">push</
                     <span class="token keyword">break</span><span class="token punctuation">;</span>
                 <span class="token punctuation">&#125;</span>
                 <span class="token class-name">String</span> x <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">!=</span> c<span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">// 栈不为空，弹出的元素与c作比较，相等就匹配，反之不匹配。</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">!=</span> c<span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">// 栈不为空，弹出的元素与c作比较，相等就说明字符串中括号匹配，反之不匹配。</span>
                     flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
                     <span class="token keyword">break</span><span class="token punctuation">;</span>
                 <span class="token punctuation">&#125;</span>
             <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
+        
+        <span class="token comment">/*----------校验操作：这是遍历完成后，再次判断栈内是否为空-------*/</span>  
         <span class="token comment">//为空取反，不为空就说明栈里还有元素（右括号），与字符串元素（左括号）不匹配，此时有两种情况。</span>
-        <span class="token comment">// 1、字符串左括号多余。2、字符串就直接没有匹配的元素</span>
+        <span class="token comment">// 1、字符串左括号多余。</span>
+        <span class="token comment">//2、字符串就直接没有匹配的元素</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>stack<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
             flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">;</span>
         sc<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220330203154314.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220330203154314.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220330203154314"></p>
-</li>
-</ul>
 <p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220330203253089.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220330203253089.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220330203253089"></p>
+<h5 id="2-3-2-栈的实例：“字符串匹配算法1-0-1”"><a href="#2-3-2-栈的实例：“字符串匹配算法1-0-1”" class="headerlink" title="2.3.2 栈的实例：“字符串匹配算法1.0.1”"></a>2.3.2 栈的实例：“字符串匹配算法1.0.1”</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StackTest</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+        <span class="token class-name">StackTest</span> st <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StackTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        st<span class="token punctuation">.</span><span class="token function">symetry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">symetry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+        <span class="token class-name">Scanner</span> sc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入需要判断的符号："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> str <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">/*String str = "&#123;&#125;[](";*/</span>
+        <span class="token class-name">Stack</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//判断标志位</span>
+        <span class="token keyword">int</span> flag <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>
+        <span class="token comment">//接收字符</span>
+        <span class="token keyword">char</span> getStr <span class="token operator">=</span> <span class="token string">' '</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//将字符串传入栈中</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">int</span> c <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">==</span> <span class="token string">'&#123;'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"&#125;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">==</span> <span class="token string">'['</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"]"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">==</span> <span class="token string">'('</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">")"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">==</span> <span class="token string">'&#125;'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token string">']'</span> <span class="token operator">||</span> c <span class="token operator">==</span> <span class="token string">')'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>stack<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    <span class="token comment">//问题一：将字符转换为字符串，根据索引找字符????为啥转换不了</span>
+                    <span class="token comment">/*getStr = str.valueOf(c);*/</span>
+                    getStr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    flag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//栈内为空，右括号多余，不匹配  "&#123;[---右括号多余---]&#125;)"</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+                <span class="token punctuation">&#125;</span>
+                <span class="token class-name">String</span> x <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">!=</span> c<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+                    getStr <span class="token operator">=</span> x<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    flag <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// 弹出的内容与字符串不同，不匹配 "&#123;---与弹出的括号不匹配---)"</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>stack<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            getStr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            flag <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment">//栈内不为空，则左括号多余，不匹配 "&#123;[---左括号多余---]&#125;("</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>flag <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"字符串匹配成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//"&#123;[(hello,java)]&#125;"</span>
+            <span class="token keyword">return</span> flag<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>flag <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"提示"</span><span class="token operator">+</span>flag<span class="token operator">+</span><span class="token string">"：栈为空，括号“ "</span><span class="token operator">+</span>getStr<span class="token operator">+</span><span class="token string">" ”多余"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"栈内元素为："</span><span class="token operator">+</span>stack<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> flag<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>flag <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"提示"</span><span class="token operator">+</span>flag<span class="token operator">+</span><span class="token string">"：栈不为空，弹出括号“ "</span><span class="token operator">+</span>getStr<span class="token operator">+</span><span class="token string">" ”没有匹配"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"栈内元素为："</span><span class="token operator">+</span>stack<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>flag <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"提示"</span><span class="token operator">+</span>flag<span class="token operator">+</span><span class="token string">"：栈内不为空，括号“ "</span><span class="token operator">+</span>getStr<span class="token operator">+</span><span class="token string">" ”多余"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"栈内元素为："</span><span class="token operator">+</span>stack<span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> flag<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token comment">//System.out.println("输入有误"+flag);</span>
+        sc<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> flag<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>①字符串匹配成功</li>
+</ul>
+<p><img src="../../../../Blog_lacal/typora_imgs/image-20220719191933857.png" class="lazyload placeholder" data-srcset="../../../../Blog_lacal/typora_imgs/image-20220719191933857.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220719191933857"></p>
+<ul>
+<li>②右括号多余</li>
+</ul>
+<p><img src="../../../../Blog_lacal/typora_imgs/image-20220719192336934.png" class="lazyload placeholder" data-srcset="../../../../Blog_lacal/typora_imgs/image-20220719192336934.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220719192336934"></p>
+<ul>
+<li>③与弹出的括号不匹配</li>
+</ul>
+<p><img src="../../../../Blog_lacal/typora_imgs/image-20220719192856723.png" class="lazyload placeholder" data-srcset="../../../../Blog_lacal/typora_imgs/image-20220719192856723.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220719192856723"></p>
+<ul>
+<li>④左括号多余</li>
+</ul>
+<p><img src="../../../../Blog_lacal/typora_imgs/image-20220719193050750.png" class="lazyload placeholder" data-srcset="../../../../Blog_lacal/typora_imgs/image-20220719193050750.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220719193050750"></p>
 <h4 id="2-3-4-LinkedList容器类"><a href="#2-3-4-LinkedList容器类" class="headerlink" title="2.3.4 LinkedList容器类"></a>2.3.4 LinkedList容器类</h4><ul>
 <li><p>LinkedList是不连续的双向链表。</p>
 </li>
@@ -1392,121 +1355,6 @@ list<span class="token punctuation">.</span><span class="token function">addLast
 </blockquote>
 </li>
 </ul>
-<h3 id="2-4-Set接口"><a href="#2-4-Set接口" class="headerlink" title="2.4 Set接口"></a>2.4 Set接口</h3><h3 id="2-5-Map接口"><a href="#2-5-Map接口" class="headerlink" title="2.5 Map接口"></a>2.5 Map接口</h3><ul>
-<li>&lt;key，value&gt;的这种键值对组成。</li>
-<li>体现了数学中y=f(x)函数，一对一的对应关系。</li>
-<li>key不能重复，value可以重复。</li>
-<li>存数据时：一对一对的存；取数据时：按key来取value。</li>
-</ul>
-<h4 id="2-5-1-Map接口常用方法"><a href="#2-5-1-Map接口常用方法" class="headerlink" title="2.5.1 Map接口常用方法"></a>2.5.1 Map接口常用方法</h4><ul>
-<li><p>存数据</p>
-<blockquote>
-<p> map.put();</p>
- <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> value1 <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">String</span> value2 <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"B"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">String</span> value3 <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"B"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>value1<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[null]</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>value2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[A]</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>value3<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[null]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p> 现象：</p>
-<ol>
-<li>在map中没有元素时，put方法返回的value值为:null。</li>
-<li>在map中有了元素之后，</li>
-</ol>
-<ul>
-<li>如果key值相同，那么put方法返回的value值为:之前被覆盖的内容。</li>
-<li>如果key值不同，那么put方法返回的value值为:null。</li>
-</ul>
-</blockquote>
-</li>
-<li><p>取数据</p>
-<blockquote>
-<p>map.get();</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> value4 <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>value4<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//C</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></blockquote>
-</li>
-<li><p>map中键值对的个数</p>
-<blockquote>
-<p>map.size();</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> size <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></blockquote>
-</li>
-<li><p>检测map中是否包含给定的键/值</p>
-<blockquote>
-<p>map.containsKey();</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">boolean</span> isKey <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">containsKey</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>isKey<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>map.containsValue();</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">boolean</span> isValue <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">containsValue</span><span class="token punctuation">(</span><span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>isValue<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></blockquote>
-</li>
-<li><p>删除数据</p>
-<blockquote>
-<p>map.remove(key); 返回string</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> remove <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"e"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>remove<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>map.remove(key,value); 返回boolean</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">boolean</span> remove1 <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"d"</span><span class="token punctuation">,</span> <span class="token string">"D"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>remove1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></blockquote>
-</li>
-<li><p>遍历</p>
-<p>map的遍历需要转换思想，没有实现Iterable接口，所以不能直接使用foreach。</p>
-<blockquote>
-<p>1.使用keySet();方法，拿到map中所有key进行存储到Set中。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> keySet <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> key <span class="token operator">:</span> keySet<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
- <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"key: "</span><span class="token operator">+</span>key<span class="token operator">+</span><span class="token string">" value: "</span><span class="token operator">+</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220505163300393.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220505163300393.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220505163300393"></p>
-<p>2.采用内部类Entry&lt;k,v&gt;的方式实现，entrySet();方法 返回的是一个个键值对的集合。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Map<span class="token punctuation">.</span>Entry</span><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span><span class="token punctuation">></span></span> entrySet <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//尖括号里面的就是元素的数据类型</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Map<span class="token punctuation">.</span>Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span></span> entry <span class="token operator">:</span> entrySet<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
- <span class="token class-name">String</span> key <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token class-name">String</span> value5 <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"key: "</span><span class="token operator">+</span>key<span class="token operator">+</span><span class="token string">" value: "</span><span class="token operator">+</span>value5<span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token comment">/*输出会显示null，因为entry对象没有创建
- System.out.println("key: "+map.get(entry)+" value: "+map.get(entry));
- */</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220505163300393.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220505163300393.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220505163300393"></p>
-<p>注意：</p>
-<p>每一个键值对，map都会在底层把它封装成Entry对象，Entry就代表一对键值对，所以他就有两个方法。</p>
-<p>Entry&lt;k,v&gt;的两个常用方法：1. getKey(); 2. getValue();</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="2-5-2-HashMap容器类"><a href="#2-5-2-HashMap容器类" class="headerlink" title="2.5.2 HashMap容器类"></a>2.5.2 HashMap容器类</h4><ul>
-<li><p>使用散列表实现Map接口，使得get()和put()的运行时间保持恒定。</p>
-</li>
-<li><p>实现Map接口，扩展了AbstractMap类等。</p>
-</li>
-<li><p>无序性。散列映射不保证他的元素顺序，元素加入散列的并不一定是他们被迭代的读出的顺序。</p>
-</li>
-<li><p>理论支撑：</p>
-<p>HashMap的底层结构：哈希数组和单向链表。</p>
-<p>单向链表默认容量为8，在jdk1.8中，结点个数大于8时，链表会转为红黑树；结点个数小于6时，红黑树会转为链表。</p>
-</li>
-</ul>
-<h4 id="2-5-3-TreeMap容器类"><a href="#2-5-3-TreeMap容器类" class="headerlink" title="2.5.3 TreeMap容器类"></a>2.5.3 TreeMap容器类</h4><p>练习:创建一个学生类，包含姓名，年龄。创建一个树图，键使用学生，值使用字符串。按照姓名升序、当姓名</p>
-<p>重复的时候按照年龄升序排序。</p>
-<p>即res = 0时</p>
-<ol>
-<li><p>把”hello”,”world”,”nihao” ,”世界” ,”today”,”hello” ,”world”这些元素存入List集合中，在List集合中去除掉重复元素。</p>
-</li>
-<li><p>设计一个手机类，包含编号，品牌，型号，价格,颜色等属性。从控制台要求用户输入5种手机的信息，使用List进行存储。</p>
-</li>
-<li><p>3.有一个List, 里面存了5个手机，要求在命令行实现:</p>
-<p>1.查询所有手机。</p>
-<p>2.输入手机编号修改手机价格。</p>
-<p>3.输入编号删除手机。</p>
-</li>
-</ol>
 
       </div>
       <div class="post-tags-categories">
@@ -1528,7 +1376,7 @@ list<span class="token punctuation">.</span><span class="token function">addLast
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/post/java-ji-chu-yu-fa-rong-qi/" target="_blank" title="Java基础语法-容器">https://beimumu.xyz/post/java-ji-chu-yu-fa-rong-qi/</a>
+    <a href="/post/java-ji-chu-yu-fa-rong-qi-er-list-jie-kou/" target="_blank" title="Java基础语法-容器(二)-List接口">https://beimumu.xyz/post/java-ji-chu-yu-fa-rong-qi-er-list-jie-kou/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -1550,18 +1398,16 @@ list<span class="token punctuation">.</span><span class="token function">addLast
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/mei02.jpg" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/mei02.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-e79om8_960x678.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/wallhaven-e79om8_960x678.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/post/san-yue-sui-ji/" class="post-nav-link">
+    <a href="/post/java-ji-chu-yu-fa-rong-qi-san-set-jie-kou/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">三月随记</div>
+        <div class="title-text">Java基础语法-容器(三)-Set接口</div>
       </div>
       
       <!-- <div class="content">
-        
-“好蓝的天空啊，是青春的蓝，突然，好想去剪个头发~”
-​                               
+        2.4 Set接口
       </div> -->
     </a>
   </div>
@@ -1572,17 +1418,16 @@ list<span class="token punctuation">.</span><span class="token function">addLast
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/pexels-steve-johnson-1183992.jpg" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/pexels-steve-johnson-1183992.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/pexels-vasily-kleymenov-10914616%20.jpg" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/background_img/pexels-vasily-kleymenov-10914616%20.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/post/java-ji-chu-yu-fa-fan-xing/" class="post-nav-link">
+    <a href="/post/java-ji-chu-yu-fa-rong-qi-yi-collection-ji-he/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Java基础语法-泛型</div>
+        <div class="title-text">Java基础语法-容器(一)-Collection集合</div>
       </div>
       <!-- <div class="content">
-        1. 泛型（Gnerics）1.1 泛型
-本质：将数据类型参数化。
-可以用在类、接口、方法中，分别称泛型类、泛型接口、泛
+        2.容器/集合（Collection）2.1 容器
+容器：在程序员的眼中就是“用来容纳和管理数据的集合”。容器也称集合。
       </div> -->
     </a>
   </div>
