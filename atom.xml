@@ -172,9 +172,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
-    
     <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
     
   </entry>
   
@@ -253,9 +253,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
-    
     <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
     
   </entry>
   
@@ -308,9 +308,9 @@
     <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
     
     
-    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
-    
     <category term="练习" scheme="https://beimumu.xyz/tags/%E7%BB%83%E4%B9%A0/"/>
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
     
   </entry>
   
@@ -371,14 +371,14 @@
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-rong-qi-san-set-jie-kou/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-rong-qi-san-set-jie-kou/</id>
     <published>2020-12-02T04:51:56.000Z</published>
-    <updated>2022-07-19T13:02:19.983Z</updated>
+    <updated>2022-08-04T08:01:57.793Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;2-4-Set接口&quot;&gt;&lt;a href=&quot;#2-4-Set接口&quot; class=&quot;headerlink&quot; title=&quot;2.4 Set接口&quot;&gt;&lt;/a&gt;2.4</summary>
+    <summary type="html">&lt;h3 id=&quot;2-4-Set接口&quot;&gt;&lt;a href=&quot;#2-4-Set接口&quot; class=&quot;headerlink&quot; title=&quot;2.4 Set接口&quot;&gt;&lt;/a&gt;2.4 Set接口&lt;/h3&gt;&lt;h4 id=&quot;2-4-1-HashSet容器类&quot;&gt;&lt;a</summary>
         
       
     
