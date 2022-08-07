@@ -649,11 +649,11 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 1.8k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 2.1k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 8分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 9分钟 |
           </span>
   
           
@@ -785,10 +785,80 @@
 <li><p>理论支撑：</p>
 <p>HashMap的底层结构：哈希数组和单向链表。</p>
 <p>单向链表默认容量为8，在jdk1.8中，结点个数大于8时，链表会转为红黑树；结点个数小于6时，红黑树会转为链表。</p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220804212816980.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220804212816980.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220804212816980"></p>
 </li>
 </ul>
-<p><img src="../../../../Blog_lacal/typora_imgs/image-20220804212816980.png" class="lazyload placeholder" data-srcset="../../../../Blog_lacal/typora_imgs/image-20220804212816980.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220804212816980"></p>
-<p>当数组长度超过64时，链表才会对结点大于8的转换为红黑树。</p>
+<h5 id="2-5-2-1-HashMap实例练习："><a href="#2-5-2-1-HashMap实例练习：" class="headerlink" title="2.5.2.1 HashMap实例练习："></a>2.5.2.1 HashMap实例练习：</h5><p>给定一系列字符串：</p>
+<p>“admin”、”zhangsan”、”zhangsan”、”admin”、”lisi”、”wangwu”、”zhaoliu”、”xiaoqiang”、”haha”。</p>
+<p>打印输出各个字符串出现的次数（使用HashMap实现，键保存字符串，值保存保存出现的次数）</p>
+<blockquote>
+<p>方法一：</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapTest</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+        <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token string">"admin"</span><span class="token punctuation">,</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token string">"admin"</span><span class="token punctuation">,</span><span class="token string">"lisi"</span><span class="token punctuation">,</span><span class="token string">"wangwu"</span><span class="token punctuation">,</span><span class="token string">"zhaoliu"</span><span class="token punctuation">,</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token string">"xiaoqiang"</span><span class="token punctuation">,</span><span class="token string">"haha"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        
+        <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//第一种方法</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">/*map.put(str[i],num);*/</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">containsKey</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token comment">//包含时，value需加1</span>
+                <span class="token class-name">Integer</span> count <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>count<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                <span class="token comment">//不包含，map里添加元素</span>
+                map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> set <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> s <span class="token operator">:</span> set<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"元素："</span><span class="token operator">+</span>s<span class="token operator">+</span><span class="token string">"   出现的次数："</span><span class="token operator">+</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>方法二：</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HashMapTest</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+        <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token string">"admin"</span><span class="token punctuation">,</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token string">"admin"</span><span class="token punctuation">,</span><span class="token string">"lisi"</span><span class="token punctuation">,</span><span class="token string">"wangwu"</span><span class="token punctuation">,</span><span class="token string">"zhaoliu"</span><span class="token punctuation">,</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span><span class="token string">"xiaoqiang"</span><span class="token punctuation">,</span><span class="token string">"haha"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token class-name">Integer</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//记录出现的次数</span>
+
+        <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//第二种方法</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> arr <span class="token operator">:</span> str<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            num <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                <span class="token class-name">Integer</span> count <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>count<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> set <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> s <span class="token operator">:</span> set<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"元素："</span><span class="token operator">+</span>s<span class="token operator">+</span><span class="token string">"   出现的次数："</span><span class="token operator">+</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220807203558500.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220807203558500.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220807203558500"></p>
+<h5 id="2-5-2-2-HashMap底层源码分析："><a href="#2-5-2-2-HashMap底层源码分析：" class="headerlink" title="2.5.2.2 HashMap底层源码分析："></a>2.5.2.2 HashMap底层源码分析：</h5><p>当数组长度超过64时，链表才会对结点大于8的转换为红黑树。</p>
+<p>未完，待续。。。。</p>
 <blockquote>
 <p>alt+7查看结构</p>
 </blockquote>
@@ -796,14 +866,32 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h4 id="2-5-3-TreeMap容器类"><a href="#2-5-3-TreeMap容器类" class="headerlink" title="2.5.3 TreeMap容器类"></a>2.5.3 TreeMap容器类</h4><ul>
-<li>TreeMap是可以对键进行排序的一种容器，在需要对键排序的时候可选用TreeMap。</li>
-<li>TreeMap底层是基于红黑树实现的。</li>
-<li>使用TreeMap时需要给定排序规则。<ol>
-<li>元素自身实现比较规则。</li>
-<li>通过外部比较器实现比较规则。</li>
+<li><p>TreeMap是可以对键进行排序的一种容器，在需要对键排序的时候可选用TreeMap。</p>
+</li>
+<li><p>TreeMap底层是基于<font color="#ff0000"><strong>红黑树</strong></font>实现的。</p>
+<blockquote>
+<p>在TreeMap需要给定规则排序时，以o1-o2为例：</p>
+<p>1、值为负数：o1小于o2，o1会排在左子树，o2会排在右子树。</p>
+<p>2、值相等：两数相同。</p>
+<p>3、值为正数：o1大于o2，o2会排在左子树，o1会排在右子树。</p>
+</blockquote>
+</li>
+<li><p>使用TreeMap时需要给定排序规则。</p>
+<ol>
+<li><p>元素自身实现比较规则。</p>
+<blockquote>
+<p>实现**Comparable<T>**接口中的compareTo()方法。</p>
+</blockquote>
+</li>
+<li><p>通过外部比较器实现比较规则。</p>
+<blockquote>
+<p>自定义实现**Comparator<T>**接口，编写比较规则。</p>
+</blockquote>
+</li>
 </ol>
 </li>
-<li>用法和HashMap一致。</li>
+<li><p>用法和HashMap一致。</p>
+</li>
 </ul>
 <h5 id="2-5-3-1-通过元素自身实现比较规则"><a href="#2-5-3-1-通过元素自身实现比较规则" class="headerlink" title="2.5.3.1 通过元素自身实现比较规则"></a>2.5.3.1 通过元素自身实现比较规则</h5><blockquote>
 <p>练习:</p>
@@ -814,6 +902,18 @@
 
     <span class="token keyword">private</span> <span class="token class-name">String</span> uname<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> uage<span class="token punctuation">;</span>
+    
+    <span class="token comment">//年龄从小到大，相等按名字字典排序。</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">Users</span> o<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>uage <span class="token operator">></span> o<span class="token punctuation">.</span><span class="token function">getUage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>uage <span class="token operator">==</span> o<span class="token punctuation">.</span><span class="token function">getUage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>uname<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>o<span class="token punctuation">.</span>uname<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
     <span class="token keyword">public</span> <span class="token class-name">Users</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token punctuation">&#125;</span>
@@ -863,19 +963,7 @@
                 <span class="token string">"uname='"</span> <span class="token operator">+</span> uname <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
                 <span class="token string">", uage="</span> <span class="token operator">+</span> uage <span class="token operator">+</span>
                 <span class="token string">'&#125;'</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token comment">//年龄从小到大，相等按名字字典排序。</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">Users</span> o<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>uage <span class="token operator">></span> o<span class="token punctuation">.</span><span class="token function">getUage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>uage <span class="token operator">==</span> o<span class="token punctuation">.</span><span class="token function">getUage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>uname<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>o<span class="token punctuation">.</span>uname<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>  
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Users</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span></span> map1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -895,7 +983,7 @@ map1<span class="token punctuation">.</span><span class="token function">put</sp
     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>users<span class="token operator">+</span><span class="token string">" ------ "</span><span class="token operator">+</span>map1<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="../../../../Blog_lacal/typora_imgs/image-20220806205939372.png" class="lazyload placeholder" data-srcset="../../../../Blog_lacal/typora_imgs/image-20220806205939372.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220806205939372"></p>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220806205939372.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220806205939372.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220806205939372"></p>
 <h5 id="2-5-3-2-通过外部比较器实现比较规则"><a href="#2-5-3-2-通过外部比较器实现比较规则" class="headerlink" title="2.5.3.2 通过外部比较器实现比较规则"></a>2.5.3.2 通过外部比较器实现比较规则</h5><blockquote>
 <p>练习:</p>
 <p>创建一个学生类，包含姓名，年龄。创建一个树图，键使用学生，值使用字符串。按照姓名升序、当姓名重复的时候按照年龄升序排序。</p>
@@ -998,18 +1086,7 @@ map2<span class="token punctuation">.</span><span class="token function">put</sp
     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>student<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">" -------- "</span><span class="token operator">+</span>student<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="../../../../Blog_lacal/typora_imgs/image-20220806215358908.png" class="lazyload placeholder" data-srcset="../../../../Blog_lacal/typora_imgs/image-20220806215358908.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220806215358908"></p>
-<ol>
-<li><p>把”hello”,”world”,”nihao” ,”世界” ,”today”,”hello” ,”world”这些元素存入List集合中，在List集合中去除掉重复元素。</p>
-</li>
-<li><p>设计一个手机类，包含编号，品牌，型号，价格,颜色等属性。从控制台要求用户输入5种手机的信息，使用List进行存储。</p>
-</li>
-<li><p>3.有一个List, 里面存了5个手机，要求在命令行实现:</p>
-<p>1.查询所有手机。</p>
-<p>2.输入手机编号修改手机价格。</p>
-<p>3.输入编号删除手机。</p>
-</li>
-</ol>
+<p><img src="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220806215358908.png" class="lazyload placeholder" data-srcset="https://blog-beimumu-xyz.oss-cn-chengdu.aliyuncs.com/img/java/image-20220806215358908.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220806215358908"></p>
 
       </div>
       <div class="post-tags-categories">
