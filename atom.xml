@@ -342,6 +342,31 @@
   </entry>
   
   <entry>
+    <title>Java基础语法-容器(五)-Collections工具类</title>
+    <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-rong-qi-wu-collections-gong-ju-lei/"/>
+    <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-rong-qi-wu-collections-gong-ju-lei/</id>
+    <published>2020-12-11T04:51:56.000Z</published>
+    <updated>2022-08-08T08:50:57.180Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;2-6-Collections工具类&quot;&gt;&lt;a href=&quot;#2-6-Collections工具类&quot; class=&quot;headerlink&quot; title=&quot;2.6 Collections工具类&quot;&gt;&lt;/a&gt;2.6</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
+    
+    
+    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java基础语法-容器(四)-Map接口</title>
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-rong-qi-si-map-jie-kou/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-rong-qi-si-map-jie-kou/</id>
@@ -371,7 +396,7 @@
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-rong-qi-san-set-jie-kou/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-rong-qi-san-set-jie-kou/</id>
     <published>2020-12-02T04:51:56.000Z</published>
-    <updated>2022-08-04T08:01:57.793Z</updated>
+    <updated>2022-08-08T09:30:49.335Z</updated>
     
     
       
@@ -396,7 +421,7 @@
     <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-rong-qi-er-list-jie-kou/"/>
     <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-rong-qi-er-list-jie-kou/</id>
     <published>2020-11-30T04:51:56.000Z</published>
-    <updated>2022-08-07T13:03:16.059Z</updated>
+    <updated>2022-08-08T08:51:15.123Z</updated>
     
     
       
@@ -504,31 +529,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;19-内部类&quot;&gt;&lt;a href=&quot;#19-内部类&quot; class=&quot;headerlink&quot; title=&quot;19.内部类&quot;&gt;&lt;/a&gt;19.内部类&lt;/h2&gt;&lt;h3 id=&quot;1-内部类（InnerClass）&quot;&gt;&lt;a href=&quot;#1-内部类（InnerClass）&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://beimumu.xyz/categories/Java/"/>
-    
-    
-    <category term="Java" scheme="https://beimumu.xyz/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java基础语法-常用类（三）</title>
-    <link href="https://beimumu.xyz/post/java-ji-chu-yu-fa-chang-yong-lei-san/"/>
-    <id>https://beimumu.xyz/post/java-ji-chu-yu-fa-chang-yong-lei-san/</id>
-    <published>2020-11-07T04:51:56.000Z</published>
-    <updated>2022-03-29T03:16:35.172Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;16-Math类&quot;&gt;&lt;a href=&quot;#16-Math类&quot; class=&quot;headerlink&quot;</summary>
         
       
     
